@@ -16,6 +16,8 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((whatDestroysBullet.value & (1 << other.gameObject.layer)) > 0) Destroy(gameObject);
+        var theObstacle = other.gameObject;
+        if ((whatDestroysBullet.value & (1 << theObstacle.layer)) > 0) Destroy(gameObject);
+        if (theObstacle.name == "Target") Destroy(theObstacle);
     }
 }
