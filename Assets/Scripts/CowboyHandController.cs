@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class HandBehavior : MonoBehaviour
+public class CowboyHandController : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 1f;
     [SerializeField] private Transform joint;
@@ -20,16 +20,16 @@ public class HandBehavior : MonoBehaviour
     {
         var handTransform = transform;
         if (isAiming) RotateHand(handTransform);
-        var leftButtonWasPressed = Mouse.current.leftButton.wasPressedThisFrame;
-        if (leftButtonWasPressed && !isAiming)
-        {
-            isAiming = true;
-        }
-        else if (leftButtonWasPressed && isAiming)
-        {
-            Instantiate(bulletPrefab, bulletSpawnPoint.position, handTransform.rotation);
-            isAiming = false;
-        }
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (isAiming)
+            {
+                Instantiate(bulletPrefab, bulletSpawnPoint.position, handTransform.rotation);
+                isAiming = false;
+            }
+            else
+            {
+                isAiming = true;
+            }
     }
 
     private void RotateHand(Transform handTransform)

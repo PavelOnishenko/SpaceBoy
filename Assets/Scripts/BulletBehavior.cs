@@ -3,21 +3,25 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 15f;
-    [SerializeField] private LayerMask whatDestroysBullet;
     
-    private Rigidbody2D rigidbody2D;
+    private Rigidbody2D rigidbody2DComponent;
     
     void Start()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbody2D.velocity = transform.up * movementSpeed;
+        rigidbody2DComponent = GetComponent<Rigidbody2D>();
+        rigidbody2DComponent.velocity = transform.up * movementSpeed;
         Destroy(gameObject, 3f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         var theObstacle = other.gameObject;
-        if ((whatDestroysBullet.value & (1 << theObstacle.layer)) > 0) Destroy(gameObject);
+
+        LayerMask obstacleLayersMask = ToLayerMask(LayerMask.NameToLayer("Wall")) | ToLayerMask(LayerMask.NameToLayer("Enemy"));
+        if ((obstacleLayersMask.value & ToLayerMask(theObstacle.layer)) > 0) Destroy(gameObject);
+        
         if (theObstacle.name == "Target") Destroy(theObstacle);
     }
+
+    private LayerMask ToLayerMask(int layer) => 1 << layer;
 }
