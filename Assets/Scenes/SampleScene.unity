@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e075f9137ad072a45b5f0abecdf86a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  rotationSpeed: 0.3
   joint: {fileID: 1446450473}
   lowerAimingBound: -40
   upperAimingBound: 40
@@ -603,8 +603,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342911646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.47, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.32, y: 0, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 435367910}
@@ -933,7 +933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8521299776314552151, guid: e54fcb9a7ca77d14f9bcb317ec53c3b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.135
       objectReference: {fileID: 0}
     - target: {fileID: 8521299776314552151, guid: e54fcb9a7ca77d14f9bcb317ec53c3b5, type: 3}
       propertyPath: m_LocalPosition.y
