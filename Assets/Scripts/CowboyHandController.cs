@@ -20,7 +20,7 @@ public class CowboyHandController : MonoBehaviour
     {
         var handTransform = transform;
         if (isAiming) RotateHand(handTransform);
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame && GameInfo.Instance.GameStarted)
             if (isAiming)
             {
                 Instantiate(bulletPrefab, bulletSpawnPoint.position, handTransform.rotation);
