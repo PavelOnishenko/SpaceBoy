@@ -15,12 +15,7 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var theObstacle = other.gameObject;
-
-        LayerMask obstacleLayersMask = ToLayerMask(LayerMask.NameToLayer("Wall")) | ToLayerMask(LayerMask.NameToLayer("Enemy"));
-        if ((obstacleLayersMask.value & ToLayerMask(theObstacle.layer)) > 0) Destroy(gameObject);
-        
-        if (theObstacle.name == "Target") Destroy(theObstacle);
+        Destroy(gameObject);
     }
 
     private LayerMask ToLayerMask(int layer) => 1 << layer;

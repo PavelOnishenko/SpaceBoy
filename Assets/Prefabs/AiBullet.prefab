@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1972658242111758401}
   - component: {fileID: 6626249346319903337}
   - component: {fileID: 3508409047587651844}
-  m_Layer: 0
-  m_Name: Bullet
+  m_Layer: 10
+  m_Name: AiBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &1592709343163370317
 SpriteRenderer:

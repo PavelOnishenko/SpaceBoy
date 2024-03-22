@@ -1315,6 +1315,7 @@ GameObject:
   - component: {fileID: 1453999653}
   - component: {fileID: 1453999656}
   - component: {fileID: 1453999655}
+  - component: {fileID: 1453999657}
   - component: {fileID: 1453999654}
   m_Layer: 8
   m_Name: EnemyHand
@@ -1496,6 +1497,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1453999657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1453999652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4152b078234f51e49a13c627876bf67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.3
+  lowerAimingBound: -40
+  upperAimingBound: 40
+  joint: {fileID: 1320756141}
+  aimingDelayMs: 100
+  epsilon: 0.5
+  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
+  bulletSpawnPoint: {fileID: 1166812431}
+  accuracy: 10
 --- !u!1 &1663565317
 GameObject:
   m_ObjectHideFlags: 0
