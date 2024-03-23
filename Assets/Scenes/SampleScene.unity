@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 391593708}
   - component: {fileID: 391593707}
   - component: {fileID: 391593706}
+  - component: {fileID: 391593709}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -439,6 +440,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &391593709
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391593705}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd8fb004a58060547bda05cda53cd434, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &417865629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1574,7 @@ MonoBehaviour:
   epsilon: 0.5
   bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
   bulletSpawnPoint: {fileID: 1166812431}
-  accuracy: 10
+  accuracy: 20
 --- !u!1 &1663565317
 GameObject:
   m_ObjectHideFlags: 0

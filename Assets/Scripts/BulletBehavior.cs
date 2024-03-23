@@ -17,6 +17,7 @@ public class BulletBehavior : MonoBehaviour
     {
         Destroy(gameObject);
         var otherGameObject = other.gameObject;
+        // todo what if game object is a hand?
         var animator = otherGameObject.GetComponent<Animator>();
         if (animator != null )
         {
