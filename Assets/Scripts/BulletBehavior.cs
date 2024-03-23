@@ -22,8 +22,5 @@ public class BulletBehavior : MonoBehaviour
         {
             animator.SetTrigger("Die");
         }
-        
     }
-
-    private LayerMask ToLayerMask(int layer) => 1 << layer;
 }
