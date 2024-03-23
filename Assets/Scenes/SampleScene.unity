@@ -973,6 +973,7 @@ GameObject:
   - component: {fileID: 1342911648}
   - component: {fileID: 1342911647}
   - component: {fileID: 1342911649}
+  - component: {fileID: 1342911650}
   m_Layer: 7
   m_Name: Cowboy
   m_TagString: Untagged
@@ -1143,6 +1144,27 @@ PolygonCollider2D:
       - {x: 0.24237418, y: -0.6293153}
       - {x: 0.23250264, y: -0.32687703}
   m_UseDelaunayMesh: 0
+--- !u!95 &1342911650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342911646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22e22f5b3f4d5594cac4aaee20e1dc37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1387084314
 GameObject:
   m_ObjectHideFlags: 0

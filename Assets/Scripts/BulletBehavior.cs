@@ -16,6 +16,13 @@ public class BulletBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
+        var otherGameObject = other.gameObject;
+        var animator = otherGameObject.GetComponent<Animator>();
+        if (animator != null )
+        {
+            animator.SetTrigger("Die");
+        }
+        
     }
 
     private LayerMask ToLayerMask(int layer) => 1 << layer;
