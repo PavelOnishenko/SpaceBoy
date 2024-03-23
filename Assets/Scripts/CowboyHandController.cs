@@ -13,11 +13,18 @@ public class CowboyHandController : MonoBehaviour
     private bool isAiming;
     private bool goingUp = true;
     private Quaternion initialRotation;
+    private CowboyState state;
 
-    void Start() => initialRotation = transform.rotation;
+    void Start()
+    {
+        state = GetComponentInParent<CowboyState>();
+        initialRotation = transform.rotation;
+    }
 
     private void Update()
     {
+        if(state.IsDead) return;
+        
         var handTransform = transform;
         if (isAiming) RotateHand(handTransform);
         if (Mouse.current.leftButton.wasPressedThisFrame && GameInfo.Instance.GameStarted)

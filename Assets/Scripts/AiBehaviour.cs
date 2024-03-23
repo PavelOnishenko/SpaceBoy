@@ -18,11 +18,13 @@ public class AiBehaviour : MonoBehaviour
     private float? desiredRotation;
     private bool goingUp = true;
     private Quaternion initialRotation;
+    private CowboyState state;
 
     void Start()
     {
         initialRotation = transform.rotation;
         StartCoroutine(AimingDelayCoroutine());
+        state = gameObject.GetComponentInParent<CowboyState>();
     }
 
     void Update()
@@ -30,6 +32,8 @@ public class AiBehaviour : MonoBehaviour
         if (!desiredRotation.HasValue) desiredRotation = GenerateDesiredRotation();
 
         if (!GameInfo.Instance.GameStarted) return;
+        
+        if(state.IsDead) return;
 
         var handTransform = transform;
         var currentRotation = handTransform.eulerAngles.z - initialRotation.eulerAngles.z;

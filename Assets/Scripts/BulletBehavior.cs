@@ -18,10 +18,10 @@ public class BulletBehavior : MonoBehaviour
         Destroy(gameObject);
         var otherGameObject = other.gameObject;
         // todo what if game object is a hand?
-        var animator = otherGameObject.GetComponent<Animator>();
-        if (animator != null )
+        if (otherGameObject.name == "Cowboy" || otherGameObject.name == "Enemy")
         {
-            animator.SetTrigger("Die");
+            var cowboyState = otherGameObject.GetComponent<CowboyState>();
+            cowboyState.Die();
         }
     }
 }

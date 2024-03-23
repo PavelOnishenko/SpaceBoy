@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 391593707}
   - component: {fileID: 391593706}
   - component: {fileID: 391593709}
+  - component: {fileID: 391593710}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -461,6 +462,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &391593710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391593705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417865629
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e075f9137ad072a45b5f0abecdf86a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.3
+  rotationSpeed: 1
   joint: {fileID: 1446450473}
   lowerAimingBound: -40
   upperAimingBound: 40
@@ -994,9 +1007,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1342911648}
   - component: {fileID: 1342911647}
-  - component: {fileID: 1342911651}
   - component: {fileID: 1342911649}
   - component: {fileID: 1342911650}
+  - component: {fileID: 1342911651}
   m_Layer: 7
   m_Name: Cowboy
   m_TagString: Untagged
@@ -1197,7 +1210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342911646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904b418df0baffa4bb6dcf89bc0429dc, type: 3}
+  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1387084314
@@ -1566,7 +1579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4152b078234f51e49a13c627876bf67e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.3
+  rotationSpeed: 1
   lowerAimingBound: -40
   upperAimingBound: 40
   joint: {fileID: 1320756141}
@@ -1574,7 +1587,7 @@ MonoBehaviour:
   epsilon: 0.5
   bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
   bulletSpawnPoint: {fileID: 1166812431}
-  accuracy: 20
+  accuracy: 5
 --- !u!1 &1663565317
 GameObject:
   m_ObjectHideFlags: 0
