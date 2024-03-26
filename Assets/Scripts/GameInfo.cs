@@ -1,10 +1,9 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Timeline;
 
 public class GameInfo : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI GameOverLabel;
+    [SerializeField] private TextMeshProUGUI gameOverLabel;
     
     public static GameInfo Instance { get; private set; }
 
@@ -16,27 +15,17 @@ public class GameInfo : MonoBehaviour
             state = value;
             if (value == GameState.PlayerWon || value == GameState.PlayerDead)
             {
-                GameOverLabel.gameObject.SetActive(true);
-                if (value == GameState.PlayerDead)
-                {
-                    GameOverLabel.text = "You died";
-                }
-
-                if (value == GameState.PlayerWon)
-                {
-                    GameOverLabel.text = "You won";
-                }
+                gameOverLabel.gameObject.SetActive(true);
+                gameOverLabel.text = value == GameState.PlayerDead ? "You died" : "You won";
             }
             else
             {
-                GameOverLabel.gameObject.SetActive(false);
+                gameOverLabel.gameObject.SetActive(false);
             }
         }
     }
 
-    private GameState state;
-    
-    public enum GameState { NotStarted, Ongoing, PlayerWon, PlayerDead }
+    private GameState state = GameState.NotStarted;
 
     private void Awake()
     {

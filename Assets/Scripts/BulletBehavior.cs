@@ -18,16 +18,8 @@ public class BulletBehavior : MonoBehaviour
         Destroy(gameObject);
         var otherGameObject = other.gameObject;
         CowboyState cowboyState = null;
-       
-        if(otherGameObject.name == "Cowboy" || otherGameObject.name == "Enemy")
-        {
-            cowboyState = otherGameObject.GetComponent<CowboyState>();
-        }
-        if (otherGameObject.name == "CowboyHand" || otherGameObject.name == "EnemyHand")
-        {
-            cowboyState = otherGameObject.GetComponentInParent<CowboyState>();           
-        }
-        if (cowboyState != null)
-            cowboyState.Die();
+        if(otherGameObject.name is "Cowboy" or "Enemy") cowboyState = otherGameObject.GetComponent<CowboyState>();
+        if (otherGameObject.name is "CowboyHand" or "EnemyHand") cowboyState = otherGameObject.GetComponentInParent<CowboyState>();
+        if (cowboyState != null) cowboyState.Die();
     }
 }

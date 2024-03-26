@@ -29,9 +29,9 @@ public class AiBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (!desiredRotation.HasValue) desiredRotation = GenerateDesiredRotation();
+        desiredRotation ??= GenerateDesiredRotation();
 
-        if (GameInfo.Instance.State != GameInfo.GameState.Ongoing) return;
+        if (GameInfo.Instance.State != GameState.Ongoing) return;
         
         if(state.IsDead) return;
 

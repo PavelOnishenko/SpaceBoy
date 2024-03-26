@@ -7,12 +7,9 @@ public class Countdown : MonoBehaviour
     [SerializeField] private int countdownTime = 3;
     [SerializeField] private TextMeshProUGUI textMesh;
 
-    private void Start()
-    {
-        StartCoroutine(CountdownCoroutine());
-    }
+    private void Start() => StartCoroutine(CountdownCoroutine());
 
-    IEnumerator CountdownCoroutine()
+    private IEnumerator CountdownCoroutine()
     {
         while (countdownTime > 0)
         {
@@ -22,10 +19,8 @@ public class Countdown : MonoBehaviour
         }
 
         textMesh.text = "Go!";
-
         yield return new WaitForSeconds(1f);
         textMesh.gameObject.SetActive(false);
-
-        GameInfo.Instance.State = GameInfo.GameState.Ongoing;
+        GameInfo.Instance.State = GameState.Ongoing;
     }
 }
