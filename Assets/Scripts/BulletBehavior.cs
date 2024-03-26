@@ -17,11 +17,17 @@ public class BulletBehavior : MonoBehaviour
     {
         Destroy(gameObject);
         var otherGameObject = other.gameObject;
-        // todo what if game object is a hand?
-        if (otherGameObject.name == "Cowboy" || otherGameObject.name == "Enemy")
+        CowboyState cowboyState = null;
+       
+        if(otherGameObject.name == "Cowboy" || otherGameObject.name == "Enemy")
         {
-            var cowboyState = otherGameObject.GetComponent<CowboyState>();
-            cowboyState.Die();
+            cowboyState = otherGameObject.GetComponent<CowboyState>();
         }
+        if (otherGameObject.name == "CowboyHand" || otherGameObject.name == "EnemyHand")
+        {
+            cowboyState = otherGameObject.GetComponentInParent<CowboyState>();           
+        }
+        if (cowboyState != null)
+            cowboyState.Die();
     }
 }

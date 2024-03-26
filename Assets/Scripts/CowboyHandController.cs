@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class CowboyHandController : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 1f;
+    [SerializeField] private float rotationSpeed = 0.3f;
     [SerializeField] private Transform joint;
     [SerializeField] private float lowerAimingBound = -40;
     [SerializeField] private float upperAimingBound = 40;

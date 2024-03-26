@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AiBehaviour : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 1f;
+    [SerializeField] private float rotationSpeed = 0.3f;
     [SerializeField] private float lowerAimingBound = -40;
     [SerializeField] private float upperAimingBound = 40;
     [SerializeField] private Transform joint;
