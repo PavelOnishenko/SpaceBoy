@@ -31,7 +31,7 @@ public class AiBehaviour : MonoBehaviour
     {
         if (!desiredRotation.HasValue) desiredRotation = GenerateDesiredRotation();
 
-        if (!GameInfo.Instance.GameStarted) return;
+        if (GameInfo.Instance.State != GameInfo.GameState.Ongoing) return;
         
         if(state.IsDead) return;
 

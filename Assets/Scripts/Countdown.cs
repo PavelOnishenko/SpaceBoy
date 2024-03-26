@@ -26,6 +26,6 @@ public class Countdown : MonoBehaviour
         yield return new WaitForSeconds(1f);
         textMesh.gameObject.SetActive(false);
 
-        GameInfo.Instance.GameStarted = true;
+        GameInfo.Instance.State = GameInfo.GameState.Ongoing;
     }
 }

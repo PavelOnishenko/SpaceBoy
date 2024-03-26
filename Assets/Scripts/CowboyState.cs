@@ -11,6 +11,7 @@ public class CowboyState : MonoBehaviour
     public void Die()
     {
         isDead = true;
+        GameInfo.Instance.State = GameInfo.GameState.Finished;
         var animator = GetComponent<Animator>();
         animator.SetTrigger("Die");
     }
