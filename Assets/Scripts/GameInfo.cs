@@ -14,9 +14,18 @@ public class GameInfo : MonoBehaviour
         set
         {
             state = value;
-            if (value == GameState.Finished)
+            if (value == GameState.PlayerWon || value == GameState.PlayerDead)
             {
                 GameOverLabel.gameObject.SetActive(true);
+                if (value == GameState.PlayerDead)
+                {
+                    GameOverLabel.text = "You died";
+                }
+
+                if (value == GameState.PlayerWon)
+                {
+                    GameOverLabel.text = "You won";
+                }
             }
             else
             {
@@ -27,7 +36,7 @@ public class GameInfo : MonoBehaviour
 
     private GameState state;
     
-    public enum GameState { NotStarted, Ongoing, Finished }
+    public enum GameState { NotStarted, Ongoing, PlayerWon, PlayerDead }
 
     private void Awake()
     {

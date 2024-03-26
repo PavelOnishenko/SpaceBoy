@@ -1723,7 +1723,7 @@ MonoBehaviour:
   epsilon: 0.5
   bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
   bulletSpawnPoint: {fileID: 1166812431}
-  accuracy: 5
+  accuracy: 10
 --- !u!1 &1663565317
 GameObject:
   m_ObjectHideFlags: 0
