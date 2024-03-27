@@ -6,6 +6,8 @@ public class Countdown : MonoBehaviour
 {
     [SerializeField] private int countdownTime = 3;
     [SerializeField] private TextMeshProUGUI textMesh;
+    
+    public void Restart() => StartCoroutine(CountdownCoroutine());
 
     private void Start() => StartCoroutine(CountdownCoroutine());
 
