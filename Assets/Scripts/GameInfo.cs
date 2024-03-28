@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class GameInfo : MonoBehaviour
@@ -20,18 +19,9 @@ public class GameInfo : MonoBehaviour
         set
         {
             state = value;
-            if (value == GameState.PlayerWon || value == GameState.PlayerDead)
+            if (value is GameState.PlayerWon or GameState.PlayerDead)
             {
-                if (value == GameState.PlayerDead)
-                {
-                    labelYouDie.SetActive(true);
-                    labelYouWon.SetActive(false);
-                }
-                else
-                {
-                    labelYouDie.SetActive(false);
-                    labelYouWon.SetActive(true);
-                }
+                HandleGameOver(value);
             }
             else
             {
@@ -39,6 +29,20 @@ public class GameInfo : MonoBehaviour
                 labelYouDie.SetActive(false);
                 labelYouWon.SetActive(false);
             }
+        }
+    }
+
+    private void HandleGameOver(GameState value)
+    {
+        if (value == GameState.PlayerDead)
+        {
+            labelYouDie.SetActive(true);
+            labelYouWon.SetActive(false);
+        }
+        else
+        {
+            labelYouDie.SetActive(false);
+            labelYouWon.SetActive(true);
         }
     }
 

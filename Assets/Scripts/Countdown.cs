@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Linq;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Countdown : MonoBehaviour
@@ -26,21 +24,19 @@ public class Countdown : MonoBehaviour
         countdownContainer.SetActive(true);
         while (countdownTime > 0)
         {
-            Debug.Log($"CountdownTime == {countdownTime}.");
             var activeDigits = digits.Where(x => x.activeSelf).ToArray();
             foreach (var t in activeDigits) t.gameObject.SetActive(false);
-            var digitToShowName = countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null };
-            Debug.Log($"digitToShowName == {digitToShowName}.");
-            var digitToShow = digits.Single(x => x.name == digitToShowName);
-            digitToShow.SetActive(true);
-            Debug.Log("digitToShow.SetActive(true)");
+            SetActive(countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null }, true);
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
-        digits.Single(x => x.name == "LabelOne").SetActive(false);
-        digits.Single(x => x.name == "LabelGo").SetActive(true);
+        SetActive("LabelOne", false);
+        SetActive("LabelGo", true);
         yield return new WaitForSeconds(1f);
         countdownContainer.SetActive(false);
         GameInfo.Instance.State = GameState.Ongoing;
     }
+
+    private void SetActive(string gameObjectName, bool newValue) => 
+        digits.Single(x => x.name == gameObjectName).SetActive(newValue);
 }
