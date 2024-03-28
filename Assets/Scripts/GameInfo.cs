@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI gameOverLabel;
+    [SerializeField] private GameObject labelYouDie;
+    [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject cowboy;
     [SerializeField] private GameObject enemy;
 
@@ -21,13 +22,22 @@ public class GameInfo : MonoBehaviour
             state = value;
             if (value == GameState.PlayerWon || value == GameState.PlayerDead)
             {
-                gameOverLabel.text = value == GameState.PlayerDead ? "You died" : "You won";
-                gameOverLabel.gameObject.SetActive(true);
+                if (value == GameState.PlayerDead)
+                {
+                    labelYouDie.SetActive(true);
+                    labelYouWon.SetActive(false);
+                }
+                else
+                {
+                    labelYouDie.SetActive(false);
+                    labelYouWon.SetActive(true);
+                }
             }
             else
             {
                 if (value == GameState.NotStarted) Restart();
-                gameOverLabel.gameObject.SetActive(false);
+                labelYouDie.SetActive(false);
+                labelYouWon.SetActive(false);
             }
         }
     }
