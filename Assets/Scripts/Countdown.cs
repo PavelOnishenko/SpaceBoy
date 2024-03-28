@@ -22,14 +22,9 @@ public class Countdown : MonoBehaviour
         while (countdownTime > 0)
         {
             GameObject[] activeDigits = digits.Where(x => x.activeSelf).ToArray();
-            foreach (var t in activeDigits)
-            {
-                t.gameObject.SetActive(false);
-            }
-            string digitToShowName = null;
-            if (countdownTime == 3) digitToShowName = "LabelThree";
-            if (countdownTime == 2) digitToShowName = "LabelTwo";
-            if (countdownTime == 1) digitToShowName = "LabelOne";
+            foreach (var t in activeDigits) t.gameObject.SetActive(false);
+
+            var digitToShowName = countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null };
             var digitToShow = digits.Single(x => x.name == digitToShowName);
             digitToShow.SetActive(true);
             yield return new WaitForSeconds(1f);
