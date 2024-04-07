@@ -3,11 +3,22 @@ using UnityEngine;
 public class CowboyState : MonoBehaviour
 {
     public bool IsDead => isDead;
+    public bool IsAiming { get; private set; }
 
     private bool isDead;
     private Animator animator;
     
     private static readonly int isDeadParameterId = Animator.StringToHash("IsDead");
+
+    public void StopAiming()
+    {
+        IsAiming = false;
+    }
+    
+    public void StartAiming()
+    {
+        IsAiming = true;
+    }
 
     public void Revive()
     {
