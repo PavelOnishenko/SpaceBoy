@@ -10,15 +10,9 @@ public class CowboyState : MonoBehaviour
     
     private static readonly int isDeadParameterId = Animator.StringToHash("IsDead");
 
-    public void StopAiming()
-    {
-        IsAiming = false;
-    }
-    
-    public void StartAiming()
-    {
-        IsAiming = true;
-    }
+    public void StopAiming() => IsAiming = false;
+
+    public void StartAiming() => IsAiming = true;
 
     public void Revive()
     {

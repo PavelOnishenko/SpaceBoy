@@ -8,7 +8,7 @@ public class Countdown : MonoBehaviour
     [SerializeField] private GameObject countdownContainer;
 
     private GameObject[] digits;
-    private bool isCounting = false;
+    private bool isCounting;
     
     public void Restart() => StartCoroutine(CountdownCoroutine());
 
@@ -22,7 +22,7 @@ public class Countdown : MonoBehaviour
     private IEnumerator CountdownCoroutine()
     {
         if (isCounting) yield break;
-        else isCounting = true;
+        isCounting = true;
         countdownTime = 3;
         countdownContainer.SetActive(true);
         while (countdownTime > 0)
@@ -41,6 +41,5 @@ public class Countdown : MonoBehaviour
         GameInfo.Instance.State = GameState.Ongoing;
     }
 
-    private void SetActive(string gameObjectName, bool newValue) => 
-        digits.Single(x => x.name == gameObjectName).SetActive(newValue);
+    private void SetActive(string gameObjectName, bool newValue) => digits.Single(x => x.name == gameObjectName).SetActive(newValue);
 }

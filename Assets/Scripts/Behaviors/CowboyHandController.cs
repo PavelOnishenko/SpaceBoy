@@ -42,8 +42,7 @@ public class CowboyHandController : MonoBehaviour
 
     private void ProcessTouchPress(TouchControl touch)
     {
-        Vector2 touchPosition = touch.position.ReadValue();
-
+        var touchPosition = touch.position.ReadValue();
         if (GameInfo.Instance.State == GameState.Ongoing && shotReady && touchPosition.x > Screen.width / 2f)
         {
             ShootOrAim(transform);
