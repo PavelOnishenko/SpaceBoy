@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class CowboyHandController : MonoBehaviour
 {
@@ -24,49 +25,33 @@ public class CowboyHandController : MonoBehaviour
     private void Update()
     {
         if (state.IsDead) return;
-        
+
         var handTransform = transform;
         if (state.IsAiming) RotateHand(handTransform);
-
-        // Simplified input detection logic
-        if (GameInfo.Instance.State == GameState.Ongoing)
-        {
-            // Touch input detection
-            if (Touchscreen.current != null && Touchscreen.current.press.isPressed)
-            {
-                if (shotReady)
-                {
-                    Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-                    // Shoot only if the touch is on the right side and the shot is ready
-                    if (touchPosition.x > Screen.width / 2)
-                    {
-                        ProcessShot(handTransform);
-                        shotReady = false; // Prevent continuous shooting
-                    }
-                }
-            }
-            else if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                ProcessShot(handTransform);
-            }
-            else
-            {
-                shotReady = true; // Re-enable shooting when there's no touch or mouse press
-            }
-        }
+        CheckForTouchInput();
     }
 
-    private void ProcessTouchInput()
+    private void CheckForTouchInput()
     {
-        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-        // Determines if the touch is on the right side of the screen for shooting
-        if (touchPosition.x > Screen.width / 2f)
+        if (Touchscreen.current == null) return;
+
+        TouchControl touch = Touchscreen.current.primaryTouch;
+        if (touch.press.isPressed) ProcessTouchPress(touch);
+        else shotReady = true; // Re-enable shooting for next touch
+    }
+
+    private void ProcessTouchPress(TouchControl touch)
+    {
+        Vector2 touchPosition = touch.position.ReadValue();
+
+        if (GameInfo.Instance.State == GameState.Ongoing && shotReady && touchPosition.x > Screen.width / 2f)
         {
-            ProcessShot(transform);
+            ShootOrAim(transform);
+            shotReady = false; // Prevent continuous shooting
         }
     }
 
-    private void ProcessShot(Transform handTransform)
+    private void ShootOrAim(Transform handTransform)
     {
         if (state.IsAiming)
         {

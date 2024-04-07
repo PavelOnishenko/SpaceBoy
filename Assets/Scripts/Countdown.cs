@@ -8,6 +8,7 @@ public class Countdown : MonoBehaviour
     [SerializeField] private GameObject countdownContainer;
 
     private GameObject[] digits;
+    private bool isCounting = false;
     
     public void Restart() => StartCoroutine(CountdownCoroutine());
 
@@ -20,6 +21,8 @@ public class Countdown : MonoBehaviour
 
     private IEnumerator CountdownCoroutine()
     {
+        if (isCounting) yield break;
+        else isCounting = true;
         countdownTime = 3;
         countdownContainer.SetActive(true);
         while (countdownTime > 0)
@@ -34,6 +37,7 @@ public class Countdown : MonoBehaviour
         SetActive("LabelGo", true);
         yield return new WaitForSeconds(1f);
         countdownContainer.SetActive(false);
+        isCounting = false;
         GameInfo.Instance.State = GameState.Ongoing;
     }
 
