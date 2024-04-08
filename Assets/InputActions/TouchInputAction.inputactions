@@ -1,0 +1,43 @@
+{
+    "name": "TouchInputAction",
+    "maps": [
+        {
+            "name": "TouchMap",
+            "id": "6651d6ce-da5e-4b36-b679-9b9732bd7ce5",
+            "actions": [
+                {
+                    "name": "TapAction",
+                    "type": "Button",
+                    "id": "2352bb53-aa8b-42ea-aae8-e7b67889c10c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SwipeAction",
+                    "type": "Button",
+                    "id": "1f28d1ee-5f33-4d9d-b9fa-7f98e8d24045",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b0b7a4b9-80f0-407d-a925-c02fd9010733",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
