@@ -28,6 +28,7 @@ public class Loader : MonoBehaviour
                 loadingCanvas.gameObject.SetActive(false);
                 progressBarIsFinished = true;
             }
+            
             yield return null;
         }
     }
