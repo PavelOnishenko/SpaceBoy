@@ -12,7 +12,11 @@ public class CowboyState : MonoBehaviour
 
     public void StopAiming() => IsAiming = false;
 
-    public void StartAiming() => IsAiming = true;
+    public void StartAiming()
+    {
+        animator.Play("SpaceGirl_Attack");
+        IsAiming = true;
+    }
 
     public void Revive()
     {
@@ -28,5 +32,9 @@ public class CowboyState : MonoBehaviour
         animator.SetBool(isDeadParameterId, true);
     }
 
-    private void Start() => animator = GetComponent<Animator>();
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animator.Play("SpaceGirl_Idle");
+    }
 }

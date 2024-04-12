@@ -274,8 +274,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   labelYouDie: {fileID: 1970713041}
   labelYouWon: {fileID: 1165487306}
-  cowboy: {fileID: 0}
-  enemy: {fileID: 0}
+  cowboy: {fileID: 1405283743}
+  enemy: {fileID: 917656046}
 --- !u!114 &417865631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,6 +520,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &917656046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8212154187097821934, guid: 7d7078c7af20f50488f9943898d41231, type: 3}
+  m_PrefabInstance: {fileID: 3786305527657874602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &943565365
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1047,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8863703573939879422, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
   m_PrefabInstance: {fileID: 3570452845804515294}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1405283743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7767067393691526557, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
+  m_PrefabInstance: {fileID: 3570452845804515294}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1498484648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5516293033225780111, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
+  m_PrefabInstance: {fileID: 3570452845804515294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1919417665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1265,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1014001683}
     m_Modifications:
+    - target: {fileID: -1386437174608412941, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
+    - target: {fileID: -1386437174608412941, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
+      propertyPath: bulletSpawnPoint
+      value: 
+      objectReference: {fileID: 1498484648}
     - target: {fileID: 7767067393691526557, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_Name
       value: Spacegirl
