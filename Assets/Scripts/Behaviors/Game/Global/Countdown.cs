@@ -27,9 +27,7 @@ public class Countdown : MonoBehaviour
         countdownContainer.SetActive(true);
         while (countdownTime > 0)
         {
-            var activeDigits = digits.Where(x => x.activeSelf).ToArray();
-            foreach (var t in activeDigits) t.gameObject.SetActive(false);
-            SetActive(countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null }, true);
+            SetDigitsActive();
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
@@ -39,6 +37,13 @@ public class Countdown : MonoBehaviour
         countdownContainer.SetActive(false);
         isCounting = false;
         GameInfo.Instance.State = GameState.Ongoing;
+    }
+
+    private void SetDigitsActive()
+    {
+        var activeDigits = digits.Where(x => x.activeSelf).ToArray();
+        foreach (var t in activeDigits) t.gameObject.SetActive(false);
+        SetActive(countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null }, true);
     }
 
     private void SetActive(string gameObjectName, bool newValue) => digits.Single(x => x.name == gameObjectName).SetActive(newValue);

@@ -7,7 +7,7 @@ public class CowboyState : MonoBehaviour
 
     private bool isDead;
     private Animator animator;
-    
+
     private static readonly int isDeadParameterId = Animator.StringToHash("IsDead");
 
     public void StopAiming() => IsAiming = false;
