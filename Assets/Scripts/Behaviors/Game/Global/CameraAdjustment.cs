@@ -9,7 +9,7 @@ public class CameraAdjustment : MonoBehaviour
         var targetAspect = targetWidthFactor / targetHeightFactor;
         var windowAspect = Screen.width / (float)Screen.height;
         var scaleHeight = windowAspect / targetAspect;
-        Camera cam = GetComponent<Camera>();
+        var cam = GetComponent<Camera>();
 
         if (scaleHeight < 1.0f) {  
             var rect = cam.rect;

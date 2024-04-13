@@ -31,7 +31,7 @@ public class AiBehaviour : MonoBehaviour
     {
         desiredRotation ??= GenerateDesiredRotation();
         if (GameInfo.Instance.State != GameState.Ongoing) return;
-        if(state.IsDead) return;
+        if (state.IsDead) return;
         var handTransform = transform;
         var currentRotation = handTransform.eulerAngles.z - initialRotation.eulerAngles.z;
         if (desiredRotation.HasValue && Math.Abs(currentRotation - desiredRotation.Value) < epsilon) ProcessShooting(handTransform.rotation);

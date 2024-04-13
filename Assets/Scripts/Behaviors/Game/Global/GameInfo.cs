@@ -60,7 +60,7 @@ public class GameInfo : MonoBehaviour
         cowboyState = cowboy.GetComponent<CowboyState>();
         enemyState = enemy.GetComponent<CowboyState>();
         countdown = GetComponent<Countdown>();
-        
+
         if (Instance == null)
         {
             Instance = this;
