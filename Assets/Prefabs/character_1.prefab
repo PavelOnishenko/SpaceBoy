@@ -1164,7 +1164,7 @@ MonoBehaviour:
   epsilon: 0.5
   bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
   bulletSpawnPoint: {fileID: 5765745660985435207}
-  accuracy: 10
+  accuracy: 5
   lowerAimingBound: 190
   upperAimingBound: 240
   shootingForearm: {fileID: 8509873305075872026}
