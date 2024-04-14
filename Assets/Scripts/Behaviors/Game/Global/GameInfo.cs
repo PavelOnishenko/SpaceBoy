@@ -9,6 +9,7 @@ public class GameInfo : MonoBehaviour
 
     private CowboyState cowboyState;
     private CowboyState enemyState;
+    private AiBehaviour aiBehaviour;
     private Countdown countdown;
 
     public static GameInfo Instance { get; private set; }
@@ -28,6 +29,7 @@ public class GameInfo : MonoBehaviour
                 if (value == GameState.NotStarted) Restart();
                 labelYouDie.SetActive(false);
                 labelYouWon.SetActive(false);
+                if (value == GameState.Ongoing) aiBehaviour.GenerateRotationAndAim();
             }
         }
     }
@@ -59,6 +61,7 @@ public class GameInfo : MonoBehaviour
     {
         cowboyState = cowboy.GetComponent<CowboyState>();
         enemyState = enemy.GetComponent<CowboyState>();
+        aiBehaviour = enemy.GetComponent<AiBehaviour>();
         countdown = GetComponent<Countdown>();
 
         if (Instance == null)

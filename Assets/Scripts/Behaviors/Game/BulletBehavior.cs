@@ -17,10 +17,8 @@ public class BulletBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
-        var otherGameObject = other.gameObject;
-        CowboyState cowboyState = null;
-        if (otherGameObject.name is "Cowboy" or "Enemy") cowboyState = otherGameObject.GetComponent<CowboyState>();
-        if (otherGameObject.name is "CowboyHand" or "EnemyHand") cowboyState = otherGameObject.GetComponentInParent<CowboyState>();
+        var rootTransform = other.transform.root;
+        var cowboyState = rootTransform.gameObject.GetComponentInChildren<CowboyState>();
         if (cowboyState != null) cowboyState.Die();
     }
 }

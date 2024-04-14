@@ -3,7 +3,6 @@ using UnityEngine;
 public class CowboyState : MonoBehaviour
 {
     [SerializeField] private string aimingAnimationName;
-    [SerializeField] private string idleAnimationName;
 
     public bool IsDead { get; private set; }
     public bool IsAiming { get; private set; }
@@ -33,13 +32,19 @@ public class CowboyState : MonoBehaviour
 
     public void Revive()
     {
+        animator.speed = 1;
+        IsAiming = false;
+        animator.SetBool("IsAiming", false);
         IsDead = false;
+        animator.SetBool("IsDead", false);
     }
 
     public void Die()
     {
+        animator.speed = 1;
         IsDead = true;
-        var isPlayer = gameObject.name == "Cowboy";
+        animator.SetBool("IsDead", true);
+        var isPlayer = gameObject.name == "Spacegirl";
         if (GameInfo.Instance.State == GameState.Ongoing) GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
 

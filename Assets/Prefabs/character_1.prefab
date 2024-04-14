@@ -1181,7 +1181,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aimingAnimationName: Animation_Shot
-  idleAnimationName: Animation_Idle
 --- !u!4 &8509873305075872026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9220691659827903927, guid: 741589c38e80d504a958c953725c1ce0, type: 3}

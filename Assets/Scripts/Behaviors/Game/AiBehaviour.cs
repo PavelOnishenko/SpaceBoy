@@ -16,11 +16,15 @@ public class AiBehaviour : MonoBehaviour
     private float? desiredRotation;
     private CowboyState state;
 
+    public void GenerateRotationAndAim()
+    {
+        desiredRotation ??= GenerateDesiredRotation();
+        state.StartAiming();
+    }
+    
     void Start()
     {
-        StartCoroutine(AimingDelayCoroutine());
         state = gameObject.GetComponent<CowboyState>();
-        desiredRotation = GenerateDesiredRotation();
     }
 
     void Update()
@@ -60,7 +64,6 @@ public class AiBehaviour : MonoBehaviour
     private IEnumerator AimingDelayCoroutine()
     {
         yield return new WaitForSeconds(aimingDelayMs / 1000);
-        desiredRotation ??= GenerateDesiredRotation();
-        state.StartAiming();
+        GenerateRotationAndAim();
     }
 }
