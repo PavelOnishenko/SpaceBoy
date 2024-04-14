@@ -4,58 +4,52 @@ using UnityEngine;
 
 public class AiBehaviour : MonoBehaviour
 {
-    [SerializeField] private float rotationSpeed = 0.3f;
-    [SerializeField] private float lowerAimingBound = -40;
-    [SerializeField] private float upperAimingBound = 40;
-    [SerializeField] private Transform joint;
     [SerializeField] private float aimingDelayMs = 500;
     [SerializeField] private float epsilon = 0.5f;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float accuracy;
+    [SerializeField] private float lowerAimingBound;
+    [SerializeField] private float upperAimingBound;
+    [SerializeField] private Transform shootingForearm;
 
-    private bool isAiming;
     private float? desiredRotation;
-    private bool goingUp = true;
-    private Quaternion initialRotation;
     private CowboyState state;
 
     void Start()
     {
-        initialRotation = transform.rotation;
         StartCoroutine(AimingDelayCoroutine());
-        state = gameObject.GetComponentInParent<CowboyState>();
+        state = gameObject.GetComponent<CowboyState>();
+        desiredRotation = GenerateDesiredRotation();
     }
 
     void Update()
     {
-        desiredRotation ??= GenerateDesiredRotation();
-        if (GameInfo.Instance.State != GameState.Ongoing) return;
         if (state.IsDead) return;
-        var handTransform = transform;
-        var currentRotation = handTransform.eulerAngles.z - initialRotation.eulerAngles.z;
-        if (desiredRotation.HasValue && Math.Abs(currentRotation - desiredRotation.Value) < epsilon) ProcessShooting(handTransform.rotation);
-        if (isAiming)
+        
+        if (!state.IsAiming) return;
+        
+        if (GameInfo.Instance.State != GameState.Ongoing) return;
+        var currentRotation = shootingForearm.eulerAngles.z;
+        if (state.IsAiming)
         {
-            handTransform.RotateAround(joint.position, Vector3.forward, (goingUp ? 1 : -1) * rotationSpeed);
-            if (currentRotation > upperAimingBound && goingUp) goingUp = false;
-            else if (currentRotation < lowerAimingBound && !goingUp) goingUp = true;
+            if (desiredRotation.HasValue && Math.Abs(currentRotation - desiredRotation.Value) < epsilon) 
+                ProcessShooting();
         }
     }
 
     private float GenerateDesiredRotation()
     {
-        var result = GenerateGaussianRandom(0, 100 / accuracy);
+        var result = GenerateGaussianRandom((upperAimingBound - lowerAimingBound) / 2f, 100 / accuracy) + lowerAimingBound;
         if (result > upperAimingBound) result = upperAimingBound;
         else if (result < lowerAimingBound) result = lowerAimingBound;
         return result;
     }
 
-    private void ProcessShooting(Quaternion handRotation)
+    private void ProcessShooting()
     {
         desiredRotation = null;
-        isAiming = false;
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, handRotation);
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         StartCoroutine(AimingDelayCoroutine());
     }
 
@@ -66,6 +60,7 @@ public class AiBehaviour : MonoBehaviour
     private IEnumerator AimingDelayCoroutine()
     {
         yield return new WaitForSeconds(aimingDelayMs / 1000);
-        isAiming = true;
+        desiredRotation ??= GenerateDesiredRotation();
+        state.StartAiming();
     }
 }

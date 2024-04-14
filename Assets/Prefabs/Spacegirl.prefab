@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8864975635030285166}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.03, y: 9.75, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.01372209, w: 0.9999058}
+  m_LocalPosition: {x: 5.8850875, y: 0.7614009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8863703573939879422}
+  m_Father: {fileID: 5642805285270475950}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7795138847987074080
 PrefabInstance:
@@ -122,7 +122,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -7552582706839291426, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5516293033225780111}
     m_AddedComponents:
@@ -136,6 +136,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4737653046166990272}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+--- !u!4 &5642805285270475950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+  m_PrefabInstance: {fileID: 7795138847987074080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7767067393691526557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
@@ -174,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e075f9137ad072a45b5f0abecdf86a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  bulletSpawnPoint: {fileID: 0}
+  bulletPrefab: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
+  bulletSpawnPoint: {fileID: 5516293033225780111}
 --- !u!114 &4737653046166990272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +193,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8863703573939879422 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
-  m_PrefabInstance: {fileID: 7795138847987074080}
-  m_PrefabAsset: {fileID: 0}
+  aimingAnimationName: SpaceGirl_Attack
+  idleAnimationName: SpaceGirl_Idle

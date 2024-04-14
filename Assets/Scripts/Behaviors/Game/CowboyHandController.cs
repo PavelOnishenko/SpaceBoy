@@ -44,17 +44,19 @@ public class CowboyHandController : MonoBehaviour
     {
         if (GameInfo.Instance.State == GameState.Ongoing && shotReady && touchLocation.x > Screen.width / 2f)
         {
-            ShootOrAim(transform);
+            ShootOrAim();
             shotReady = false; // Prevent continuous shooting
         }
     }
 
-    private void ShootOrAim(Transform handTransform)
+    private void ShootOrAim()
     {
         if (state.IsAiming)
         {
-            Instantiate(bulletPrefab, bulletSpawnPoint.position, handTransform.rotation);
-            state.StopAiming();
+            Quaternion rotation = Quaternion.Euler(0, 0, -90); // Creating a quaternion for -90 degrees rotation around Z-axis
+            Quaternion result = bulletSpawnPoint.rotation * rotation; 
+            Instantiate(bulletPrefab, bulletSpawnPoint.position, result);
+            state.PauseAiming();
         }
         else
         {

@@ -3,6 +3,7 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 15f;
+    [SerializeField] private float destroyTime = 3f;
 
     private Rigidbody2D rigidbody2DComponent;
 
@@ -10,7 +11,7 @@ public class BulletBehavior : MonoBehaviour
     {
         rigidbody2DComponent = GetComponent<Rigidbody2D>();
         rigidbody2DComponent.velocity = transform.up * movementSpeed;
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, destroyTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
