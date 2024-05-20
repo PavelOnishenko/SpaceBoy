@@ -1,32 +1,43 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Loader : MonoBehaviour
 {
-    [SerializeField] private string sceneNameToLoad;
     [SerializeField] private Slider progressBar;
     [SerializeField] private Canvas loadingCanvas;
     [SerializeField] private float step = 0.001f;
     
-    void Start() => StartCoroutine(LoadSceneAsync());
+    void Start()
+    {
+        StartCoroutine(LoadSceneAsync());
+        DontDestroyOnLoad(loadingCanvas.gameObject);
+    }
 
     IEnumerator LoadSceneAsync()
     {
+        var sceneNameToLoad = SceneOrder.Instance.GetNextScene();
         var asyncLoad = SceneManager.LoadSceneAsync(sceneNameToLoad);
         asyncLoad.allowSceneActivation = false;
-        var progressBarIsFinished = false;
-        while (!progressBarIsFinished)
+
+        while (true)
         {
-            if (asyncLoad.progress - progressBar.value > step) progressBar.value += step;
-            else progressBar.value = asyncLoad.progress;
-            if (progressBar.value >= 0.9f && !asyncLoad.allowSceneActivation) asyncLoad.allowSceneActivation = true;
+            if (asyncLoad.progress - progressBar.value > step)
+                progressBar.value += step;
+            else
+                progressBar.value = asyncLoad.progress;
+
+            if (progressBar.value >= 0.9f && !asyncLoad.allowSceneActivation)
+                asyncLoad.allowSceneActivation = true;
+
             if (Math.Abs(progressBar.value - 1f) < 0.01f)
             {
-                loadingCanvas.gameObject.SetActive(false);
-                progressBarIsFinished = true;
+                if(!loadingCanvas.IsDestroyed()) 
+                    loadingCanvas.gameObject.SetActive(false);
+                break;
             }
             
             yield return null;
