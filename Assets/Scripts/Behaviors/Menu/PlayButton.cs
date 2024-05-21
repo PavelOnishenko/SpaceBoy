@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class PlayButton : MonoBehaviour
 {
-    [SerializeField] private Sprite offSprite; // Assign in the Inspector
-    [SerializeField] private  Sprite onSprite; // Assign in the Inspector
-    [SerializeField] private  string sceneToLoad = "LoadingScene"; // Specify the scene name
+    [SerializeField] private Sprite offSprite; 
+    [SerializeField] private  Sprite onSprite; 
+    [SerializeField] private  string sceneToLoad = "LoadingScene";
 
     private Image imageComponent;
     
@@ -18,14 +18,13 @@ public class PlayButton : MonoBehaviour
         imageComponent = GetComponent<Image>();
         if (imageComponent == null)
         {
-            Debug.LogError("Image component not found on the GameObject.");
+            Debug.LogError("Image component not found on the PLayButton GameObject.");
         }
         SceneOrder.Instance.SetNextScene("SampleScene");
     }
     
     public void Enter()
     {
-        Debug.Log("Mouse enter");
         if (imageComponent != null)
         {
             imageComponent.sprite = onSprite;
@@ -34,7 +33,6 @@ public class PlayButton : MonoBehaviour
 
     public void Exit()
     {
-        Debug.Log("Mouse exit");
         if (imageComponent != null)
         {
             imageComponent.sprite = offSprite;
