@@ -18,7 +18,7 @@ public class Loader : MonoBehaviour
         StartCoroutine(LoadSceneAsync());
 }
 
-IEnumerator LoadSceneAsync()
+    IEnumerator LoadSceneAsync()
     {
         var sceneNameToLoad = SceneOrder.Instance.GetNextScene();
         var asyncLoad = SceneManager.LoadSceneAsync(sceneNameToLoad);
@@ -30,7 +30,6 @@ IEnumerator LoadSceneAsync()
                 progressBar.value += step;
             else
                 progressBar.value = asyncLoad.progress;
-            Debug.Log(progressBar.value);
 
             if (progressBar.value >= 0.9f && !asyncLoad.allowSceneActivation)
                 asyncLoad.allowSceneActivation = true;
@@ -42,9 +41,7 @@ IEnumerator LoadSceneAsync()
                 break;
             }
 
-            Debug.Log("Retuning");
             yield return null;
-            Debug.Log("AFTER");
         }
     }
 }
