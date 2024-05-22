@@ -21,11 +21,8 @@ public class AiBehaviour : MonoBehaviour
         desiredRotation ??= GenerateDesiredRotation();
         state.StartAiming();
     }
-    
-    void Start()
-    {
-        state = gameObject.GetComponent<CowboyState>();
-    }
+
+    void Start() => state = gameObject.GetComponent<CowboyState>();
 
     void Update()
     {
@@ -59,7 +56,10 @@ public class AiBehaviour : MonoBehaviour
 
     private static float GenerateGaussianRandom(float mean = 0f, float stdDev = 1f) =>
         mean + stdDev *
-        (Mathf.Sqrt(-2.0f * Mathf.Log(1.0f - UnityEngine.Random.value)) * Mathf.Sin(2.0f * Mathf.PI * (1.0f - UnityEngine.Random.value)));
+        (
+            Mathf.Sqrt(-2.0f * Mathf.Log(1.0f - UnityEngine.Random.value)) * 
+            Mathf.Sin(2.0f * Mathf.PI * (1.0f - UnityEngine.Random.value))
+        );
 
     private IEnumerator AimingDelayCoroutine()
     {

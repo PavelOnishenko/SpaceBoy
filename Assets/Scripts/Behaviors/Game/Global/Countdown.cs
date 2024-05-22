@@ -46,5 +46,6 @@ public class Countdown : MonoBehaviour
         SetActive(countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null }, true);
     }
 
-    private void SetActive(string gameObjectName, bool newValue) => digits.Single(x => x.name == gameObjectName).SetActive(newValue);
+    private void SetActive(string gameObjectName, bool newValue) => 
+        digits.Single(x => x.name == gameObjectName).SetActive(newValue);
 }

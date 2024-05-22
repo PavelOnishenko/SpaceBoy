@@ -10,10 +10,7 @@ public class CowboyHandController : MonoBehaviour
     private CowboyState state;
     private bool shotReady = true; // Flag to control shot triggering
 
-    void Start()
-    {
-        state = GetComponent<CowboyState>();
-    }
+    void Start() => state = GetComponent<CowboyState>();
 
     private void Update()
     {
@@ -53,7 +50,8 @@ public class CowboyHandController : MonoBehaviour
     {
         if (state.IsAiming)
         {
-            Quaternion rotation = Quaternion.Euler(0, 0, -90); // Creating a quaternion for -90 degrees rotation around Z-axis
+            // Creating a quaternion for -90 degrees rotation around Z-axis
+            Quaternion rotation = Quaternion.Euler(0, 0, -90); 
             Quaternion result = bulletSpawnPoint.rotation * rotation; 
             Instantiate(bulletPrefab, bulletSpawnPoint.position, result);
             state.PauseAiming();

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CowboyState : MonoBehaviour
 {
+    [SerializeField] private string mainCharacterGameObjectName = "Spacegirl";
+    [SerializeField] private string isAimingAnimatorBoolName = "IsAiming";
+    [SerializeField] private string isDeadAnimatorBoolName = "IsDead";
     [SerializeField] private string aimingAnimationName;
 
     public bool IsDead { get; private set; }
@@ -17,15 +20,10 @@ public class CowboyState : MonoBehaviour
 
     public void StartAiming()
     {
-        var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.IsName(aimingAnimationName))
-        {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName(aimingAnimationName))
             animator.speed = 1;
-        }
         else
-        {
-            animator.SetBool("IsAiming", true);
-        }
+            animator.SetBool(isAimingAnimatorBoolName, true);
 
         IsAiming = true;
     }
@@ -34,22 +32,20 @@ public class CowboyState : MonoBehaviour
     {
         animator.speed = 1;
         IsAiming = false;
-        animator.SetBool("IsAiming", false);
+        animator.SetBool(isAimingAnimatorBoolName, false);
         IsDead = false;
-        animator.SetBool("IsDead", false);
+        animator.SetBool(isDeadAnimatorBoolName, false);
     }
 
     public void Die()
     {
         animator.speed = 1;
         IsDead = true;
-        animator.SetBool("IsDead", true);
-        var isPlayer = gameObject.name == "Spacegirl";
-        if (GameInfo.Instance.State == GameState.Ongoing) GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
+        animator.SetBool(isDeadAnimatorBoolName, true);
+        var isPlayer = gameObject.name == mainCharacterGameObjectName;
+        if (GameInfo.Instance.State == GameState.Ongoing) 
+            GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
 
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    private void Start() => animator = GetComponent<Animator>();
 }

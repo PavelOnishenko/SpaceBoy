@@ -34,12 +34,12 @@ public class Loader : MonoBehaviour
             if (progressBar.value >= 0.9f && !asyncLoad.allowSceneActivation)
                 asyncLoad.allowSceneActivation = true;
 
-            if (Math.Abs(progressBar.value - 1f) < 0.01f)
-            {
-                if(!loadingCanvas.IsDestroyed()) 
-                    loadingCanvas.gameObject.SetActive(false);
-                break;
-            }
+            //if (Math.Abs(progressBar.value - 1f) < 0.01f)
+            //{
+            //    if(!loadingCanvas.IsDestroyed()) 
+            //        loadingCanvas.gameObject.SetActive(false);
+            //    break;
+            //}
 
             yield return null;
         }
