@@ -3,7 +3,8 @@ using UnityEngine;
 public class SceneOrder : MonoBehaviour
 {
     public static SceneOrder Instance { get; private set; }
-    private string nextScene = "MenuScene"; // Default start scene
+
+    private string nextScene = "MenuScene";
 
     void Awake()
     {
@@ -18,13 +19,7 @@ public class SceneOrder : MonoBehaviour
         }
     }
 
-    public string GetNextScene()
-    {
-        return nextScene;
-    }
+    public string GetNextScene() => nextScene;
 
-    public void SetNextScene(string sceneName)
-    {
-        nextScene = sceneName;
-    }
+    public void SetNextScene(string sceneName) => nextScene = sceneName;
 }
