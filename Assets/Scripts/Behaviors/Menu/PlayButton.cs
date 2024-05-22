@@ -8,39 +8,30 @@ using UnityEngine.UI;
 public class PlayButton : MonoBehaviour
 {
     [SerializeField] private Sprite offSprite; 
-    [SerializeField] private  Sprite onSprite; 
-    [SerializeField] private  string sceneToLoad = "LoadingScene";
+    [SerializeField] private Sprite onSprite; 
+    [SerializeField] private string loadingScene = "LoadingScene";
+    [SerializeField] private string sceneAfterLoading = "CombatScene";
 
     private Image imageComponent;
     
     void Awake()
     {
-        imageComponent = GetComponent<Image>();
-        if (imageComponent == null)
-        {
+        if (!TryGetComponent<Image>(out imageComponent))
             Debug.LogError("Image component not found on the PLayButton GameObject.");
-        }
-        SceneOrder.Instance.SetNextScene("SampleScene");
+        SceneOrder.Instance.SetNextScene(sceneAfterLoading);
     }
     
     public void Enter()
     {
         if (imageComponent != null)
-        {
             imageComponent.sprite = onSprite;
-        }
     }
 
     public void Exit()
     {
         if (imageComponent != null)
-        {
             imageComponent.sprite = offSprite;
-        }
     }
 
-    public void Click()
-    {
-        SceneManager.LoadScene(sceneToLoad);
-    }
+    public void Click() => SceneManager.LoadScene(loadingScene);
 }
