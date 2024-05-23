@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
       propertyPath: m_Name
-      value: character_1
+      value: BrainmanPrefab
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
       propertyPath: m_Layer
@@ -375,7 +375,7 @@ PrefabInstance:
       addedObject: {fileID: 3141579930194099112}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2897201968135257613}
+      addedObject: {fileID: 1763777210293117069}
     - targetCorrespondingSourceObject: {fileID: -1125081754167440450, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6442418345251723004}
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   lowerAimingBound: 190
   upperAimingBound: 240
   shootingForearm: {fileID: 8509873305075872026}
---- !u!114 &2897201968135257613
+--- !u!114 &1763777210293117069
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1177,10 +1177,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8212154187097821934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
+  m_Script: {fileID: 11500000, guid: d8f276466462d6e42967a7aa57c71297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimingAnimationName: Animation_Shot
+  mainCharacterGameObjectName: Spacegirl
+  isDeadAnimatorBoolName: IsDead
+  isAimingAnimatorBoolName: IsAiming
+  aimingAnimationName: 
 --- !u!4 &8509873305075872026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9220691659827903927, guid: 741589c38e80d504a958c953725c1ce0, type: 3}

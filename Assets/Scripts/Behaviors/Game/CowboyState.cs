@@ -2,37 +2,19 @@ using UnityEngine;
 
 public class CowboyState : MonoBehaviour
 {
-    [SerializeField] private string mainCharacterGameObjectName = "Spacegirl";
-    [SerializeField] private string isAimingAnimatorBoolName = "IsAiming";
+    [SerializeField] private string protagobistGameObjectName = "Spacegirl";
     [SerializeField] private string isDeadAnimatorBoolName = "IsDead";
-    [SerializeField] private string aimingAnimationName;
+    
+    // todo remove redundant Animator bool param IsAiming from Protagonist and fix animation state machine
 
     public bool IsDead { get; private set; }
-    public bool IsAiming { get; private set; }
 
-    private Animator animator;
-
-    public void PauseAiming()
-    {
-        animator.speed = 0;
-        IsAiming = false;
-    }
-
-    public void StartAiming()
-    {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName(aimingAnimationName))
-            animator.speed = 1;
-        else
-            animator.SetBool(isAimingAnimatorBoolName, true);
-
-        IsAiming = true;
-    }
+    protected Animator animator;
 
     public void Revive()
     {
+        // todo do we need this speed setting? (and another place below)
         animator.speed = 1;
-        IsAiming = false;
-        animator.SetBool(isAimingAnimatorBoolName, false);
         IsDead = false;
         animator.SetBool(isDeadAnimatorBoolName, false);
     }
@@ -42,7 +24,7 @@ public class CowboyState : MonoBehaviour
         animator.speed = 1;
         IsDead = true;
         animator.SetBool(isDeadAnimatorBoolName, true);
-        var isPlayer = gameObject.name == mainCharacterGameObjectName;
+        var isPlayer = gameObject.name == protagobistGameObjectName;
         if (GameInfo.Instance.State == GameState.Ongoing) 
             GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }

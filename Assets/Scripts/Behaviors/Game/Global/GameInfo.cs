@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class GameInfo : MonoBehaviour
@@ -6,11 +7,14 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject cowboy;
     [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject shootButtonPrefab;
+    [SerializeField] private GameObject shootButtonPositionsContainer;
 
     private CowboyState cowboyState;
     private CowboyState enemyState;
     private AiBehaviour aiBehaviour;
     private Countdown countdown;
+    private Transform[] shootButtonPositions;
 
     public static GameInfo Instance { get; private set; }
 
@@ -20,17 +24,42 @@ public class GameInfo : MonoBehaviour
         set
         {
             state = value;
-            if (value is GameState.PlayerWon or GameState.PlayerDead)
+            if (state is GameState.PlayerWon or GameState.PlayerDead)
             {
-                HandleGameOver(value);
+                HandleGameOver(state);
             }
             else
             {
-                if (value == GameState.NotStarted) Restart();
+                if (state == GameState.NotStarted) Restart();
                 labelYouDie.SetActive(false);
                 labelYouWon.SetActive(false);
-                if (value == GameState.Ongoing) aiBehaviour.GenerateRotationAndAim();
+                if (state == GameState.Ongoing)
+                {
+                    aiBehaviour.GenerateRotationAndAim();
+                    var choice = Random.Range(0, 9);
+                    var buttonSpawnPoint = shootButtonPositions[choice];
+                    Instantiate(shootButtonPrefab, buttonSpawnPoint.position, Quaternion.identity);
+                }
             }
+        }
+    }
+
+    private void Start()
+    {
+        cowboyState = cowboy.GetComponent<CowboyState>();
+        enemyState = enemy.GetComponent<CowboyState>();
+        aiBehaviour = enemy.GetComponent<AiBehaviour>();
+        countdown = GetComponent<Countdown>();
+        shootButtonPositions = GetComponentsInChildren<Transform>().ToArray();
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -56,22 +85,4 @@ public class GameInfo : MonoBehaviour
     }
 
     private GameState state = GameState.NotStarted;
-
-    private void Start()
-    {
-        cowboyState = cowboy.GetComponent<CowboyState>();
-        enemyState = enemy.GetComponent<CowboyState>();
-        aiBehaviour = enemy.GetComponent<AiBehaviour>();
-        countdown = GetComponent<Countdown>();
-
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 }

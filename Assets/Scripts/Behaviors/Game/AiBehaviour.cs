@@ -14,7 +14,7 @@ public class AiBehaviour : MonoBehaviour
     [SerializeField] private Transform shootingForearm;
 
     private float? desiredRotation;
-    private CowboyState state;
+    private EnemyState state;
 
     public void GenerateRotationAndAim()
     {
@@ -22,7 +22,7 @@ public class AiBehaviour : MonoBehaviour
         state.StartAiming();
     }
 
-    void Start() => state = gameObject.GetComponent<CowboyState>();
+    void Start() => state = gameObject.GetComponent<EnemyState>();
 
     void Update()
     {

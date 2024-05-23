@@ -42,7 +42,7 @@ public class Countdown : MonoBehaviour
     private void SetDigitsActive()
     {
         var activeDigits = digits.Where(x => x.activeSelf).ToArray();
-        foreach (var t in activeDigits) t.gameObject.SetActive(false);
+        foreach (var digit in activeDigits) digit.SetActive(false);
         SetActive(countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null }, true);
     }
 
