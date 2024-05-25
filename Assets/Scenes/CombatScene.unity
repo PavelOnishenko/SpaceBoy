@@ -307,8 +307,6 @@ MonoBehaviour:
   labelYouWon: {fileID: 1165487306}
   cowboy: {fileID: 1405283743}
   enemy: {fileID: 917656046}
-  shootButtonPrefab: {fileID: 8409841719084427696, guid: c80d0a9ef8efd4a4e8df93d344f1e1c3, type: 3}
-  shootButtonPositionsContainer: {fileID: 2102621165}
 --- !u!114 &417865631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,7 +1503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2106359139
 SpriteRenderer:
   m_ObjectHideFlags: 0
