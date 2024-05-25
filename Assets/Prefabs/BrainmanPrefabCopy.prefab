@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrainmanPrefabCopy
       objectReference: {fileID: 0}
+    - target: {fileID: -8491674880726710961, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneFootLeft
+      objectReference: {fileID: 0}
     - target: {fileID: -8002710426800316989, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -64,8 +68,89 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5139837630983686176, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneHipLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -3331106662022596299, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneHipRight
+      objectReference: {fileID: 0}
+    - target: {fileID: -3145382201746366490, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneBootLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792741764276040761, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneWrist
+      objectReference: {fileID: 0}
+    - target: {fileID: -2631276252154265238, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneBootRight
+      objectReference: {fileID: 0}
+    - target: {fileID: -616466575251373095, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneHandRightTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 386791141387813222, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360909380597077532, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneFoream
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103377006982303299, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneFootRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297364353584691495, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneHead
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257508509235537429, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181300385887193387, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneHandLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775287663641171667, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Name
+      value: BoneHandLeftGun
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7936873478120683849}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+--- !u!1 &7912359269500843222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+  m_PrefabInstance: {fileID: 7649811512399451499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7936873478120683849
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912359269500843222}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83d8ff6ab5e93b94590a2dd66cde6ee5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
