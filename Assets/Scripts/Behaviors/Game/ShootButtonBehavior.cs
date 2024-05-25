@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ShootButtonBehavior : MonoBehaviour
 {
-    [SerializeField] private Animator protagonistAnimator;
+    private ProtagonistStateController stateController;
+
+    private void Start()
+    {
+        stateController = GameInfo.Instance.protagonist.GetComponent<ProtagonistStateController>();
+    }
 
     private void Update()
     {
@@ -20,15 +25,21 @@ public class ShootButtonBehavior : MonoBehaviour
     private void CheckInputAction(Vector2 position)
     {
         var worldPosition = Camera.main.ScreenToWorldPoint(position);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(worldPosition, Vector2.zero);
 
-        var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
-        if (hit.collider != null && hit.collider.gameObject == this.gameObject)
-            ProcessInputAction();
+        foreach (var hit in hits)
+        {
+            if (hit.collider != null && hit.collider.gameObject.name == gameObject.name)
+            {
+                ProcessInputAction();
+                break; 
+            }
+        }
     }
 
     private void ProcessInputAction()
     {
-        Debug.Log(gameObject.name + " was tapped or clicked.");
-        protagonistAnimator.SetTrigger("Aim");
+        Destroy(gameObject);
+        stateController.Aim();
     }
 }

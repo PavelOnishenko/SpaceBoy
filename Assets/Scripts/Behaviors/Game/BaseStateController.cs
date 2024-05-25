@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class ProtagonistState : MonoBehaviour
+public class BaseStateController : MonoBehaviour
 {
     [SerializeField] private string protagobistGameObjectName = "Spacegirl";
     [SerializeField] private string isDeadAnimatorBoolName = "IsDead";
+    [SerializeField] private BulletCreator bulletCreator;
     
     // todo remove redundant Animator bool param IsAiming from Protagonist and fix animation state machine
 
     public bool IsDead { get; private set; }
 
     protected Animator animator;
+
+    private void Start() => animator = GetComponent<Animator>();
 
     public void Revive()
     {
@@ -29,5 +32,5 @@ public class ProtagonistState : MonoBehaviour
             GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
 
-    private void Start() => animator = GetComponent<Animator>();
+    public void CreateBullet() => bulletCreator.CreateBullet();
 }

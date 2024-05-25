@@ -2,13 +2,9 @@ using UnityEngine;
 
 public class BulletCreator : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private GameObject bulletPrefab;
 
-    public void CreateBullet()
-    {
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-    }
+    public void CreateBullet() => 
+        Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
 }

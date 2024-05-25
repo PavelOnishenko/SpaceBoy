@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,7 +11,12 @@ public class ShootingButtonCreator : MonoBehaviour
 
     private void Start()
     {
-        shootButtonPositions = GetComponentsInChildren<Transform>().ToArray();
+        //var childTransforms = new List<Transform>();
+        //foreach (Transform child in shootButtonPositionsContainer.transform)
+        //    childTransforms.Add(child);
+        //shootButtonPositions = childTransforms.ToArray();
+
+        shootButtonPositions = shootButtonPositionsContainer.transform.Cast<Transform>().ToArray();
     }
 
     public void CreateButton()

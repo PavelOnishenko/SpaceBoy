@@ -1,20 +1,35 @@
-using System.Linq;
 using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
+    public GameObject protagonist;
+
     [SerializeField] private GameObject labelYouDie;
     [SerializeField] private GameObject labelYouWon;
-    [SerializeField] private GameObject cowboy;
     [SerializeField] private GameObject enemy;
     [SerializeField] private ShootingButtonCreator shootingButtonCreator;
     
-    private ProtagonistState cowboyState;
-    private ProtagonistState enemyState;
+    private BaseStateController cowboyState;
+    private BaseStateController enemyState;
     private AiBehaviour aiBehaviour;
     private Countdown countdown;
 
     public static GameInfo Instance { get; private set; }
+
+    private void Start()
+    {
+        cowboyState = protagonist.GetComponent<BaseStateController>();
+        enemyState = enemy.GetComponent<BaseStateController>();
+        aiBehaviour = enemy.GetComponent<AiBehaviour>();
+        countdown = GetComponent<Countdown>();
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public GameState State
     {
@@ -37,24 +52,6 @@ public class GameInfo : MonoBehaviour
                     shootingButtonCreator.CreateButton();
                 }
             }
-        }
-    }
-
-    private void Start()
-    {
-        cowboyState = cowboy.GetComponent<ProtagonistState>();
-        enemyState = enemy.GetComponent<ProtagonistState>();
-        aiBehaviour = enemy.GetComponent<AiBehaviour>();
-        countdown = GetComponent<Countdown>();
-
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 

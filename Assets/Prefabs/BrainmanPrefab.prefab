@@ -376,6 +376,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1763777210293117069}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4512234938232763156}
     - targetCorrespondingSourceObject: {fileID: -1125081754167440450, guid: 741589c38e80d504a958c953725c1ce0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6442418345251723004}
@@ -1162,12 +1165,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimingDelayMs: 500
   epsilon: 0.5
-  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
-  bulletSpawnPoint: {fileID: 5765745660985435207}
   accuracy: 5
   lowerAimingBound: 190
   upperAimingBound: 240
   shootingForearm: {fileID: 8509873305075872026}
+  bulletSpawnPoint: {fileID: 5765745660985435207}
 --- !u!114 &1763777210293117069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,10 +1182,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8f276466462d6e42967a7aa57c71297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCharacterGameObjectName: Spacegirl
+  protagobistGameObjectName: Spacegirl
   isDeadAnimatorBoolName: IsDead
+  bulletCreator: {fileID: 4512234938232763156}
   isAimingAnimatorBoolName: IsAiming
   aimingAnimationName: 
+--- !u!114 &4512234938232763156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8212154187097821934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 5765745660985435207}
+  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
 --- !u!4 &8509873305075872026 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9220691659827903927, guid: 741589c38e80d504a958c953725c1ce0, type: 3}

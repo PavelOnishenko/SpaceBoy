@@ -24,13 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8864975635030285166}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.01372209, w: 0.9999058}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7147549, w: -0.699375}
   m_LocalPosition: {x: 5.8850875, y: 0.7614009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5642805285270475950}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -451.246}
 --- !u!1001 &7795138847987074080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       propertyPath: m_Name
-      value: Spacegirl
+      value: SpacegirlPrefab
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       propertyPath: m_Layer
@@ -115,6 +115,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99893516
+      objectReference: {fileID: 0}
+    - target: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.046136897
+      objectReference: {fileID: 0}
+    - target: {fileID: -6745652297115610994, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.289
+      objectReference: {fileID: 0}
     - target: {fileID: -6559069202852028727, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -179,6 +199,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5291378619951579470, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9994938
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291378619951579470, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291378619951579470, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291378619951579470, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.03181436
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291378619951579470, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.646
+      objectReference: {fileID: 0}
     - target: {fileID: 5361147817882509098, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -231,10 +271,10 @@ PrefabInstance:
       addedObject: {fileID: 2383800852847704887}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -1386437174608412941}
+      addedObject: {fileID: 8205903285327244482}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4737653046166990272}
+      addedObject: {fileID: 8182007446535354344}
     - targetCorrespondingSourceObject: {fileID: -4546919045956300991, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 183109376129628958}
@@ -593,7 +633,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-1386437174608412941
+--- !u!114 &8205903285327244482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -602,24 +642,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7767067393691526557}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e075f9137ad072a45b5f0abecdf86a6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 286f082d81538654fa52b55e427522b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  protagobistGameObjectName: Spacegirl
+  isDeadAnimatorBoolName: IsDead
+  bulletCreator: {fileID: 8182007446535354344}
+--- !u!114 &8182007446535354344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767067393691526557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 5516293033225780111}
   bulletPrefab: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
-  bulletSpawnPoint: {fileID: 5516293033225780111}
---- !u!114 &4737653046166990272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7767067393691526557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimingAnimationName: SpaceGirl_Attack
 --- !u!1 &8735078476481043181 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7704287994595893555, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}

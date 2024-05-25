@@ -10,9 +10,10 @@ public class AiBehaviour : MonoBehaviour
     [SerializeField] private float lowerAimingBound;
     [SerializeField] private float upperAimingBound;
     [SerializeField] private Transform shootingForearm;
+    [SerializeField] private Transform bulletSpawnPoint;
 
     private float? desiredRotation;
-    private EnemyState state;
+    private EnemyStateController state;
 
     public void StartAiming()
     {
@@ -20,7 +21,7 @@ public class AiBehaviour : MonoBehaviour
         state.StartAiming();
     }
 
-    void Start() => state = gameObject.GetComponent<EnemyState>();
+    void Start() => state = gameObject.GetComponent<EnemyStateController>();
 
     void Update()
     {
@@ -29,6 +30,7 @@ public class AiBehaviour : MonoBehaviour
         if (!state.IsAiming) return;
         
         if (GameInfo.Instance.State != GameState.Ongoing) return;
+
         var currentRotation = shootingForearm.eulerAngles.z;
         if (state.IsAiming)
         {
@@ -48,6 +50,7 @@ public class AiBehaviour : MonoBehaviour
     private void ProcessShooting()
     {
         desiredRotation = null;
+        //state.CreateBullet();
         StartCoroutine(AimingDelayCoroutine());
     }
 

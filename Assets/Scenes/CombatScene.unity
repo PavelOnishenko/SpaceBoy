@@ -263,7 +263,7 @@ Transform:
   m_GameObject: {fileID: 384192642}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 595.1, y: 551.9, z: -9.38734}
+  m_LocalPosition: {x: 300.9, y: 221.9, z: -9.38734}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 417865630}
   - component: {fileID: 417865633}
   - component: {fileID: 417865635}
+  - component: {fileID: 417865636}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -303,10 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e4b85f16d89b4429b80ad1da4b30b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  protagonist: {fileID: 1405283743}
   labelYouDie: {fileID: 1970713041}
   labelYouWon: {fileID: 1165487306}
-  cowboy: {fileID: 1405283743}
   enemy: {fileID: 917656046}
+  shootingButtonCreator: {fileID: 417865636}
 --- !u!114 &417865631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +362,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447c4246e0f8f7d45957640692012e5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &417865636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417865629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76477262e4de8494aa7e3d5a5e8778d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootButtonPrefab: {fileID: 8409841719084427696, guid: c80d0a9ef8efd4a4e8df93d344f1e1c3, type: 3}
+  shootButtonPositionsContainer: {fileID: 2102621165}
 --- !u!1 &479585458
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +752,7 @@ Transform:
   m_GameObject: {fileID: 943565365}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 599.4, y: 552.3, z: -4.1356893}
+  m_LocalPosition: {x: 284.6, y: 248.6, z: -4.1356893}
   m_LocalScale: {x: 15, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1201,7 +1217,7 @@ Transform:
   m_GameObject: {fileID: 1396795026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.74, y: -22.293335, z: 0}
+  m_LocalPosition: {x: 0.05, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1472,7 +1488,7 @@ Transform:
   m_GameObject: {fileID: 2102621165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 517, y: 70, z: 0}
+  m_LocalPosition: {x: 478.7, y: 70, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

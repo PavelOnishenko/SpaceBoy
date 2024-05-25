@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyState : ProtagonistState
+public class EnemyStateController : BaseStateController
 {
     [SerializeField] private string isAimingAnimatorBoolName = "IsAiming";
     [SerializeField] private string aimingAnimationName;
