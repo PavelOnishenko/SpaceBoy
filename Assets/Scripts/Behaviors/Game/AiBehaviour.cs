@@ -6,8 +6,6 @@ public class AiBehaviour : MonoBehaviour
 {
     [SerializeField] private float aimingDelayMs = 500;
     [SerializeField] private float epsilon = 0.5f;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float accuracy;
     [SerializeField] private float lowerAimingBound;
     [SerializeField] private float upperAimingBound;
@@ -50,7 +48,6 @@ public class AiBehaviour : MonoBehaviour
     private void ProcessShooting()
     {
         desiredRotation = null;
-        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
         StartCoroutine(AimingDelayCoroutine());
     }
 

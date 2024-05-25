@@ -7,8 +7,8 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject cowboy;
     [SerializeField] private GameObject enemy;
+    [SerializeField] private ShootingButtonCreator shootingButtonCreator;
     
-
     private ProtagonistState cowboyState;
     private ProtagonistState enemyState;
     private AiBehaviour aiBehaviour;
@@ -32,7 +32,10 @@ public class GameInfo : MonoBehaviour
                 labelYouDie.SetActive(false);
                 labelYouWon.SetActive(false);
                 if (state == GameState.Ongoing)
+                {
                     aiBehaviour.StartAiming();
+                    shootingButtonCreator.CreateButton();
+                }
             }
         }
     }

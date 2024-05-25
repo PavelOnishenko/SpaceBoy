@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletCreator : MonoBehaviour
@@ -7,5 +5,10 @@ public class BulletCreator : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public void CreateBullet()
+    {
+        Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
     }
 }
