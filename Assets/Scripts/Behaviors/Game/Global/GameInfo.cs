@@ -7,14 +7,12 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject cowboy;
     [SerializeField] private GameObject enemy;
-    [SerializeField] private GameObject shootButtonPrefab;
-    [SerializeField] private GameObject shootButtonPositionsContainer;
+    
 
-    private CowboyState cowboyState;
-    private CowboyState enemyState;
+    private ProtagonistState cowboyState;
+    private ProtagonistState enemyState;
     private AiBehaviour aiBehaviour;
     private Countdown countdown;
-    private Transform[] shootButtonPositions;
 
     public static GameInfo Instance { get; private set; }
 
@@ -34,20 +32,15 @@ public class GameInfo : MonoBehaviour
                 labelYouDie.SetActive(false);
                 labelYouWon.SetActive(false);
                 if (state == GameState.Ongoing)
-                {
-                    aiBehaviour.GenerateRotationAndAim();
-                    var choice = Random.Range(0, 9);
-                    var buttonSpawnPoint = shootButtonPositions[choice];
-                    Instantiate(shootButtonPrefab, buttonSpawnPoint.position, Quaternion.identity);
-                }
+                    aiBehaviour.StartAiming();
             }
         }
     }
 
     private void Start()
     {
-        cowboyState = cowboy.GetComponent<CowboyState>();
-        enemyState = enemy.GetComponent<CowboyState>();
+        cowboyState = cowboy.GetComponent<ProtagonistState>();
+        enemyState = enemy.GetComponent<ProtagonistState>();
         aiBehaviour = enemy.GetComponent<AiBehaviour>();
         countdown = GetComponent<Countdown>();
         shootButtonPositions = GetComponentsInChildren<Transform>().ToArray();

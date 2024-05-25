@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CowboyState : MonoBehaviour
+public class ProtagonistState : MonoBehaviour
 {
     [SerializeField] private string protagobistGameObjectName = "Spacegirl";
     [SerializeField] private string isDeadAnimatorBoolName = "IsDead";

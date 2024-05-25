@@ -16,7 +16,7 @@ public class AiBehaviour : MonoBehaviour
     private float? desiredRotation;
     private EnemyState state;
 
-    public void GenerateRotationAndAim()
+    public void StartAiming()
     {
         desiredRotation ??= GenerateDesiredRotation();
         state.StartAiming();
@@ -64,6 +64,6 @@ public class AiBehaviour : MonoBehaviour
     private IEnumerator AimingDelayCoroutine()
     {
         yield return new WaitForSeconds(aimingDelayMs / 1000);
-        GenerateRotationAndAim();
+        StartAiming();
     }
 }
