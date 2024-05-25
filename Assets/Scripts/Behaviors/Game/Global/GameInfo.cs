@@ -43,7 +43,6 @@ public class GameInfo : MonoBehaviour
         enemyState = enemy.GetComponent<ProtagonistState>();
         aiBehaviour = enemy.GetComponent<AiBehaviour>();
         countdown = GetComponent<Countdown>();
-        shootButtonPositions = GetComponentsInChildren<Transform>().ToArray();
 
         if (Instance == null)
         {
