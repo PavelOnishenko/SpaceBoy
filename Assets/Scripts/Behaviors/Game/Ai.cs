@@ -4,7 +4,7 @@ using UnityEngine;
 public class Ai : MonoBehaviour
 {
 
-    [SerializeField] private float delayBeforeAttackSeconds = 0.5f;
+    [SerializeField] private float delayBeforeAttackSeconds = 0.1f;
 
     private BaseStateController state;
 
