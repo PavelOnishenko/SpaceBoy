@@ -12,6 +12,7 @@ public class GameInfo : MonoBehaviour
     
     private BaseStateController cowboyState;
     private BaseStateController enemyState;
+    private Ai ai;
     private Countdown countdown;
     private ShootButtonCreator shootButtonCreator;
 
@@ -21,6 +22,7 @@ public class GameInfo : MonoBehaviour
     {
         cowboyState = protagonist.GetComponent<BaseStateController>();
         enemyState = enemy.GetComponent<BaseStateController>();
+        ai = enemy.GetComponent<Ai>();
         countdown = countdownContainer.GetComponent<Countdown>();
         shootButtonCreator = shootingButtonContainer.GetComponent<ShootButtonCreator>();
 
@@ -51,7 +53,7 @@ public class GameInfo : MonoBehaviour
                 labelYouWon.SetActive(false);
                 if (state == GameState.Ongoing)
                 {
-                    enemyState.Aim();
+                    ai.AttackAfterDelay();
                     shootButtonCreator.CreateButton();
                 }
             }

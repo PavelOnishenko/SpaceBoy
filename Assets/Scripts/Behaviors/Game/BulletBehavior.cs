@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 15f;
+    [SerializeField] private float movementSpeed = 1000f;
     [SerializeField] private float destroyTime = 3f;
 
     private Rigidbody2D rigidbody2DComponent;
