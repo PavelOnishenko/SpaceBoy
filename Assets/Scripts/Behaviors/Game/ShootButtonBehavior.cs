@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class ShootButtonBehavior : MonoBehaviour
 {
-    private ProtagonistStateController stateController;
+    [SerializeField] private float destroyTime = 3f;
+
+    private BaseStateController stateController;
 
     private void Start()
     {
-        stateController = GameInfo.Instance.protagonist.GetComponent<ProtagonistStateController>();
+        stateController = GameInfo.Instance.protagonist.GetComponent<BaseStateController>();
+        Destroy(gameObject, destroyTime);
     }
 
     private void Update()

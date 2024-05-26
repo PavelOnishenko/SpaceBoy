@@ -288,13 +288,10 @@ PrefabInstance:
       addedObject: {fileID: 7936873478120683849}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4629035116496481755}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3506040058297689523}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2803616016930879977}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1784172725837122992}
     - targetCorrespondingSourceObject: {fileID: -1125081754167440450, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5832293325665985767}
@@ -1077,41 +1074,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4629035116496481755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7912359269500843222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4152b078234f51e49a13c627876bf67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimingDelayMs: 500
-  epsilon: 0.5
-  accuracy: 5
-  lowerAimingBound: 190
-  upperAimingBound: 240
-  bulletSpawnPoint: {fileID: 5383111288588638284}
---- !u!114 &3506040058297689523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7912359269500843222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f276466462d6e42967a7aa57c71297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  protagobistGameObjectName: Spacegirl
-  isDeadAnimatorBoolName: IsDead
-  bulletCreator: {fileID: 2803616016930879977}
-  isAimingAnimatorBoolName: IsAiming
-  aimingAnimationName: BrainManAim
 --- !u!114 &2803616016930879977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,6 +1088,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 5383111288588638284}
   bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
+--- !u!114 &1784172725837122992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912359269500843222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protagobistGameObjectName: Spacegirl
+  isDeadAnimatorBoolName: IsDead
+  bulletCreator: {fileID: 2803616016930879977}
 --- !u!4 &8013181749343384614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8854889053627997875, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}

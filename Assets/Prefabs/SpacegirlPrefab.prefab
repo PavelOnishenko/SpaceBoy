@@ -271,10 +271,10 @@ PrefabInstance:
       addedObject: {fileID: 2383800852847704887}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8205903285327244482}
+      addedObject: {fileID: 8182007446535354344}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8182007446535354344}
+      addedObject: {fileID: 9102185780014261344}
     - targetCorrespondingSourceObject: {fileID: -4546919045956300991, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 183109376129628958}
@@ -633,22 +633,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8205903285327244482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7767067393691526557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 286f082d81538654fa52b55e427522b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  protagobistGameObjectName: Spacegirl
-  isDeadAnimatorBoolName: IsDead
-  bulletCreator: {fileID: 8182007446535354344}
-  persistentService: {fileID: 11400000, guid: 0bc0685a12c6b6f4fbe2c9cf8ae1a8bb, type: 2}
 --- !u!114 &8182007446535354344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -663,6 +647,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 5516293033225780111}
   bulletPrefab: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
+--- !u!114 &9102185780014261344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767067393691526557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protagobistGameObjectName: Spacegirl
+  isDeadAnimatorBoolName: IsDead
+  bulletCreator: {fileID: 8182007446535354344}
 --- !u!1 &8735078476481043181 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7704287994595893555, guid: 7d008c61b32d7ca49985b4d537ce0b5e, type: 3}

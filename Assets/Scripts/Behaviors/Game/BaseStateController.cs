@@ -1,8 +1,5 @@
 using UnityEngine;
 
-// todo помен€ть наследование на композицию
-// todo погл€деть на встроенный CharacterStateController
-// todo можно делать один скрипт MonoBeh на ќдин GameObject, а внутри уже использовать обычные классы, не MonoBeh
 public class BaseStateController : MonoBehaviour
 {
     [SerializeField] private string protagobistGameObjectName = "Spacegirl";
@@ -14,6 +11,17 @@ public class BaseStateController : MonoBehaviour
     protected Animator animator;
 
     private void Start() => animator = GetComponent<Animator>();
+
+    public void Shoot()
+    {
+        bulletCreator.CreateBullet();
+        animator.SetTrigger("Shoot");
+    }
+
+    public void Aim()
+    {
+        animator.SetTrigger("Aim");
+    }
 
     public void Revive()
     {
@@ -32,6 +40,4 @@ public class BaseStateController : MonoBehaviour
         if (GameInfo.Instance.State == GameState.Ongoing) 
             GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
-
-    public void CreateBullet() => bulletCreator.CreateBullet();
 }
