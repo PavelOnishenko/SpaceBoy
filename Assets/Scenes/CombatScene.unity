@@ -613,7 +613,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7912359269500843222, guid: 667a76963c0eb204caaf92dc93a92fbc, type: 3}
       propertyPath: m_Name
-      value: BrainmanPrefabCopy
+      value: Brainman
       objectReference: {fileID: 0}
     - target: {fileID: 9008959578717990069, guid: 667a76963c0eb204caaf92dc93a92fbc, type: 3}
       propertyPath: m_LocalPosition.x
