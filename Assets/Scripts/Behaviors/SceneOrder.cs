@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class SceneOrder : MonoBehaviour
 {
+    // todo когда будем расширяться:
+    // service locator - шаблон проектирования вместо static Instance,
+    // там будем регать всякие штуки с помощью DontDestroyOnLoad
+
     public static SceneOrder Instance { get; private set; }
 
     private string nextScene = "MenuScene";

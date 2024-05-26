@@ -1,28 +1,24 @@
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class ShootingButtonCreator : MonoBehaviour
+public class ShootButtonCreator : MonoBehaviour
 {
     [SerializeField] private GameObject shootButtonPrefab;
-    [SerializeField] private GameObject shootButtonPositionsContainer;
+    [SerializeField] private ShootButtonPlaceholder[] shootButtonPlaceholders;
 
-    private Transform[] shootButtonPositions;
+    private void OnValidate()
+    {
+        shootButtonPlaceholders = GetComponentsInChildren<ShootButtonPlaceholder>();
+    }
 
     private void Start()
     {
-        //var childTransforms = new List<Transform>();
-        //foreach (Transform child in shootButtonPositionsContainer.transform)
-        //    childTransforms.Add(child);
-        //shootButtonPositions = childTransforms.ToArray();
-
-        shootButtonPositions = shootButtonPositionsContainer.transform.Cast<Transform>().ToArray();
     }
 
     public void CreateButton()
     {
-        var choice = Random.Range(0, 9);
-        var buttonSpawnPoint = shootButtonPositions[choice];
+        // todo use length
+        var choice = Random.Range(0, shootButtonPlaceholders.Length);
+        var buttonSpawnPoint = shootButtonPlaceholders[choice];
         Instantiate(shootButtonPrefab, buttonSpawnPoint.position, Quaternion.identity);
     }
 }

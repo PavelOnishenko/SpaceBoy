@@ -648,6 +648,7 @@ MonoBehaviour:
   protagobistGameObjectName: Spacegirl
   isDeadAnimatorBoolName: IsDead
   bulletCreator: {fileID: 8182007446535354344}
+  persistentService: {fileID: 11400000, guid: 0bc0685a12c6b6f4fbe2c9cf8ae1a8bb, type: 2}
 --- !u!114 &8182007446535354344
 MonoBehaviour:
   m_ObjectHideFlags: 0

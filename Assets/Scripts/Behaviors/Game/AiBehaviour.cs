@@ -9,19 +9,21 @@ public class AiBehaviour : MonoBehaviour
     [SerializeField] private float accuracy;
     [SerializeField] private float lowerAimingBound;
     [SerializeField] private float upperAimingBound;
-    [SerializeField] private Transform shootingForearm;
     [SerializeField] private Transform bulletSpawnPoint;
 
     private float? desiredRotation;
     private EnemyStateController state;
+
+    void Start()
+    {
+        state = GetComponent<EnemyStateController>();
+    }
 
     public void StartAiming()
     {
         desiredRotation ??= GenerateDesiredRotation();
         state.StartAiming();
     }
-
-    void Start() => state = gameObject.GetComponent<EnemyStateController>();
 
     void Update()
     {
@@ -31,7 +33,7 @@ public class AiBehaviour : MonoBehaviour
         
         if (GameInfo.Instance.State != GameState.Ongoing) return;
 
-        var currentRotation = shootingForearm.eulerAngles.z;
+        var currentRotation = bulletSpawnPoint.eulerAngles.z;
         if (state.IsAiming)
         {
             if (desiredRotation.HasValue && Math.Abs(currentRotation - desiredRotation.Value) < epsilon) 

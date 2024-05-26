@@ -7,12 +7,13 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject labelYouDie;
     [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject enemy;
-    [SerializeField] private ShootingButtonCreator shootingButtonCreator;
+    [SerializeField] private GameObject shootingButtonContainer;
     
     private BaseStateController cowboyState;
     private BaseStateController enemyState;
     private AiBehaviour aiBehaviour;
     private Countdown countdown;
+    private ShootButtonCreator shootButtonCreator;
 
     public static GameInfo Instance { get; private set; }
 
@@ -22,6 +23,7 @@ public class GameInfo : MonoBehaviour
         enemyState = enemy.GetComponent<BaseStateController>();
         aiBehaviour = enemy.GetComponent<AiBehaviour>();
         countdown = GetComponent<Countdown>();
+        shootButtonCreator = shootingButtonContainer.GetComponent<ShootButtonCreator>();
 
         if (Instance != null)
         {
@@ -31,6 +33,8 @@ public class GameInfo : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    // todo may be refactored with contexts (26 05 2024) or events
+    // todo look at Unity Timeline tutorial and Unity Playable
     public GameState State
     {
         get => state;
@@ -49,7 +53,7 @@ public class GameInfo : MonoBehaviour
                 if (state == GameState.Ongoing)
                 {
                     aiBehaviour.StartAiming();
-                    shootingButtonCreator.CreateButton();
+                    shootButtonCreator.CreateButton();
                 }
             }
         }

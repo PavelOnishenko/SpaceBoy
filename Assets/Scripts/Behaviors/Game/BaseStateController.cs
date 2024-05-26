@@ -1,13 +1,14 @@
 using UnityEngine;
 
+// todo помен€ть наследование на композицию
+// todo погл€деть на встроенный CharacterStateController
+// todo можно делать один скрипт MonoBeh на ќдин GameObject, а внутри уже использовать обычные классы, не MonoBeh
 public class BaseStateController : MonoBehaviour
 {
     [SerializeField] private string protagobistGameObjectName = "Spacegirl";
     [SerializeField] private string isDeadAnimatorBoolName = "IsDead";
     [SerializeField] private BulletCreator bulletCreator;
     
-    // todo remove redundant Animator bool param IsAiming from Protagonist and fix animation state machine
-
     public bool IsDead { get; private set; }
 
     protected Animator animator;

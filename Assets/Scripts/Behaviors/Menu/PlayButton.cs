@@ -21,6 +21,8 @@ public class PlayButton : MonoBehaviour
         SceneOrder.Instance.SetNextScene(sceneAfterLoading);
     }
     
+    // todo IPointerClickHandler
+
     public void Enter()
     {
         if (imageComponent != null)

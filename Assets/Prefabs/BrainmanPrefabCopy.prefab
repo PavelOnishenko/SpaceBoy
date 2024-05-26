@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5335555674309829229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5383111288588638284}
+  m_Layer: 8
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5383111288588638284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5335555674309829229}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.73455423, w: 0.67855}
+  m_LocalPosition: {x: 4.73, y: -1.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8013181749343384614}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -94.539}
 --- !u!1001 &7649811512399451499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12,9 +43,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrainmanPrefabCopy
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8510431946696466036, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -8491674880726710961, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneFootLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -8491674880726710961, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8122628372682279482, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8002710426800316989, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8002710426800316989, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_IsActive
@@ -68,65 +119,173 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6002512218453643756, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -5772545904157420989, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -5139837630983686176, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneHipLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -5139837630983686176, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4771823213126725300, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4187307018264035600, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -3331106662022596299, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneHipRight
       objectReference: {fileID: 0}
+    - target: {fileID: -3331106662022596299, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -3145382201746366490, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneBootLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: -3145382201746366490, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -2792741764276040761, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneWrist
       objectReference: {fileID: 0}
+    - target: {fileID: -2792741764276040761, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -2631276252154265238, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneBootRight
+      objectReference: {fileID: 0}
+    - target: {fileID: -2631276252154265238, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1125081754167440450, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -616466575251373095, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneHandRightTop
       objectReference: {fileID: 0}
+    - target: {fileID: -616466575251373095, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 386791141387813222, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneBody
+      objectReference: {fileID: 0}
+    - target: {fileID: 386791141387813222, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1360909380597077532, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneFoream
       objectReference: {fileID: 0}
+    - target: {fileID: 1360909380597077532, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756661611487413730, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2103377006982303299, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneFootRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103377006982303299, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3297364353584691495, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneHead
       objectReference: {fileID: 0}
+    - target: {fileID: 3297364353584691495, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708392889169750117, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4257508509235537429, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486626916420918921, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5166887438533968138, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6181300385887193387, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneHandLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 6181300385887193387, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220518733052820020, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338470500452575701, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7775287663641171667, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Name
       value: BoneHandLeftGun
       objectReference: {fileID: 0}
+    - target: {fileID: 7775287663641171667, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727091967253889458, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8854889053627997875, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5383111288588638284}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7936873478120683849}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4629035116496481755}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3506040058297689523}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2803616016930879977}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
 --- !u!1 &7912359269500843222 stripped
 GameObject:
@@ -154,3 +313,57 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4629035116496481755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912359269500843222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4152b078234f51e49a13c627876bf67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimingDelayMs: 500
+  epsilon: 0.5
+  accuracy: 5
+  lowerAimingBound: 190
+  upperAimingBound: 240
+  bulletSpawnPoint: {fileID: 5383111288588638284}
+--- !u!114 &3506040058297689523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912359269500843222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f276466462d6e42967a7aa57c71297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protagobistGameObjectName: Spacegirl
+  isDeadAnimatorBoolName: IsDead
+  bulletCreator: {fileID: 2803616016930879977}
+  isAimingAnimatorBoolName: IsAiming
+  aimingAnimationName: BrainManAim
+--- !u!114 &2803616016930879977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912359269500843222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 5383111288588638284}
+  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
+--- !u!4 &8013181749343384614 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8854889053627997875, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+  m_PrefabInstance: {fileID: 7649811512399451499}
+  m_PrefabAsset: {fileID: 0}
