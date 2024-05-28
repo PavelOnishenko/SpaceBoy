@@ -40,7 +40,7 @@ public class GameInfo : MonoBehaviour
         {
             _state = value;
             if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOver(value);
-            else HandleInGaneEvents(value);
+            else HandleInGameEvents(value);
         }
     }
 
@@ -58,7 +58,7 @@ public class GameInfo : MonoBehaviour
         }
     }
 
-    private void HandleInGaneEvents(GameState state)
+    private void HandleInGameEvents(GameState state)
     {
         if (state == GameState.NotStarted) Restart();
         labelYouDie.SetActive(false);

@@ -16,7 +16,6 @@ public class ShootButtonCreator : MonoBehaviour
 
     public void CreateButton()
     {
-        // todo use length
         var choice = Random.Range(0, shootButtonPlaceholders.Length);
         var buttonSpawnPoint = shootButtonPlaceholders[choice];
         Instantiate(shootButtonPrefab, buttonSpawnPoint.position, Quaternion.identity);

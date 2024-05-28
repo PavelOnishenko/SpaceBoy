@@ -25,7 +25,12 @@ public class Countdown : MonoBehaviour
         isCounting = true;
         countdownTime = 3;
         gameObject.SetActive(true);
-        ShowNumbersCouroutine();
+        while (countdownTime > 0)
+        {
+            SetDigitsActive();
+            yield return new WaitForSeconds(1f);
+            countdownTime--;
+        }
         SetActive("LabelOne", false);
         SetActive("LabelGo", true);
         yield return new WaitForSeconds(1f);
@@ -34,15 +39,6 @@ public class Countdown : MonoBehaviour
         GameInfo.Instance.State = GameState.Ongoing;
     }
 
-    private IEnumerator ShowNumbersCouroutine()
-    {
-        while (countdownTime > 0)
-        {
-            SetDigitsActive();
-            yield return new WaitForSeconds(1f);
-            countdownTime--;
-        }
-    }
 
     private void SetDigitsActive()
     {
