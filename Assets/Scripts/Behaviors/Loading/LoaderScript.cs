@@ -14,7 +14,7 @@ public class Loader : MonoBehaviour
         progressBar.value = 0;
         loadingCanvas.gameObject.SetActive(true);
         StartCoroutine(LoadSceneAsync());
-}
+    }
 
     IEnumerator LoadSceneAsync()
     {

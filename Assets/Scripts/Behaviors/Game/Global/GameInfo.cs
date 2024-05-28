@@ -27,36 +27,20 @@ public class GameInfo : MonoBehaviour
         shootButtonCreator = shootingButtonContainer.GetComponent<ShootButtonCreator>();
 
         if (Instance != null)
-        {
             Destroy(gameObject);
-        }
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
-    // todo may be refactored with contexts (26 05 2024) or events
     // todo look at Unity Timeline tutorial and Unity Playable
     public GameState State
     {
-        get => state;
+        get => _state;
         set
         {
-            state = value;
-            if (state is GameState.PlayerWon or GameState.PlayerDead)
-            {
-                HandleGameOver(state);
-            }
-            else
-            {
-                if (state == GameState.NotStarted) Restart();
-                labelYouDie.SetActive(false);
-                labelYouWon.SetActive(false);
-                if (state == GameState.Ongoing)
-                {
-                    ai.AttackAfterDelay();
-                    shootButtonCreator.CreateButton();
-                }
-            }
+            _state = value;
+            if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOver(value);
+            else HandleInGaneEvents(value);
         }
     }
 
@@ -74,6 +58,18 @@ public class GameInfo : MonoBehaviour
         }
     }
 
+    private void HandleInGaneEvents(GameState state)
+    {
+        if (state == GameState.NotStarted) Restart();
+        labelYouDie.SetActive(false);
+        labelYouWon.SetActive(false);
+        if (state == GameState.Ongoing)
+        {
+            ai.AttackAfterDelay();
+            shootButtonCreator.CreateButton();
+        }
+    }
+
     private void Restart()
     {
         countdown.Restart();
@@ -81,5 +77,5 @@ public class GameInfo : MonoBehaviour
         enemyState.Revive();
     }
 
-    private GameState state = GameState.NotStarted;
+    private GameState _state = GameState.NotStarted;
 }

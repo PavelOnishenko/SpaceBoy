@@ -25,18 +25,23 @@ public class Countdown : MonoBehaviour
         isCounting = true;
         countdownTime = 3;
         gameObject.SetActive(true);
-        while (countdownTime > 0)
-        {
-            SetDigitsActive();
-            yield return new WaitForSeconds(1f);
-            countdownTime--;
-        }
+        ShowNumbersCouroutine();
         SetActive("LabelOne", false);
         SetActive("LabelGo", true);
         yield return new WaitForSeconds(1f);
         SetActive("LabelGo", false);
         isCounting = false;
         GameInfo.Instance.State = GameState.Ongoing;
+    }
+
+    private IEnumerator ShowNumbersCouroutine()
+    {
+        while (countdownTime > 0)
+        {
+            SetDigitsActive();
+            yield return new WaitForSeconds(1f);
+            countdownTime--;
+        }
     }
 
     private void SetDigitsActive()
