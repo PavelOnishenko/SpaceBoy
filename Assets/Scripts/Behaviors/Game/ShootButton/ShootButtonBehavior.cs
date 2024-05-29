@@ -4,11 +4,11 @@ public class ShootButtonBehavior : MonoBehaviour
 {
     [SerializeField] private float destroyTime = 3f;
 
-    private CharacterStateController stateController;
+    private CharacterState stateController;
 
     private void Start()
     {
-        stateController = GameInfo.Instance.protagonist.GetComponent<CharacterStateController>();
+        stateController = GameInfo.Instance.protagonist.GetComponent<CharacterState>();
         Destroy(gameObject, destroyTime);
     }
 

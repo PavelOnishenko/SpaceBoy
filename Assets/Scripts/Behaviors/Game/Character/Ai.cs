@@ -6,12 +6,12 @@ public class Ai : MonoBehaviour
 
     [SerializeField] private float delayBeforeAttackSeconds = 0.1f;
 
-    private CharacterStateController state;
+    private CharacterState state;
 
     public void AttackAfterDelay()
     {
         StartCoroutine(AttackAfterDelayCoroutine());
-        state = GetComponent<CharacterStateController>();
+        state = GetComponent<CharacterState>();
     }
 
     IEnumerator AttackAfterDelayCoroutine()

@@ -10,8 +10,8 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject shootingButtonContainer;
     [SerializeField] private GameObject countdownContainer;
     
-    private CharacterStateController cowboyState;
-    private CharacterStateController enemyState;
+    private CharacterState cowboyState;
+    private CharacterState enemyState;
     private Ai ai;
     private Countdown countdown;
     private ShootButtonCreator shootButtonCreator;
@@ -20,8 +20,8 @@ public class GameInfo : MonoBehaviour
 
     private void Start()
     {
-        cowboyState = protagonist.GetComponent<CharacterStateController>();
-        enemyState = enemy.GetComponent<CharacterStateController>();
+        cowboyState = protagonist.GetComponent<CharacterState>();
+        enemyState = enemy.GetComponent<CharacterState>();
         ai = enemy.GetComponent<Ai>();
         countdown = countdownContainer.GetComponent<Countdown>();
         shootButtonCreator = shootingButtonContainer.GetComponent<ShootButtonCreator>();
