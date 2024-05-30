@@ -233,7 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4257508509235537429, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.255
+      value: 3.2549992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257508509235537429, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.035728
       objectReference: {fileID: 0}
     - target: {fileID: 4486626916420918921, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Layer
@@ -1103,7 +1107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protagobistGameObjectName: Spacegirl
+  protagonistGameObjectName: Spacegirl
   isDeadAnimatorBoolName: IsDead
   bulletCreator: {fileID: 2803616016930879977}
 --- !u!114 &3224199938092350351
@@ -1118,6 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delayBeforeAttackSeconds: 0.1
 --- !u!4 &8013181749343384614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8854889053627997875, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
