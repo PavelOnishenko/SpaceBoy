@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protagobistGameObjectName: Spacegirl
+  protagonistGameObjectName: Spacegirl
   isDeadAnimatorBoolName: IsDead
   bulletCreator: {fileID: 8182007446535354344}
 --- !u!1 &8735078476481043181 stripped
