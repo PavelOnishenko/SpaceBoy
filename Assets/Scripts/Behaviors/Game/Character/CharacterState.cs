@@ -9,6 +9,7 @@ public class CharacterState : MonoBehaviour
     [SerializeField] private GameObject heartsContainer;
 
     private HeartsController heartsController;
+    private Ai ai;
 
     public bool IsDead => hp <= 0;
 
@@ -21,6 +22,15 @@ public class CharacterState : MonoBehaviour
         hp = initialHp;
         animator = GetComponent<Animator>();
         heartsController = heartsContainer.GetComponent<HeartsController>();
+        ai = GetComponent<Ai>();
+    }
+
+    public void GetReadyToShoot()
+    {
+        if (name == "Spacegirl")
+            GameInfo.Instance.RecreateShootButton();
+        else if (name == "Brainman")
+            ai.AttackAfterDelay();
     }
 
     public void Shoot()
@@ -37,6 +47,7 @@ public class CharacterState : MonoBehaviour
     public void Revive()
     {
         hp = initialHp;
+        heartsController.SetHp(hp);
         animator.SetBool(isDeaParamName, false);
     }
 
