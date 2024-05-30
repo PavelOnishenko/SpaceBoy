@@ -6,6 +6,9 @@ public class CharacterState : MonoBehaviour
     [SerializeField] private string isDeaParamName = "IsDead";
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private int initialHp = 2;
+    [SerializeField] private GameObject heartsContainer;
+
+    private HeartsController heartsController;
 
     public bool IsDead => hp <= 0;
 
@@ -17,6 +20,7 @@ public class CharacterState : MonoBehaviour
     {
         hp = initialHp;
         animator = GetComponent<Animator>();
+        heartsController = heartsContainer.GetComponent<HeartsController>();
     }
 
     public void Shoot()
@@ -39,6 +43,7 @@ public class CharacterState : MonoBehaviour
     public void GetHit()
     {
         hp--;
+        heartsController.SetHp(hp);
         if(IsDead)
         {
             animator.SetBool(isDeaParamName, true);
@@ -48,7 +53,7 @@ public class CharacterState : MonoBehaviour
         }
         else
         {
-
+            animator.SetTrigger("GetHit");
         }
     }
 }
