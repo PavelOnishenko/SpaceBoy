@@ -7,7 +7,7 @@ public class PlayButton : MonoBehaviour
     [SerializeField] private Sprite offSprite; 
     [SerializeField] private Sprite onSprite; 
     [SerializeField] private string loadingScene = "LoadingScene";
-    [SerializeField] private string sceneAfterLoading = "CombatScene";
+    [SerializeField] private string sceneAfterLoading = "LevelHallwayScene";
 
     private Image imageComponent;
     
