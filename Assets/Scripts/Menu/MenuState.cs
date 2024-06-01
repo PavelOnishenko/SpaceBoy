@@ -10,7 +10,7 @@ namespace Assets.Scripts.Behaviors.Menu
         [SerializeField] GameObject levelCaption;
         [SerializeField] GameObject levelPreview;
 
-        private int selectedLevel;
+        private int selectedLevel = 1;
         private int lastLevel;
         private LevelCaptionBehavior levelCaptionBehavior;
         private LevelPreviewBehavior levelPreviewBehavior;
