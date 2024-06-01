@@ -14,7 +14,7 @@ public class PlayButton : MonoBehaviour
     void Awake()
     {
         if (!TryGetComponent<Image>(out imageComponent))
-            Debug.LogError("Image component not found on the PLayButton GameObject.");
+            Debug.LogError("Image component not found on the PlayButton game object.");
         SceneOrder.Instance.SetNextScene(sceneAfterLoading);
     }
     
