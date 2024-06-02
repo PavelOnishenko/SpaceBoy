@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 601179612}
   - component: {fileID: 601179614}
   - component: {fileID: 601179613}
+  - component: {fileID: 601179616}
   m_Layer: 5
   m_Name: GreenGun
   m_TagString: Untagged
@@ -441,6 +442,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601179611}
   m_CullTransparentMesh: 1
+--- !u!114 &601179616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601179611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e9dc026b523af439460e4f8aae3ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 40
 --- !u!1 &1258373390
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +622,7 @@ GameObject:
   - component: {fileID: 1362967704}
   - component: {fileID: 1362967706}
   - component: {fileID: 1362967705}
+  - component: {fileID: 1362967708}
   m_Layer: 5
   m_Name: OrangeGun
   m_TagString: Untagged
@@ -672,6 +687,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362967703}
   m_CullTransparentMesh: 1
+--- !u!114 &1362967708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362967703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e9dc026b523af439460e4f8aae3ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
 --- !u!1 &1496078912
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,6 +915,7 @@ GameObject:
   - component: {fileID: 1761050742}
   - component: {fileID: 1761050744}
   - component: {fileID: 1761050743}
+  - component: {fileID: 1761050746}
   m_Layer: 5
   m_Name: BlueGun
   m_TagString: Untagged
@@ -951,6 +980,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761050741}
   m_CullTransparentMesh: 1
+--- !u!114 &1761050746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761050741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e9dc026b523af439460e4f8aae3ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 20
 --- !u!1 &1801599617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,6 +1361,7 @@ GameObject:
   - component: {fileID: 1935671922}
   - component: {fileID: 1935671924}
   - component: {fileID: 1935671923}
+  - component: {fileID: 1935671926}
   m_Layer: 5
   m_Name: YellowGun
   m_TagString: Untagged
@@ -1383,6 +1426,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935671921}
   m_CullTransparentMesh: 1
+--- !u!114 &1935671926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935671921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e9dc026b523af439460e4f8aae3ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
 --- !u!1 &2057634121
 GameObject:
   m_ObjectHideFlags: 0
