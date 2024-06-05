@@ -6,8 +6,10 @@ public class CharacterState : MonoBehaviour
     [SerializeField] private string isDeaParamName = "IsDead";
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private int initialHp = 2;
-    [SerializeField] private GameObject heartsContainer;
+    [SerializeField] private string heartContainerNamePrefix;
 
+    private GameObject characterContainer;
+    private GameObject heartsContainer;
     private HeartsController heartsController;
     private Ai ai;
 
@@ -21,15 +23,17 @@ public class CharacterState : MonoBehaviour
     {
         hp = initialHp;
         animator = GetComponent<Animator>();
+        characterContainer = transform.parent.gameObject;
+        heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
         heartsController = heartsContainer.GetComponent<HeartsController>();
         ai = GetComponent<Ai>();
     }
 
     public void GetReadyToShoot()
     {
-        if (name == "Spacegirl")
+        if (characterContainer.name.StartsWith("Protagonist"))
             GameInfo.Instance.RecreateShootButton();
-        else if (name == "Brainman")
+        else if (characterContainer.name.StartsWith("Enemy"))
             ai.AttackAfterDelay();
     }
 
