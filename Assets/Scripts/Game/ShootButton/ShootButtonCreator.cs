@@ -5,6 +5,9 @@ public class ShootButtonCreator : MonoBehaviour
 {
     [SerializeField] private GameObject shootButtonPrefab;
     [SerializeField] private ShootButtonPlaceholder[] shootButtonPlaceholders;
+    [SerializeField] private float buttonAppearancePeriod = 3.0f;
+
+    private IEnumerator buttoneRoutine;
 
     private void OnValidate()
     {
@@ -13,7 +16,8 @@ public class ShootButtonCreator : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(ButtonRoutine());
+        buttoneRoutine = ButtonRoutine();
+        StartCoroutine(buttoneRoutine);
     }
 
     public void CreateButton()
@@ -27,7 +31,7 @@ public class ShootButtonCreator : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(buttonAppearancePeriod);
             CreateButton();
         }
     }
