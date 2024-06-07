@@ -15,9 +15,9 @@ public class CharacterState : MonoBehaviour
 
     public bool IsDead => hp <= 0;
 
-    private int hp;
-
     protected Animator animator;
+
+    private int hp;
 
     private void Start()
     {
