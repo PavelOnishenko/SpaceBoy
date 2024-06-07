@@ -1356,10 +1356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spacegirl
       objectReference: {fileID: 0}
-    - target: {fileID: 7767067393691526557, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8863703573939879422, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1399,14 +1395,6 @@ PrefabInstance:
     - target: {fileID: 8863703573939879422, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9102185780014261344, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
-      propertyPath: heartsContainer
-      value: 
-      objectReference: {fileID: 411867297}
-    - target: {fileID: 9102185780014261344, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
-      propertyPath: heartContainerNamePrefix
-      value: Protagonist
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1676,6 +1664,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628872262}
     m_Modifications:
+    - target: {fileID: 398108399736545864, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
+      propertyPath: delayBeforeAttackSeconds
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 585393145866106354, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
       propertyPath: m_Name
       value: Lizard

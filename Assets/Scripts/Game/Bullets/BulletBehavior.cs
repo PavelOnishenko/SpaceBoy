@@ -19,6 +19,6 @@ public class BulletBehavior : MonoBehaviour
         Destroy(gameObject);
         var rootTransform = other.transform.root;
         var characterState = rootTransform.gameObject.GetComponentInChildren<CharacterState>();
-        if (characterState != null) characterState.GetHit();
+        characterState.GetHit();
     }
 }

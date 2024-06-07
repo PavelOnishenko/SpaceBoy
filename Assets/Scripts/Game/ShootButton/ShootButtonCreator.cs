@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ShootButtonCreator : MonoBehaviour
@@ -12,6 +13,7 @@ public class ShootButtonCreator : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(ButtonRoutine());
     }
 
     public void CreateButton()
@@ -20,4 +22,14 @@ public class ShootButtonCreator : MonoBehaviour
         var buttonSpawnPoint = shootButtonPlaceholders[choice];
         Instantiate(shootButtonPrefab, buttonSpawnPoint.position, Quaternion.identity);
     }
+
+    IEnumerator ButtonRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(4f);
+            CreateButton();
+        }
+    }
+
 }

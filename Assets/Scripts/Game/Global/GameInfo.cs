@@ -44,11 +44,6 @@ public class GameInfo : MonoBehaviour
         }
     }
 
-    public void RecreateShootButton()
-    {
-        shootButtonCreator.CreateButton();
-    }
-
     private void HandleGameOver(GameState value)
     {
         if (value == GameState.PlayerDead)
@@ -71,7 +66,6 @@ public class GameInfo : MonoBehaviour
         if (state == GameState.Ongoing)
         {
             ai.AttackAfterDelay();
-            shootButtonCreator.CreateButton();
         }
     }
 

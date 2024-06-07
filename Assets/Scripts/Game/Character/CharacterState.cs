@@ -29,18 +29,9 @@ public class CharacterState : MonoBehaviour
         ai = GetComponent<Ai>();
     }
 
-    public void GetReadyToShoot()
-    {
-        if (characterContainer.name.StartsWith("Protagonist"))
-            GameInfo.Instance.RecreateShootButton();
-        else if (characterContainer.name.StartsWith("Enemy"))
-            ai.AttackAfterDelay();
-    }
-
     public void Shoot()
     {
         bulletCreator.CreateBullet();
-        animator.SetTrigger("Shoot");
     }
 
     public void Aim()
