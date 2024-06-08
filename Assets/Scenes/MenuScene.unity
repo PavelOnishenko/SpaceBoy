@@ -366,6 +366,52 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &828602275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828602277}
+  - component: {fileID: 828602276}
+  m_Layer: 0
+  m_Name: CharacterPickerGo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &828602276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828602275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c90ed86e798f0445af7b262df90b8a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpaceGirlHighlight: {fileID: 990095579}
+  GreenGirlHighlight: {fileID: 1906886749}
+--- !u!4 &828602277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828602275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881490420
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +461,7 @@ GameObject:
   - component: {fileID: 990095582}
   - component: {fileID: 990095581}
   m_Layer: 0
-  m_Name: Picker
+  m_Name: Highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +834,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1668604344}
   - component: {fileID: 1668604343}
-  - component: {fileID: 1668604345}
   m_Layer: 0
   m_Name: Global
   m_TagString: Untagged
@@ -825,20 +870,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1668604345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668604342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c90ed86e798f0445af7b262df90b8a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpaceGirlPicker: {fileID: 990095579}
-  GreenGirlPicker: {fileID: 1906886749}
 --- !u!1 &1708329648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,7 +1261,7 @@ GameObject:
   - component: {fileID: 1906886751}
   - component: {fileID: 1906886750}
   m_Layer: 0
-  m_Name: Picker
+  m_Name: Highlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1587,7 +1618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1af3f19796cbe4c8a21c20a5fdafd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  picker: {fileID: 990095579}
+  characterPickerGo: {fileID: 828602275}
   characterTypeToPick: 0
 --- !u!114 &1959411604
 MonoBehaviour:
@@ -1707,7 +1738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d1af3f19796cbe4c8a21c20a5fdafd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  picker: {fileID: 1906886749}
+  characterPickerGo: {fileID: 828602275}
   characterTypeToPick: 1
 --- !u!114 &2041749861
 MonoBehaviour:
@@ -1859,3 +1890,4 @@ SceneRoots:
   - {fileID: 1865054906}
   - {fileID: 1496078915}
   - {fileID: 1668604344}
+  - {fileID: 828602277}

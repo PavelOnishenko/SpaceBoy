@@ -1,22 +1,11 @@
-using UnityEngine;
-
-public class SceneOrder : MonoBehaviour
+public class SceneOrder
 {
     public static SceneOrder Instance
     {
         get
         {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<SceneOrder>();
-                if (_instance == null)
-                {
-                    var gameObject = new GameObject("SceneOrderContainer");
-                    _instance = gameObject.AddComponent<SceneOrder>();
-                    DontDestroyOnLoad(gameObject);
-                }
-            }
-            return _instance;
+            instance ??= new SceneOrder();
+            return instance;
         }
     }
 
@@ -25,7 +14,7 @@ public class SceneOrder : MonoBehaviour
         
     }
 
-    private static  SceneOrder _instance;
+    private static SceneOrder instance;
 
     private string nextScene = "MenuScene";
 

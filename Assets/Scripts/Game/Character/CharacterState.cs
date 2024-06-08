@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterState : MonoBehaviour
 {
-    [SerializeField] private string protagonistGameObjectName = "Spacegirl";
+    [SerializeField] private string protagonistGameObjectName = "SpaceGirl";
     [SerializeField] private string isDeaParamName = "IsDead";
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private int initialHp = 2;

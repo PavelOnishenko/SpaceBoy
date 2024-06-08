@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8088018012391911271, guid: 3eb30227e7063e4469871f8f84cf85b8, type: 3}
       propertyPath: m_Name
-      value: GreenGirlPrefab
+      value: GreenGirl
       objectReference: {fileID: 0}
     - target: {fileID: 8088018012391911271, guid: 3eb30227e7063e4469871f8f84cf85b8, type: 3}
       propertyPath: m_IsActive
@@ -303,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &36941062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,7 +625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &234207451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,8 +972,6 @@ MonoBehaviour:
   heartPlaceholders:
   - {fileID: 165566170}
   - {fileID: 1969983814}
-  - {fileID: 234207451}
-  - {fileID: 1022007631}
 --- !u!4 &411867299
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,6 +1097,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 491200687}
+  - component: {fileID: 491200688}
   m_Layer: 0
   m_Name: ProtagonistContainer
   m_TagString: Untagged
@@ -1123,6 +1122,18 @@ Transform:
   - {fileID: 25464440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &491200688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491200686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f14920a519f3214ca30f0239b328e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &618792238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7767067393691526557, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_Name
-      value: Spacegirl
+      value: SpaceGirl
       objectReference: {fileID: 0}
     - target: {fileID: 8863703573939879422, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1512,7 +1523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1022007631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,6 +1643,7 @@ MonoBehaviour:
   - {fileID: 1181688528}
   - {fileID: 333341256}
   - {fileID: 1749915914}
+  buttonAppearancePeriod: 3
 --- !u!4 &1090902487
 Transform:
   m_ObjectHideFlags: 0
@@ -2007,7 +2019,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1404900543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2324,8 +2336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartPlaceholders:
   - {fileID: 448762493}
-  - {fileID: 36941062}
-  - {fileID: 1404900543}
   - {fileID: 1282941124}
 --- !u!4 &1489505174
 Transform:
@@ -2909,15 +2919,15 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 61736442}
-  - {fileID: 1090902487}
-  - {fileID: 1628872262}
-  - {fileID: 411867299}
-  - {fileID: 1909532418}
-  - {fileID: 1169068052}
-  - {fileID: 491200687}
-  - {fileID: 753875301}
   - {fileID: 390911956}
+  - {fileID: 61736442}
+  - {fileID: 1909532418}
+  - {fileID: 411867299}
+  - {fileID: 491200687}
   - {fileID: 1489505174}
-  - {fileID: 1447759831}
+  - {fileID: 1628872262}
+  - {fileID: 1090902487}
+  - {fileID: 753875301}
   - {fileID: 1477786089}
+  - {fileID: 1447759831}
+  - {fileID: 1169068052}

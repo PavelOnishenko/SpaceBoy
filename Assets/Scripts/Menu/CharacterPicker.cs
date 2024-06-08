@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class CharacterPicker : MonoBehaviour
 {
-    [SerializeField] private GameObject SpaceGirlPicker;
-    [SerializeField] private GameObject GreenGirlPicker;
+    [SerializeField] private GameObject SpaceGirlHighlight;
+    [SerializeField] private GameObject GreenGirlHighlight;
 
     private CharacterType pickedCharacter;
 
@@ -13,13 +13,15 @@ public class CharacterPicker : MonoBehaviour
         pickedCharacter = who;
         if(pickedCharacter is CharacterType.GreenGirl)
         {
-            GreenGirlPicker.SetActive(true);
-            SpaceGirlPicker.SetActive(false);
+            GreenGirlHighlight.SetActive(true);
+            SpaceGirlHighlight.SetActive(false);
+            IntersceneState.Instance.SelectProtagonist(CharacterType.GreenGirl);
         }
         else
         {
-            GreenGirlPicker.SetActive(false);
-            SpaceGirlPicker.SetActive(true);
+            GreenGirlHighlight.SetActive(false);
+            SpaceGirlHighlight.SetActive(true);
+            IntersceneState.Instance.SelectProtagonist(CharacterType.SpaceGirl);
         }
     }
 }
