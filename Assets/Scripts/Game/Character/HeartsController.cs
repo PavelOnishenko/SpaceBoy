@@ -19,9 +19,8 @@ public class HeartsController : MonoBehaviour
 
     private int GetHeartNumber(HeartPlaceholder heartPlaceholder)
     {
-        var digits = heartPlaceholder.gameObject.name
-                    .Where(character => character > '0' && character < '9').ToArray();
-        var digitsString = new string(digits);
+        var digitsString = new string(
+            heartPlaceholder.gameObject.name.Where(character => character > '0' && character < '9').ToArray());
         var parsed = int.Parse(digitsString);
         return parsed;
     }

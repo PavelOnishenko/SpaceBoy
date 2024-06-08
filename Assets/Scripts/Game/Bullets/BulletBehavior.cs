@@ -17,8 +17,6 @@ public class BulletBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Destroy(gameObject);
-        var rootTransform = other.transform.root;
-        var characterState = rootTransform.gameObject.GetComponentInChildren<CharacterState>();
-        characterState.GetHit();
+        other.transform.root.gameObject.GetComponentInChildren<CharacterState>().GetHit();
     }
 }

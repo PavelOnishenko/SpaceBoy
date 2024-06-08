@@ -20,12 +20,10 @@ public class ShootButtonCreator : MonoBehaviour
         StartCoroutine(buttoneRoutine);
     }
 
-    public void CreateButton()
-    {
-        var choice = Random.Range(0, shootButtonPlaceholders.Length);
-        var buttonSpawnPoint = shootButtonPlaceholders[choice];
-        Instantiate(shootButtonPrefab, buttonSpawnPoint.position, Quaternion.identity);
-    }
+    public void CreateButton() => 
+        Instantiate(shootButtonPrefab,
+            shootButtonPlaceholders[Random.Range(0, shootButtonPlaceholders.Length)].position,
+            Quaternion.identity);
 
     IEnumerator ButtonRoutine()
     {
@@ -35,5 +33,4 @@ public class ShootButtonCreator : MonoBehaviour
             CreateButton();
         }
     }
-
 }

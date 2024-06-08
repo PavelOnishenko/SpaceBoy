@@ -1,5 +1,4 @@
 using Assets.Scripts.Menu;
-using UnityEngine;
 
 public class IntersceneState
 {

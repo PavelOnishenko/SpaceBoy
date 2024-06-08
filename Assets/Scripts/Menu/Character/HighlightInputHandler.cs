@@ -8,13 +8,7 @@ public class HighlightInputHandler : MonoBehaviour
 
     private CharacterPicker characterPicker;
 
-    private void Start()
-    {
-        characterPicker = characterPickerGo.GetComponent<CharacterPicker>();
-    }
+    private void Start() => characterPicker = characterPickerGo.GetComponent<CharacterPicker>();
 
-    public void OnClick()
-    {
-        characterPicker.Pick(characterTypeToPick);
-    }
+    public void OnClick() => characterPicker.Pick(characterTypeToPick);
 }

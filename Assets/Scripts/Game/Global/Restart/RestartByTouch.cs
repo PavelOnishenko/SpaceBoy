@@ -14,8 +14,7 @@ public class RestartByTouch : MonoBehaviour
 
         if (touch.press.isPressed)
         {
-            var touchPosition = touch.position.ReadValue();
-            if (touchPosition.x < Screen.width / 2f)
+            if (touch.position.ReadValue().x < Screen.width / 2f)
             {
                 touchStart = touch.position.ReadValue();
                 isSwipeStartLeftSide = true;
@@ -29,7 +28,7 @@ public class RestartByTouch : MonoBehaviour
     {
         if (isSwipeStartLeftSide && touch.phase.ReadValue() == UnityEngine.InputSystem.TouchPhase.Ended)
         {
-            Vector2 touchEnd = touch.position.ReadValue();
+            var touchEnd = touch.position.ReadValue();
             if (IsSwipeLeft(touchStart, touchEnd)) RestartGame();
             isSwipeStartLeftSide = false;
         }

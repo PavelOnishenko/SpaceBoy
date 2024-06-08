@@ -8,10 +8,8 @@ public class CharacterState : MonoBehaviour
     [SerializeField] private int initialHp = 2;
     [SerializeField] private string heartContainerNamePrefix;
 
-    private GameObject characterContainer;
     private GameObject heartsContainer;
     private HeartsController heartsController;
-    private Ai ai;
 
     public bool IsDead => hp <= 0;
 
@@ -23,21 +21,13 @@ public class CharacterState : MonoBehaviour
     {
         hp = initialHp;
         animator = GetComponent<Animator>();
-        characterContainer = transform.parent.gameObject;
         heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
         heartsController = heartsContainer.GetComponent<HeartsController>();
-        ai = GetComponent<Ai>();
     }
 
-    public void Shoot()
-    {
-        bulletCreator.CreateBullet();
-    }
+    public void Shoot() => bulletCreator.CreateBullet();
 
-    public void Aim()
-    {
-        animator.SetTrigger("Aim");
-    }
+    public void Aim() => animator.SetTrigger("Aim");
 
     public void Revive()
     {

@@ -51,8 +51,7 @@ namespace Assets.Scripts.Behaviors.Menu
         {
             levelCaptionBehavior.SetLevelCaption(selectedLevel);
             levelPreviewBehavior.SetLevelPreview(selectedLevel);
-            var nextSceneName = levelSceneNames[selectedLevel];
-            SceneOrder.Instance.SetNextScene(nextSceneName);
+            SceneOrder.Instance.SetNextScene(levelSceneNames[selectedLevel]);
         }
     }
 }
