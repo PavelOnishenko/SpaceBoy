@@ -16,7 +16,18 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        var protagonistIsHit = other.gameObject.IsParentWithName("ProtagonistContainer");
+        string characterName;
+        if (protagonistIsHit)
+        {
+            characterName = IntersceneState.Instance.SelectedProtagonist.ToString();
+        }
+        else
+        {
+            // todo fix later hahahaha
+            characterName = "Lizard";
+        }
+        other.gameObject.GetComponentFromParentByName<CharacterState>(characterName).GetHit();
         Destroy(gameObject);
-        other.transform.root.gameObject.GetComponentInChildren<CharacterState>().GetHit();
     }
 }

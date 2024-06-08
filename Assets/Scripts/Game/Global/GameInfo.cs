@@ -1,26 +1,31 @@
+using System.Linq;
 using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
-    public GameObject protagonist;
-
     [SerializeField] private GameObject labelYouDie;
     [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject shootingButtonContainer;
     [SerializeField] private GameObject countdownContainer;
-    
-    private CharacterState cowboyState;
+    [SerializeField] private GameObject protagonistContainer;
+
+    public GameObject Protagonist => protagonist;
+
+    private CharacterState protagonistState;
     private CharacterState enemyState;
     private Ai ai;
     private Countdown countdown;
     private ShootButtonCreator shootButtonCreator;
+    private GameObject protagonist;
 
     public static GameInfo Instance { get; private set; }
 
     private void Start()
     {
-        cowboyState = protagonist.GetComponent<CharacterState>();
+        protagonist = protagonistContainer.transform.Cast<Transform>()
+            .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
+        protagonistState = protagonist.GetComponent<CharacterState>();
         enemyState = enemy.GetComponent<CharacterState>();
         ai = enemy.GetComponent<Ai>();
         countdown = countdownContainer.GetComponent<Countdown>();
@@ -32,7 +37,6 @@ public class GameInfo : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // todo look at Unity Timeline tutorial and Unity Playable
     public GameState State
     {
         get => _state;
@@ -72,7 +76,7 @@ public class GameInfo : MonoBehaviour
     private void Restart()
     {
         countdown.Restart();
-        cowboyState.Revive();
+        protagonistState.Revive();
         enemyState.Revive();
     }
 

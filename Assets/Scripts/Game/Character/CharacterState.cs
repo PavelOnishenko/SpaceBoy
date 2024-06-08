@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CharacterState : MonoBehaviour
 {
-    [SerializeField] private string protagonistGameObjectName = "SpaceGirl";
     [SerializeField] private string isDeaParamName = "IsDead";
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private int initialHp = 2;
@@ -19,19 +18,18 @@ public class CharacterState : MonoBehaviour
 
     private void Start()
     {
-        hp = initialHp;
-        animator = GetComponent<Animator>();
-        heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
-        heartsController = heartsContainer.GetComponent<HeartsController>();
+        ResetDependencies();
     }
 
     public void Shoot() => bulletCreator.CreateBullet();
 
-    public void Aim() => animator.SetTrigger("Aim");
+    public void Aim()
+    {
+        animator.SetTrigger("Aim");
+    }
 
     public void Revive()
     {
-        hp = initialHp;
         heartsController.SetHp(hp);
         animator.SetBool(isDeaParamName, false);
     }
@@ -43,7 +41,8 @@ public class CharacterState : MonoBehaviour
         if(IsDead)
         {
             animator.SetBool(isDeaParamName, true);
-            var isPlayer = gameObject.name == protagonistGameObjectName;
+            var selectedProtagonistString = IntersceneState.Instance.SelectedProtagonist.ToString();
+            var isPlayer = gameObject.name == selectedProtagonistString;
             if (GameInfo.Instance.State == GameState.Ongoing)
                 GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
         }
@@ -51,5 +50,13 @@ public class CharacterState : MonoBehaviour
         {
             animator.SetTrigger("GetHit");
         }
+    }
+
+    private void ResetDependencies()
+    {
+        hp = initialHp;
+        animator = GetComponent<Animator>();
+        heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
+        heartsController = heartsContainer.GetComponent<HeartsController>();
     }
 }

@@ -8,7 +8,7 @@ public class ShootButtonBehavior : MonoBehaviour
 
     private void Start()
     {
-        stateController = GameInfo.Instance.protagonist.GetComponent<CharacterState>();
+        stateController = GameInfo.Instance.Protagonist.GetComponent<CharacterState>();
         Destroy(gameObject, destroyTime);
     }
 
@@ -42,7 +42,7 @@ public class ShootButtonBehavior : MonoBehaviour
 
     private void ProcessInputAction()
     {
-        Destroy(gameObject);
         stateController.Aim();
+        Destroy(gameObject);
     }
 }
