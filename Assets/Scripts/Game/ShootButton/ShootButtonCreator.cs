@@ -21,10 +21,11 @@ public class ShootButtonCreator : MonoBehaviour
         StartCoroutine(buttonRoutine);
     }
 
-    public void CreateButton() =>
-        currentlyShownButton = Instantiate(shootButtonPrefab,
-            shootButtonPlaceholders[Random.Range(0, shootButtonPlaceholders.Length)].position,
-            Quaternion.identity);
+    public void CreateButton()
+    {
+        var position = shootButtonPlaceholders[Random.Range(0, shootButtonPlaceholders.Length)].position;
+        currentlyShownButton = Instantiate(shootButtonPrefab, position, Quaternion.identity);
+    }
 
     public void DestroyButton() => Destroy(currentlyShownButton);
 
@@ -33,10 +34,7 @@ public class ShootButtonCreator : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(buttonAppearancePeriod);
-            while(GameInfo.Instance.State is not GameState.Ongoing)
-            {
-                yield return null;
-            }
+            while(GameInfo.Instance.State is not GameState.Ongoing) yield return null;
             CreateButton();
         }
     }

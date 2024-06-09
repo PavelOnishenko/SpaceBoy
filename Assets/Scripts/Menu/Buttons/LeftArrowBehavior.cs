@@ -20,15 +20,9 @@ namespace Assets.Scripts.Menu
             imageComponent = GetComponent<Image>();
         }
 
-        public void Enter()
-        {
-            imageComponent.sprite = onSprite;
-        }
+        public void Enter() => imageComponent.sprite = onSprite;
 
-        public void Exit()
-        {
-            imageComponent.sprite = offSprite;
-        }
+        public void Exit() => imageComponent.sprite = offSprite;
 
         public void Click() => menuState.SelectLevelToLeft();
     }

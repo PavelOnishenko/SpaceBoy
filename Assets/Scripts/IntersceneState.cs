@@ -17,8 +17,5 @@ public class IntersceneState
 
     private CharacterType selectedProtagonist;
 
-    public void SelectProtagonist(CharacterType protagonist)
-    {
-        selectedProtagonist = protagonist;
-    }
+    public void SelectProtagonist(CharacterType protagonist) => selectedProtagonist = protagonist;
 }

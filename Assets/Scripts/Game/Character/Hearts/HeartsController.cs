@@ -1,20 +1,15 @@
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class HeartsController : MonoBehaviour
 {
     [SerializeField] private HeartPlaceholder[] heartPlaceholders;
 
-    private void OnValidate()
-    {
-        heartPlaceholders = GetComponentsInChildren<HeartPlaceholder>(true);
-    }
+    private void OnValidate() => heartPlaceholders = GetComponentsInChildren<HeartPlaceholder>(true);
 
-    private void Start()
-    {
-        SetHp(2);
-    }
+    private void Start() => SetHp(2);
 
     public void SetHp(int hp)
     {
@@ -22,13 +17,8 @@ public class HeartsController : MonoBehaviour
         ProcessSomeHearts(heartPlaceholder => GetHeartNumber(heartPlaceholder) > hp, false, true);
     }
 
-    private int GetHeartNumber(HeartPlaceholder heartPlaceholder)
-    {
-        var digitsString = new string(
-            heartPlaceholder.gameObject.name.Where(character => character > '0' && character < '9').ToArray());
-        var parsed = int.Parse(digitsString);
-        return parsed;
-    }
+    private int GetHeartNumber(HeartPlaceholder heartPlaceholder) => 
+        int.Parse(Regex.Match(heartPlaceholder.gameObject.name, @"\d+").Value);
 
     private void ProcessSomeHearts(Predicate<HeartPlaceholder> condition, bool setFilledActive, bool setEmptyActive)
     {
@@ -36,10 +26,8 @@ public class HeartsController : MonoBehaviour
         foreach (var heartPlaceholder in heartsToProcess)
         {
             var heart = heartPlaceholder.gameObject;
-            if (heart.name.Contains("Filled"))
-                heart.SetActive(setFilledActive);
-            else if (heart.name.Contains("Empty"))
-                heart.SetActive(setEmptyActive);
+            if (heart.name.Contains("Filled")) heart.SetActive(setFilledActive);
+            else if (heart.name.Contains("Empty")) heart.SetActive(setEmptyActive);
         }
     }
 }

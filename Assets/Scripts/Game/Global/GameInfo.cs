@@ -44,12 +44,12 @@ public class GameInfo : MonoBehaviour
         set
         {
             _state = value;
-            if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOver(value);
-            else HandleInGameEvents(value);
+            if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOverStateChange(value);
+            else HandleInGameStateChange(value);
         }
     }
 
-    private void HandleGameOver(GameState value)
+    private void HandleGameOverStateChange(GameState value)
     {
         if (value == GameState.PlayerDead)
         {
@@ -63,15 +63,12 @@ public class GameInfo : MonoBehaviour
         }
     }
 
-    private void HandleInGameEvents(GameState state)
+    private void HandleInGameStateChange(GameState state)
     {
         if (state == GameState.NotStarted) Restart();
         labelYouDie.SetActive(false);
         labelYouWon.SetActive(false);
-        if (state == GameState.Ongoing)
-        {
-            ai.AttackAfterDelay();
-        }
+        if (state == GameState.Ongoing) ai.AttackAfterDelay();
     }
 
     private void Restart()

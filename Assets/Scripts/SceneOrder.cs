@@ -9,11 +9,6 @@ public class SceneOrder
         }
     }
 
-    public SceneOrder()
-    {
-        
-    }
-
     private static SceneOrder instance;
 
     private string nextScene = "MenuScene";

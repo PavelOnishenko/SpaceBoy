@@ -12,13 +12,10 @@ public class RestartByTouch : MonoBehaviour
         var touch = Touchscreen.current?.primaryTouch;
         if (touch is null) return;
 
-        if (touch.press.isPressed)
+        if (touch.press.isPressed && touch.position.ReadValue().x < Screen.width / 2f)
         {
-            if (touch.position.ReadValue().x < Screen.width / 2f)
-            {
-                touchStart = touch.position.ReadValue();
-                isSwipeStartLeftSide = true;
-            }
+            touchStart = touch.position.ReadValue();
+            isSwipeStartLeftSide = true;
         }
 
         CheckForLeftSwipe(touch);

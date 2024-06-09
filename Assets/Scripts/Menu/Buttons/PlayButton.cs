@@ -20,14 +20,12 @@ public class PlayButton : MonoBehaviour
     
     public void Enter()
     {
-        if (imageComponent != null)
-            imageComponent.sprite = onSprite;
+        if (imageComponent != null) imageComponent.sprite = onSprite;
     }
 
     public void Exit()
     {
-        if (imageComponent != null)
-            imageComponent.sprite = offSprite;
+        if (imageComponent != null) imageComponent.sprite = offSprite;
     }
 
     public void Click() => SceneManager.LoadScene(loadingScene);
