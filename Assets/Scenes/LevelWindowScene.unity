@@ -871,6 +871,8 @@ MonoBehaviour:
   heartPlaceholders:
   - {fileID: 165566170}
   - {fileID: 1969983814}
+  - {fileID: 234207451}
+  - {fileID: 1022007631}
 --- !u!4 &411867299
 Transform:
   m_ObjectHideFlags: 0
@@ -2234,6 +2236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartPlaceholders:
   - {fileID: 448762493}
+  - {fileID: 36941062}
+  - {fileID: 1404900543}
   - {fileID: 1282941124}
 --- !u!4 &1489505174
 Transform:

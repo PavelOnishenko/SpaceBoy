@@ -8,7 +8,12 @@ public class HeartsController : MonoBehaviour
 
     private void OnValidate()
     {
-        heartPlaceholders = GetComponentsInChildren<HeartPlaceholder>();
+        heartPlaceholders = GetComponentsInChildren<HeartPlaceholder>(true);
+    }
+
+    private void Start()
+    {
+        SetHp(2);
     }
 
     public void SetHp(int hp)
