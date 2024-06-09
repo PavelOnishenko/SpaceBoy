@@ -1576,10 +1576,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1628872262}
     m_Modifications:
-    - target: {fileID: 398108399736545864, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
-      propertyPath: delayBeforeAttackSeconds
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 585393145866106354, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
       propertyPath: m_Name
       value: Lizard

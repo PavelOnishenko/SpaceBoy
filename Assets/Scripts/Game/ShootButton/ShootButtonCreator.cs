@@ -7,7 +7,8 @@ public class ShootButtonCreator : MonoBehaviour
     [SerializeField] private ShootButtonPlaceholder[] shootButtonPlaceholders;
     [SerializeField] private float buttonAppearancePeriod = 3.0f;
 
-    private IEnumerator buttoneRoutine;
+    private IEnumerator buttonRoutine;
+    private GameObject currentlyShownButton;
 
     private void OnValidate()
     {
@@ -16,20 +17,26 @@ public class ShootButtonCreator : MonoBehaviour
 
     private void Start()
     {
-        buttoneRoutine = ButtonRoutine();
-        StartCoroutine(buttoneRoutine);
+        buttonRoutine = ButtonRoutine();
+        StartCoroutine(buttonRoutine);
     }
 
-    public void CreateButton() => 
-        Instantiate(shootButtonPrefab,
+    public void CreateButton() =>
+        currentlyShownButton = Instantiate(shootButtonPrefab,
             shootButtonPlaceholders[Random.Range(0, shootButtonPlaceholders.Length)].position,
             Quaternion.identity);
+
+    public void DestroyButton() => Destroy(currentlyShownButton);
 
     IEnumerator ButtonRoutine()
     {
         while (true)
         {
             yield return new WaitForSeconds(buttonAppearancePeriod);
+            while(GameInfo.Instance.State is not GameState.Ongoing)
+            {
+                yield return null;
+            }
             CreateButton();
         }
     }

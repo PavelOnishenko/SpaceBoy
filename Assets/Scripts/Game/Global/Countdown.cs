@@ -7,6 +7,9 @@ public class Countdown : MonoBehaviour
 {
     [SerializeField] private int countdownTime = 3;
 
+    public int CountdownTime => countdownTime;
+    public bool IsCounting => isCounting;
+
     private GameObject[] digits;
     private bool isCounting;
 

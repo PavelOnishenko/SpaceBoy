@@ -79,6 +79,8 @@ public class GameInfo : MonoBehaviour
         countdown.Restart();
         protagonistState.Revive();
         enemyState.Revive();
+        ai.AttackAfterDelay();
+        shootButtonCreator.DestroyButton();
     }
 
     private GameState _state = GameState.NotStarted;

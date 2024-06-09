@@ -30,7 +30,8 @@ public class CharacterState : MonoBehaviour
 
     public void Revive()
     {
-        heartsController.SetHp(hp);
+        hp = initialHp;
+        heartsController.SetHp(initialHp);
         animator.SetBool(isDeaParamName, false);
     }
 
@@ -50,6 +51,11 @@ public class CharacterState : MonoBehaviour
         {
             animator.SetTrigger("GetHit");
         }
+    }
+
+    public void Calm()
+    {
+        animator.SetTrigger("Calm");
     }
 
     private void ResetDependencies()
