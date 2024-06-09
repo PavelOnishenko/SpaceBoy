@@ -8,6 +8,11 @@ public class CharacterPicker : MonoBehaviour
 
     private CharacterType pickedCharacter;
 
+    private void Start()
+    {
+        Pick(CharacterType.SpaceGirl);
+    }
+
     public void Pick(CharacterType who)
     {
         pickedCharacter = who;
