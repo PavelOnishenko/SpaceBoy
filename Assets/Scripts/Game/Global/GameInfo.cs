@@ -11,6 +11,7 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject protagonistContainer;
 
     public GameObject Protagonist => protagonist;
+    public GameObject Enemy => enemy;
 
     private CharacterState protagonistState;
     private CharacterState enemyState;

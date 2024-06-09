@@ -12,15 +12,7 @@ public class ProtagonistPlacer : MonoBehaviour
         spaceGirl = transform.Cast<Transform>().Single(x => x.gameObject.name == "SpaceGirl").gameObject;
         spaceGirl.SetActive(false);
         greenGirl = transform.Cast<Transform>().Single(x => x.gameObject.name == "GreenGirl").gameObject;
-        //var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
-
-
-        // todo ROLL BACK this
-        var intersceneState = IntersceneState.Instance;
-        intersceneState.SelectProtagonist(CharacterType.GreenGirl);
-        var selectedProtagonist = intersceneState.SelectedProtagonist;
-        
-        
+        var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
         if (selectedProtagonist == CharacterType.SpaceGirl)
         {
             spaceGirl.SetActive(true);
