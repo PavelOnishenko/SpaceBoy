@@ -11,4 +11,4 @@ public class LevelPreviewBehavior : MonoBehaviour
     private void Start() => image = GetComponent<Image>();
 
     public void SetLevelPreview(int level) => image.sprite = level == 1 ? spriteLevel1 : spriteLevel2;
-}
+}  

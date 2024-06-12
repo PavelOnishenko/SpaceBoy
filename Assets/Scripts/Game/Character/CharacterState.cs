@@ -13,6 +13,9 @@ public class CharacterState : MonoBehaviour
     private HeartsController heartsController;
     private int hp;
 
+    private float damageCooldown = 0.1f;
+    private float lastHitTime;
+
     private void Start()
     {
         hp = initialHp;
@@ -34,6 +37,13 @@ public class CharacterState : MonoBehaviour
 
     public void GetHit()
     {
+        if (Time.time - lastHitTime < damageCooldown)
+        {
+            return;
+        }
+
+        lastHitTime = Time.time;
+
         hp--;
         heartsController.SetHp(hp);
         if(IsDead)

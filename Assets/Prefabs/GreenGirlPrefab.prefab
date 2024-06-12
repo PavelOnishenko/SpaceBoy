@@ -1972,7 +1972,7 @@ Animator:
   m_GameObject: {fileID: 8088018012391911271}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f1e4c1a7bfac9944cb67aaef6c3d17f0, type: 2}
+  m_Controller: {fileID: 9100000, guid: df346d75b218a4745bbdc495d21f5874, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2009,7 +2009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDeaParamName: IsDead
   bulletCreator: {fileID: 6359086776978145873}
   initialHp: 2
   heartContainerNamePrefix: Protagonist

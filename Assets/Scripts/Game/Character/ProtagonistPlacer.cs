@@ -10,8 +10,9 @@ public class ProtagonistPlacer : MonoBehaviour
     private void Awake()
     {
         spaceGirl = transform.Cast<Transform>().Single(x => x.gameObject.name == "SpaceGirl").gameObject;
-        spaceGirl.SetActive(false);
         greenGirl = transform.Cast<Transform>().Single(x => x.gameObject.name == "GreenGirl").gameObject;
+        spaceGirl.SetActive(false);
+        greenGirl.SetActive(false);
         var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
         if (selectedProtagonist == CharacterType.SpaceGirl)
         {

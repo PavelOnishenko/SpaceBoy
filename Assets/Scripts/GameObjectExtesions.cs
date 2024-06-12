@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class GameObjectExtensions
 {
-    public static T GetComponentFromParentByName<T>(this GameObject child, string parentName) where T : Component
+    public static T? GetComponentFromParentByName<T>(this GameObject child, string parentName) where T : Component
     {
         var currentTransform = child.transform;
 
@@ -15,7 +15,7 @@ public static class GameObjectExtensions
             }
             currentTransform = currentTransform.parent;
         }
-        Debug.LogError("Didn't find anything!");
+        Debug.LogError($"Didn't find parent with name [{parentName}].");
         return null;
     }
 

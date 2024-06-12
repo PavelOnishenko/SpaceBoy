@@ -26,7 +26,7 @@ public class BulletBehavior : MonoBehaviour
         {
             characterName = GameInfo.Instance.Enemy.name;
         }
-        other.gameObject.GetComponentFromParentByName<CharacterState>(characterName).GetHit();
+        other.gameObject.GetComponentFromParentByName<CharacterState>(characterName)?.GetHit();
         Destroy(gameObject);
     }
 }
