@@ -1,1 +1,4 @@
-public enum GameState { NotStarted, Ongoing, PlayerWon, PlayerDead }
+public enum GameState 
+{ 
+    NotStarted, Ongoing, PlayerWon, PlayerDead 
+}

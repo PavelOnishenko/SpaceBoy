@@ -2,53 +2,34 @@ using UnityEngine;
 
 public class CharacterState : MonoBehaviour
 {
-    [SerializeField] private string protagonistGameObjectName = "Spacegirl";
-    [SerializeField] private string isDeaParamName = "IsDead";
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private int initialHp = 2;
-    [SerializeField] private GameObject heartsContainer;
-
-    private HeartsController heartsController;
-    private Ai ai;
-
+    [SerializeField] private string heartContainerNamePrefix;
     public bool IsDead => hp <= 0;
 
-    private int hp;
-
     protected Animator animator;
+
+    private GameObject heartsContainer;
+    private HeartsController heartsController;
+    private int hp;
 
     private void Start()
     {
         hp = initialHp;
         animator = GetComponent<Animator>();
+        heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
         heartsController = heartsContainer.GetComponent<HeartsController>();
-        ai = GetComponent<Ai>();
     }
 
-    public void GetReadyToShoot()
-    {
-        if (name == "Spacegirl")
-            GameInfo.Instance.RecreateShootButton();
-        else if (name == "Brainman")
-            ai.AttackAfterDelay();
-    }
+    public void Shoot() => bulletCreator.CreateBullet();
 
-    public void Shoot()
-    {
-        bulletCreator.CreateBullet();
-        animator.SetTrigger("Shoot");
-    }
-
-    public void Aim()
-    {
-        animator.SetTrigger("Aim");
-    }
+    public void Aim() => animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
 
     public void Revive()
     {
         hp = initialHp;
         heartsController.SetHp(hp);
-        animator.SetBool(isDeaParamName, false);
+        animator.SetBool(CharacterAnimationParamType.IsDead.ToString(), false);
     }
 
     public void GetHit()
@@ -57,14 +38,15 @@ public class CharacterState : MonoBehaviour
         heartsController.SetHp(hp);
         if(IsDead)
         {
-            animator.SetBool(isDeaParamName, true);
-            var isPlayer = gameObject.name == protagonistGameObjectName;
+            animator.SetBool(CharacterAnimationParamType.IsDead.ToString(), true);
+            var selectedProtagonistString = IntersceneState.Instance.SelectedProtagonist.ToString();
+            var isPlayer = gameObject.name == selectedProtagonistString;
             if (GameInfo.Instance.State == GameState.Ongoing)
                 GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
         }
         else
         {
-            animator.SetTrigger("GetHit");
+            animator.SetTrigger(CharacterAnimationTriggerType.GetHit.ToString());
         }
     }
 }

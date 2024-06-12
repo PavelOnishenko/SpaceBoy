@@ -8,7 +8,7 @@ public class ShootButtonBehavior : MonoBehaviour
 
     private void Start()
     {
-        stateController = GameInfo.Instance.protagonist.GetComponent<CharacterState>();
+        stateController = GameInfo.Instance.Protagonist.GetComponent<CharacterState>();
         Destroy(gameObject, destroyTime);
     }
 
@@ -21,8 +21,7 @@ public class ShootButtonBehavior : MonoBehaviour
                 CheckInputAction(touch.position);
         }
 
-        if (Input.GetMouseButtonDown(0))
-            CheckInputAction(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0)) CheckInputAction(Input.mousePosition);
     }
 
     private void CheckInputAction(Vector2 position)
@@ -31,18 +30,16 @@ public class ShootButtonBehavior : MonoBehaviour
         RaycastHit2D[] hits = Physics2D.RaycastAll(worldPosition, Vector2.zero);
 
         foreach (var hit in hits)
-        {
             if (hit.collider != null && hit.collider.gameObject.name == gameObject.name)
             {
                 ProcessInputAction();
-                break; 
+                break;
             }
-        }
     }
 
     private void ProcessInputAction()
     {
-        Destroy(gameObject);
         stateController.Aim();
+        Destroy(gameObject);
     }
 }

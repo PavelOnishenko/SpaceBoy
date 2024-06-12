@@ -7,6 +7,9 @@ public class Countdown : MonoBehaviour
 {
     [SerializeField] private int countdownTime = 3;
 
+    public int CountdownTime => countdownTime;
+    public bool IsCounting => isCounting;
+
     private GameObject[] digits;
     private bool isCounting;
 
@@ -31,20 +34,24 @@ public class Countdown : MonoBehaviour
             yield return new WaitForSeconds(1f);
             countdownTime--;
         }
-        SetActive("LabelOne", false);
-        SetActive("LabelGo", true);
+        SetActive(CountdownLabelType.LabelOne.ToString(), false);
+        SetActive(CountdownLabelType.LabelGo.ToString(), true);
         yield return new WaitForSeconds(1f);
-        SetActive("LabelGo", false);
+        SetActive(CountdownLabelType.LabelGo.ToString(), false);
         isCounting = false;
         GameInfo.Instance.State = GameState.Ongoing;
     }
-
 
     private void SetDigitsActive()
     {
         var activeDigits = digits.Where(x => x.activeSelf).ToArray();
         foreach (var t in activeDigits) t.gameObject.SetActive(false);
-        SetActive(countdownTime switch { 3 => "LabelThree", 2 => "LabelTwo", 1 => "LabelOne", _ => null }, true);
+        var gameObjectName = countdownTime switch 
+        { 
+            3 => CountdownLabelType.LabelThree.ToString(), 2 => CountdownLabelType.LabelTwo.ToString(), 
+            1 => CountdownLabelType.LabelOne.ToString(), _ => null 
+        };
+        SetActive(gameObjectName, true);
     }
 
     private void SetActive(string gameObjectName, bool newValue) =>

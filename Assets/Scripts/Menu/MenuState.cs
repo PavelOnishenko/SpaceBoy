@@ -26,6 +26,7 @@ namespace Assets.Scripts.Behaviors.Menu
             lastLevel = Enum.GetValues(typeof(Level)).Length;
             levelCaptionBehavior = levelCaption.GetComponent<LevelCaptionBehavior>();
             levelPreviewBehavior = levelPreview.GetComponent<LevelPreviewBehavior>();
+            IntersceneState.Instance.SelectProtagonist(CharacterType.SpaceGirl);
         }
 
         public void SelectLevelToLeft()
@@ -50,8 +51,7 @@ namespace Assets.Scripts.Behaviors.Menu
         {
             levelCaptionBehavior.SetLevelCaption(selectedLevel);
             levelPreviewBehavior.SetLevelPreview(selectedLevel);
-            var nextSceneName = levelSceneNames[selectedLevel];
-            SceneOrder.Instance.SetNextScene(nextSceneName);
+            SceneOrder.Instance.SetNextScene(levelSceneNames[selectedLevel]);
         }
     }
 }

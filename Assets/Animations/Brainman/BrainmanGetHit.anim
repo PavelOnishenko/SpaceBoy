@@ -2776,7 +2776,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.8833333
-    functionName: GetReadyToShoot
+    functionName: AttackAfterDelay
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

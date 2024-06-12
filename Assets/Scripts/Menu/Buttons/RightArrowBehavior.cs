@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Behaviors.Menu
@@ -20,15 +19,9 @@ namespace Assets.Scripts.Behaviors.Menu
             imageComponent = GetComponent<Image>();
         }
 
-        public void Enter()
-        {
-            imageComponent.sprite = onSprite;
-        }
+        public void Enter() => imageComponent.sprite = onSprite;
 
-        public void Exit()
-        {
-            imageComponent.sprite = offSprite;
-        }
+        public void Exit() => imageComponent.sprite = offSprite;
 
         public void Click() => menuState.SelectLevelToRight();
     }

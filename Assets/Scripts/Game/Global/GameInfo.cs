@@ -1,26 +1,32 @@
+using System.Linq;
 using UnityEngine;
 
 public class GameInfo : MonoBehaviour
 {
-    public GameObject protagonist;
-
     [SerializeField] private GameObject labelYouDie;
     [SerializeField] private GameObject labelYouWon;
     [SerializeField] private GameObject enemy;
     [SerializeField] private GameObject shootingButtonContainer;
     [SerializeField] private GameObject countdownContainer;
-    
-    private CharacterState cowboyState;
+    [SerializeField] private GameObject protagonistContainer;
+
+    public GameObject Protagonist => protagonist;
+    public GameObject Enemy => enemy;
+
+    private CharacterState protagonistState;
     private CharacterState enemyState;
     private Ai ai;
     private Countdown countdown;
     private ShootButtonCreator shootButtonCreator;
+    private GameObject protagonist;
 
     public static GameInfo Instance { get; private set; }
 
     private void Start()
     {
-        cowboyState = protagonist.GetComponent<CharacterState>();
+        protagonist = protagonistContainer.transform.Cast<Transform>()
+            .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
+        protagonistState = protagonist.GetComponent<CharacterState>();
         enemyState = enemy.GetComponent<CharacterState>();
         ai = enemy.GetComponent<Ai>();
         countdown = countdownContainer.GetComponent<Countdown>();
@@ -32,24 +38,18 @@ public class GameInfo : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // todo look at Unity Timeline tutorial and Unity Playable
     public GameState State
     {
         get => _state;
         set
         {
             _state = value;
-            if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOver(value);
-            else HandleInGameEvents(value);
+            if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOverStateChange(value);
+            else HandleInGameStateChange(value);
         }
     }
 
-    public void RecreateShootButton()
-    {
-        shootButtonCreator.CreateButton();
-    }
-
-    private void HandleGameOver(GameState value)
+    private void HandleGameOverStateChange(GameState value)
     {
         if (value == GameState.PlayerDead)
         {
@@ -63,23 +63,21 @@ public class GameInfo : MonoBehaviour
         }
     }
 
-    private void HandleInGameEvents(GameState state)
+    private void HandleInGameStateChange(GameState state)
     {
         if (state == GameState.NotStarted) Restart();
         labelYouDie.SetActive(false);
         labelYouWon.SetActive(false);
-        if (state == GameState.Ongoing)
-        {
-            ai.AttackAfterDelay();
-            shootButtonCreator.CreateButton();
-        }
+        if (state == GameState.Ongoing) ai.AttackAfterDelay();
     }
 
     private void Restart()
     {
         countdown.Restart();
-        cowboyState.Revive();
+        protagonistState.Revive();
         enemyState.Revive();
+        ai.AttackAfterDelay();
+        shootButtonCreator.DestroyButton();
     }
 
     private GameState _state = GameState.NotStarted;
