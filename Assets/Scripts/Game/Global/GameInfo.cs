@@ -32,22 +32,24 @@ public class GameInfo : MonoBehaviour
 
     private void Start()
     {
-        protagonist = protagonistContainer.transform.Cast<Transform>()
-            .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
-
-        var enemyName = enemyNameByLevel[IntersceneState.Instance.SelectedLevel].ToString();
-        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name == enemyName).gameObject;
-
-        protagonistState = protagonist.GetComponent<CharacterState>();
-        enemyState = enemy.GetComponent<CharacterState>();
-        ai = enemy.GetComponent<Ai>();
+        SetCharacterRelatedVariables();
         countdown = countdownContainer.GetComponent<Countdown>();
         shootButtonCreator = shootingButtonContainer.GetComponent<ShootButtonCreator>();
-
         if (Instance != null)
             Destroy(gameObject);
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void SetCharacterRelatedVariables()
+    {
+        protagonist = protagonistContainer.transform.Cast<Transform>()
+            .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
+        protagonistState = protagonist.GetComponent<CharacterState>();
+        var enemyName = enemyNameByLevel[IntersceneState.Instance.SelectedLevel].ToString();
+        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name == enemyName).gameObject;
+        enemyState = enemy.GetComponent<CharacterState>();
+        ai = enemy.GetComponent<Ai>();
     }
 
     public GameState State
