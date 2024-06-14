@@ -13,7 +13,7 @@ public class SceneOrder
 
     private string nextScene = "MenuScene";
 
-    public string GetNextScene() => nextScene;
+    public string GetNextSceneName() => nextScene;
 
     public void SetNextScene(string sceneName) => nextScene = sceneName;
 }

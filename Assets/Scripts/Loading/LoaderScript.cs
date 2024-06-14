@@ -18,7 +18,8 @@ public class Loader : MonoBehaviour
 
     IEnumerator LoadSceneAsync()
     {
-        var asyncLoad = SceneManager.LoadSceneAsync(SceneOrder.Instance.GetNextScene());
+        var nextSceneName = SceneOrder.Instance.GetNextSceneName();
+        var asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
         asyncLoad.allowSceneActivation = false;
 
         while (true)
