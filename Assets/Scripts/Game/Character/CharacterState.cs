@@ -37,26 +37,21 @@ public class CharacterState : MonoBehaviour
 
     public void GetHit()
     {
-        if (Time.time - lastHitTime < damageCooldown)
-        {
-            return;
-        }
+        if (Time.time - lastHitTime < damageCooldown) return;
 
         lastHitTime = Time.time;
 
         hp--;
         heartsController.SetHp(hp);
-        if(IsDead)
-        {
-            animator.SetBool(CharacterAnimationParamType.IsDead.ToString(), true);
-            var selectedProtagonistString = IntersceneState.Instance.SelectedProtagonist.ToString();
-            var isPlayer = gameObject.name == selectedProtagonistString;
-            if (GameInfo.Instance.State == GameState.Ongoing)
-                GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
-        }
-        else
-        {
-            animator.SetTrigger(CharacterAnimationTriggerType.GetHit.ToString());
-        }
+        if(IsDead) GetDead();
+        else animator.SetTrigger(CharacterAnimationTriggerType.GetHit.ToString());
+    }
+
+    private void GetDead()
+    {
+        animator.SetBool(CharacterAnimationParamType.IsDead.ToString(), true);
+        var isPlayer = gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString();
+        if (GameInfo.Instance.State == GameState.Ongoing)
+            GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
 }

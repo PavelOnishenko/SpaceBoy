@@ -1,23 +1,15 @@
 using UnityEngine;
-using System.Linq;
 using Assets.Scripts.Menu;
+using Assets.Scripts.Game.Global;
 
 public class LevelSelector : MonoBehaviour
 {
-    private GameObject levelHallway;
-    private GameObject levelWindow;
-
+    private ExclusiveRendering<Level> exclusiveRendering;
 
     private void Awake()
     {
-        levelHallway = transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(Level.Hallway.ToString())).gameObject;
-        levelWindow = transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(Level.Window.ToString())).gameObject;
-        levelHallway.SetActive(false);
-        levelWindow.SetActive(false);
-        var selectedLevel = IntersceneState.Instance.SelectedLevel;
-        if (selectedLevel == Level.Hallway) levelHallway.SetActive(true);
-        else levelWindow.SetActive(true);
-
-        
+        exclusiveRendering = new ExclusiveRendering<Level>(this.gameObject,
+            new[] { Level.Hallway, Level.Window }, () => IntersceneState.Instance.SelectedLevel);
+        exclusiveRendering.Render();
     }
 }

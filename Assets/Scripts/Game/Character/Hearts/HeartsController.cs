@@ -22,7 +22,7 @@ public class HeartsController : MonoBehaviour
 
     private void ProcessSomeHearts(Predicate<HeartPlaceholder> condition, bool setFilledActive, bool setEmptyActive)
     {
-        var heartsToProcess = heartPlaceholders.Where(x => condition(x)).ToArray();
+        var heartsToProcess = heartPlaceholders.Where(x => condition(x));
         foreach (var heartPlaceholder in heartsToProcess)
         {
             var heart = heartPlaceholder.gameObject;

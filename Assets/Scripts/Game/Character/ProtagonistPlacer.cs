@@ -1,20 +1,16 @@
 using UnityEngine;
-using System.Linq;
 using Assets.Scripts.Menu;
+using Assets.Scripts.Game.Global;
 
 public class ProtagonistPlacer : MonoBehaviour
 {
-    private GameObject spaceGirl;
-    private GameObject greenGirl;
+    private ExclusiveRendering<CharacterType> exclusiveRendering;
 
     private void Awake()
     {
-        spaceGirl = transform.Cast<Transform>().Single(x => x.gameObject.name == "SpaceGirl").gameObject;
-        greenGirl = transform.Cast<Transform>().Single(x => x.gameObject.name == "GreenGirl").gameObject;
-        spaceGirl.SetActive(false);
-        greenGirl.SetActive(false);
-        var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
-        if (selectedProtagonist == CharacterType.SpaceGirl) spaceGirl.SetActive(true);
-        else greenGirl.SetActive(true);
+        exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject,
+            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl },
+            () => IntersceneState.Instance.SelectedProtagonist);
+        exclusiveRendering.Render();
     }
 }

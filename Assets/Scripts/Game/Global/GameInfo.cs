@@ -22,7 +22,7 @@ public class GameInfo : MonoBehaviour
     private ShootButtonCreator shootButtonCreator;
     private GameObject protagonist;
     private GameObject enemy;
-    public static Dictionary<Level, CharacterType> enemyNameByLevel = new Dictionary<Level, CharacterType>()
+    public static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new Dictionary<Level, CharacterType>()
     {
         { Level.Hallway, CharacterType.Brainman },
         { Level.Window, CharacterType.Lizard}
