@@ -2,6 +2,6 @@
 {
     public enum CharacterType
     {
-        SpaceGirl, GreenGirl
+        SpaceGirl, GreenGirl, Lizard, Brainman
     }
 }

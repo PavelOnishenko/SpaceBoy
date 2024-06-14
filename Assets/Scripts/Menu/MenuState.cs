@@ -15,12 +15,6 @@ namespace Assets.Scripts.Behaviors.Menu
         private LevelCaptionBehavior levelCaptionBehavior;
         private LevelPreviewBehavior levelPreviewBehavior;
 
-        private Dictionary<int, string> levelSceneNames = new Dictionary<int, string>()
-        {
-            { 1, "LevelHallwayScene" },
-            { 2, "LevelWindowScene" }
-        };
-
         private void Start()
         {
             lastLevel = Enum.GetValues(typeof(Level)).Length;
@@ -36,6 +30,7 @@ namespace Assets.Scripts.Behaviors.Menu
             else
                 selectedLevel--;
             RefreshUi();
+            IntersceneState.Instance.SelectLevel((Level)selectedLevel);
         }
 
         public void SelectLevelToRight()
@@ -45,13 +40,13 @@ namespace Assets.Scripts.Behaviors.Menu
             else
                 selectedLevel++;
             RefreshUi();
+            IntersceneState.Instance.SelectLevel((Level)selectedLevel);
         }
 
         private void RefreshUi()
         {
             levelCaptionBehavior.SetLevelCaption(selectedLevel);
             levelPreviewBehavior.SetLevelPreview(selectedLevel);
-            SceneOrder.Instance.SetNextScene(levelSceneNames[selectedLevel]);
         }
     }
 }

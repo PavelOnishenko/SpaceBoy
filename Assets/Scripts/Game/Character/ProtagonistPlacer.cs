@@ -14,15 +14,7 @@ public class ProtagonistPlacer : MonoBehaviour
         spaceGirl.SetActive(false);
         greenGirl.SetActive(false);
         var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
-        if (selectedProtagonist == CharacterType.SpaceGirl)
-        {
-            spaceGirl.SetActive(true);
-            greenGirl.SetActive(false);
-        }
-        else
-        {
-            spaceGirl.SetActive(false);
-            greenGirl.SetActive(true);
-        }
+        if (selectedProtagonist == CharacterType.SpaceGirl) spaceGirl.SetActive(true);
+        else greenGirl.SetActive(true);
     }
 }
