@@ -21,7 +21,8 @@ public class ShootButtonBehavior : MonoBehaviour
                 CheckInputAction(touch.position);
         }
 
-        if (Input.GetMouseButtonDown(0)) CheckInputAction(Input.mousePosition);
+        if (Input.GetMouseButtonDown(0)) 
+            CheckInputAction(Input.mousePosition);
     }
 
     private void CheckInputAction(Vector2 position)

@@ -13,10 +13,11 @@ namespace Assets.Scripts.Game.Global
         public ExclusiveRendering(GameObject host, IEnumerable<TEnum> groupEnumValues, Func<TEnum> getSelectedValue)
         {
             this.getSelectedValue = getSelectedValue;
-            group = groupEnumValues.ToDictionary(x => x, enumValue => host.transform.Cast<Transform>()
-                .Single(transform => transform.gameObject.name.Contains(enumValue.ToString())).gameObject);
+            Func<TEnum, GameObject> findObjectInContainerByName = enumValue => host.transform.Cast<Transform>()
+                .Single(transform => transform.gameObject.name.Contains(enumValue.ToString())).gameObject;
+            group = groupEnumValues.ToDictionary(x => x, findObjectInContainerByName);
         }
-
+        
         public void Render()
         {
             foreach (var go in group.Values) go.SetActive(false);

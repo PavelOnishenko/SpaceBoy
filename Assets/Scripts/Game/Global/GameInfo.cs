@@ -25,7 +25,7 @@ public class GameInfo : MonoBehaviour
     public static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new Dictionary<Level, CharacterType>()
     {
         { Level.Hallway, CharacterType.Brainman },
-        { Level.Window, CharacterType.Lizard}
+        { Level.Window, CharacterType.Octopus }
     };
 
     public static GameInfo Instance { get; private set; }
@@ -47,7 +47,7 @@ public class GameInfo : MonoBehaviour
             .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
         protagonistState = protagonist.GetComponent<CharacterState>();
         var enemyName = enemyNameByLevel[IntersceneState.Instance.SelectedLevel].ToString();
-        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name == enemyName).gameObject;
+        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;
         enemyState = enemy.GetComponent<CharacterState>();
         ai = enemy.GetComponent<Ai>();
     }
