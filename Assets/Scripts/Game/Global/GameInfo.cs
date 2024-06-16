@@ -22,11 +22,6 @@ public class GameInfo : MonoBehaviour
     private ShootButtonCreator shootButtonCreator;
     private GameObject protagonist;
     private GameObject enemy;
-    public static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new Dictionary<Level, CharacterType>()
-    {
-        { Level.Hallway, CharacterType.Brainman },
-        { Level.Window, CharacterType.Octopus }
-    };
 
     public static GameInfo Instance { get; private set; }
 
@@ -46,7 +41,7 @@ public class GameInfo : MonoBehaviour
         protagonist = protagonistContainer.transform.Cast<Transform>()
             .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
         protagonistState = protagonist.GetComponent<CharacterState>();
-        var enemyName = enemyNameByLevel[IntersceneState.Instance.SelectedLevel].ToString();
+        var enemyName = IntersceneState.enemyNameByLevel[IntersceneState.Instance.SelectedLevel].ToString();
         enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;
         enemyState = enemy.GetComponent<CharacterState>();
         ai = enemy.GetComponent<Ai>();

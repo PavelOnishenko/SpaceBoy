@@ -1,4 +1,5 @@
 using Assets.Scripts.Menu;
+using System.Collections.Generic;
 
 public class IntersceneState
 {
@@ -10,6 +11,12 @@ public class IntersceneState
             return instance;
         }
     }
+
+    public static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new Dictionary<Level, CharacterType>()
+    {
+        { Level.Hallway, CharacterType.Brainman },
+        { Level.Window, CharacterType.Lizard }
+    };
 
     private static IntersceneState instance;
 
