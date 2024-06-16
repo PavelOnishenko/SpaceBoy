@@ -2,17 +2,14 @@ using UnityEngine;
 
 public static class GameObjectExtensions
 {
-    public static T? GetComponentFromParentByName<T>(this GameObject child, string parentName) where T : Component
+    public static T GetComponentFromParentByName<T>(this GameObject child, string parentName) where T : Component
     {
         var currentTransform = child.transform;
 
         while (currentTransform != null)
         {
-            if (currentTransform.name == parentName)
-            {
-                var component = currentTransform.GetComponent<T>();
-                if (component != null) return component;
-            }
+            if (currentTransform.name == parentName && currentTransform.TryGetComponent<T>(out var component)) 
+                return component;
             currentTransform = currentTransform.parent;
         }
         Debug.LogError($"Didn't find parent with name [{parentName}].");

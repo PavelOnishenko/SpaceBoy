@@ -1,5 +1,3 @@
-using Assets.Scripts.Menu;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -41,7 +39,7 @@ public class GameInfo : MonoBehaviour
         protagonist = protagonistContainer.transform.Cast<Transform>()
             .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
         protagonistState = protagonist.GetComponent<CharacterState>();
-        var enemyName = IntersceneState.enemyNameByLevel[IntersceneState.Instance.SelectedLevel].ToString();
+        var enemyName = IntersceneState.Instance.SelectedEnemy.ToString();
         enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;
         enemyState = enemy.GetComponent<CharacterState>();
         ai = enemy.GetComponent<Ai>();
