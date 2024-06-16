@@ -57,23 +57,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.6169615
+      value: 9.61696
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.808918
+      value: 9.80892
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.5560029
+      value: 2.556
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.6
+      value: 12.600006
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.5
+      value: -3.8999977
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalPosition.z
@@ -352,7 +352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDeaParamName: IsDead
   bulletCreator: {fileID: 4144750578853785839}
   initialHp: 2
   heartContainerNamePrefix: Enemy
@@ -368,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 0.8
+  delayBeforeAttackSeconds: 1
 --- !u!1 &1666115021742035238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1794489708331582825, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}

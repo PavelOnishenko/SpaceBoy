@@ -675,10 +675,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brainman
       objectReference: {fileID: 0}
-    - target: {fileID: 7912359269500843222, guid: 667a76963c0eb204caaf92dc93a92fbc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9008959578717990069, guid: 667a76963c0eb204caaf92dc93a92fbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -843,10 +839,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1919417666}
     m_Modifications:
-    - target: {fileID: 398108399736545864, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
-      propertyPath: delayBeforeAttackSeconds
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 585393145866106354, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
       propertyPath: m_Name
       value: Lizard
@@ -854,18 +846,6 @@ PrefabInstance:
     - target: {fileID: 585393145866106354, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790077644449475985, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 9.61696
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790077644449475985, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 9.80892
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790077644449475985, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.556
       objectReference: {fileID: 0}
     - target: {fileID: 1790077644449475985, guid: 7d80ac03d811b17448abf778761c91cf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -925,6 +905,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 89721781452308104, guid: c8b23ba4ad4144542b7d0d6b7867b6d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2609804254012803992, guid: c8b23ba4ad4144542b7d0d6b7867b6d9, type: 3}
       propertyPath: m_Name
       value: ProtagonistContainer
@@ -967,6 +951,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3453958918746485680, guid: c8b23ba4ad4144542b7d0d6b7867b6d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731321035891724829, guid: c8b23ba4ad4144542b7d0d6b7867b6d9, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1838,7 +1826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919562582808244543, guid: 5ede421373b57aa418d404287211736c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
