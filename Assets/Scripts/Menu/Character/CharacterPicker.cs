@@ -20,13 +20,13 @@ public class CharacterPicker : MonoBehaviour
         {
             GreenGirlHighlight.SetActive(true);
             SpaceGirlHighlight.SetActive(false);
-            IntersceneState.Instance.SelectProtagonist(CharacterType.GreenGirl);
+            IntersceneState.Instance.SelectedProtagonist = CharacterType.GreenGirl;
         }
         else
         {
             GreenGirlHighlight.SetActive(false);
             SpaceGirlHighlight.SetActive(true);
-            IntersceneState.Instance.SelectProtagonist(CharacterType.SpaceGirl);
+            IntersceneState.Instance.SelectedProtagonist = CharacterType.SpaceGirl;
         }
     }
 }

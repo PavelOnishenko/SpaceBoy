@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Menu;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Behaviors.Menu
@@ -20,27 +19,23 @@ namespace Assets.Scripts.Behaviors.Menu
             lastLevel = Enum.GetValues(typeof(Level)).Length;
             levelCaptionBehavior = levelCaption.GetComponent<LevelCaptionBehavior>();
             levelPreviewBehavior = levelPreview.GetComponent<LevelPreviewBehavior>();
-            IntersceneState.Instance.SelectProtagonist(CharacterType.SpaceGirl);
+            IntersceneState.Instance.SelectedProtagonist = CharacterType.SpaceGirl;
         }
 
         public void SelectLevelToLeft()
         {
-            if (selectedLevel <= 1)
-                selectedLevel = lastLevel;
-            else
-                selectedLevel--;
+            if (selectedLevel <= 1) selectedLevel = lastLevel;
+            else selectedLevel--;
             RefreshUi();
-            IntersceneState.Instance.SelectLevel((Level)selectedLevel);
+            IntersceneState.Instance.SelectedLevel = (Level)selectedLevel;
         }
 
         public void SelectLevelToRight()
         {
-            if (selectedLevel >= lastLevel)
-                selectedLevel = 1;
-            else
-                selectedLevel++;
+            if (selectedLevel >= lastLevel) selectedLevel = 1;
+            else selectedLevel++;
             RefreshUi();
-            IntersceneState.Instance.SelectLevel((Level)selectedLevel);
+            IntersceneState.Instance.SelectedLevel = (Level)selectedLevel;
         }
 
         private void RefreshUi()
