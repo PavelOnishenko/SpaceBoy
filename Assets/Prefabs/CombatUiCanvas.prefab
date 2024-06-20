@@ -1839,7 +1839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4976648383396769277}
-  - component: {fileID: 5470241449407010622}
+  - component: {fileID: 8006846791578422418}
   m_Layer: 0
   m_Name: CountdownContainer
   m_TagString: Untagged
@@ -1866,7 +1866,7 @@ Transform:
   - {fileID: 6417681294664093066}
   m_Father: {fileID: 1382586944263278872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5470241449407010622
+--- !u!114 &8006846791578422418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1875,7 +1875,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7345052830344880668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c64591b2a7c9f439cff4bf40a4366e, type: 3}
+  m_Script: {fileID: 11500000, guid: c374e3f4d425ce54d997daad4088a893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTime: 3

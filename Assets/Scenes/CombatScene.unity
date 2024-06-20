@@ -818,19 +818,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7345052830344880668, guid: 9d597b00f3142324c89c8af4b07ce4f3, type: 3}
   m_PrefabInstance: {fileID: 1718312470711816464}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &943565366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943565365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c374e3f4d425ce54d997daad4088a893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdownTime: 3
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1751,14 +1738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5470241449407010622, guid: 9d597b00f3142324c89c8af4b07ce4f3, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7345052830344880668, guid: 9d597b00f3142324c89c8af4b07ce4f3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 943565366}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d597b00f3142324c89c8af4b07ce4f3, type: 3}
 --- !u!1001 &6135426280967716960
 PrefabInstance:
