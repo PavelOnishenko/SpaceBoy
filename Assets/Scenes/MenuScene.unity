@@ -211,8 +211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c99a5cd3eb578488d7ad58e8d6e7c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteLevel1: {fileID: 21300000, guid: 453270c9149ce4c45af4adb4c303bdce, type: 3}
-  spriteLevel2: {fileID: 21300000, guid: 916ca8955300cc641a5aadcb9bb7afdb, type: 3}
+  levelSprites:
+  - {fileID: 21300000, guid: 453270c9149ce4c45af4adb4c303bdce, type: 3}
+  - {fileID: 21300000, guid: 916ca8955300cc641a5aadcb9bb7afdb, type: 3}
+  - {fileID: 21300000, guid: 591ad4e9da1f8a148b60dd85e8e30457, type: 3}
 --- !u!1 &530682931
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,8 +853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe38578d6aa5b3042b70a15650d6087f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteLevel1: {fileID: 21300000, guid: f7c6c50b20bb0a542be6d09087e083f6, type: 3}
-  spriteLevel2: {fileID: 21300000, guid: 5c7db0dbef5448a4fb77959dbd34fb02, type: 3}
+  levelSprites:
+  - {fileID: 21300000, guid: f7c6c50b20bb0a542be6d09087e083f6, type: 3}
+  - {fileID: 21300000, guid: 5c7db0dbef5448a4fb77959dbd34fb02, type: 3}
+  - {fileID: 21300000, guid: 2f27373f368dfa642b53f228526802f5, type: 3}
 --- !u!1 &1758365132
 GameObject:
   m_ObjectHideFlags: 0

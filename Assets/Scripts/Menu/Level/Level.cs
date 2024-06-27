@@ -3,6 +3,7 @@
     public enum Level
     {
         Hallway = 1,
-        Window = 2
+        Window = 2,
+        Outside = 3
     }
 }
