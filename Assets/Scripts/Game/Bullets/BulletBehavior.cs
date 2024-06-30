@@ -28,22 +28,18 @@ public class BulletBehavior : MonoBehaviour
 
 
 
-
+    #region FOR EDITOR
 
     public void ApplyParameters()
     {
         var gameParameters = GameParametersManager.Instance.gameParameters;
         if (gameParameters != null)
         {
-            if(gameObject.name.StartsWith("Human"))
-            {
-                movementSpeed = gameParameters.humanBulletSpeed;
-            }
-            else if (gameObject.name.StartsWith("Ai"))
-            {
-                movementSpeed = gameParameters.aiBulletSpeed;
-            }
+            if(gameObject.name.StartsWith("Human")) movementSpeed = gameParameters.humanBulletSpeed;
+            else if (gameObject.name.StartsWith("Ai")) movementSpeed = gameParameters.aiBulletSpeed;
             destroyTime = gameParameters.bulletDestructionTime;
         }
     }
+
+    #endregion
 }

@@ -1,33 +1,29 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 
 public class GameParametersEditor : EditorWindow
 {
-    private GameParameters gameParameters;
+    private GameParameters parameters;
 
     [MenuItem("Window/Game Parameters")]
-    public static void ShowWindow()
-    {
-        GetWindow<GameParametersEditor>("Game Parameters");
-    }
+    public static void ShowWindow() => GetWindow<GameParametersEditor>("Game Parameters");
 
     private void OnGUI()
     {
         GUILayout.Label("Game Parameters", EditorStyles.boldLabel);
 
-        gameParameters = (GameParameters)EditorGUILayout.ObjectField("Game Parameters", gameParameters, typeof(GameParameters), false);
+        parameters = (GameParameters)EditorGUILayout.ObjectField("Game Parameters", parameters, typeof(GameParameters), false);
 
-        if (gameParameters != null)
+        if (parameters != null)
         {
-            gameParameters.humanBulletSpeed = EditorGUILayout.FloatField(
-                "скоростьѕулиѕротагониста", gameParameters.humanBulletSpeed);
-            gameParameters.aiBulletSpeed = EditorGUILayout.FloatField("скоростьѕули¬рага", gameParameters.aiBulletSpeed);
-            gameParameters.bulletDestructionTime = EditorGUILayout.FloatField(
-                "врем€ уничтожение пули", gameParameters.bulletDestructionTime);
+            parameters.humanBulletSpeed = FloatField("скоростьѕулиѕротагониста", () => parameters.humanBulletSpeed);
+            parameters.aiBulletSpeed = FloatField("скоростьѕули¬рага", () => parameters.aiBulletSpeed);
+            parameters.bulletDestructionTime = FloatField("врем€”ничтожени€ѕули", () => parameters.bulletDestructionTime);
 
             if (GUILayout.Button("Save"))
             {
-                EditorUtility.SetDirty(gameParameters);
+                EditorUtility.SetDirty(parameters);
                 AssetDatabase.SaveAssets();
                 UpdatePrefabs();
             }
@@ -36,13 +32,12 @@ public class GameParametersEditor : EditorWindow
 
     private void UpdatePrefabs()
     {
-        string[] guids = AssetDatabase.FindAssets("t:Prefab");
+        var guids = AssetDatabase.FindAssets("t:Prefab");
         foreach (string guid in guids)
         {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-
-            BulletBehavior bullet = prefab.GetComponent<BulletBehavior>();
+            var path = AssetDatabase.GUIDToAssetPath(guid);
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+            var bullet = prefab.GetComponent<BulletBehavior>();
             if (bullet != null)
             {
                 bullet.ApplyParameters();
@@ -52,4 +47,6 @@ public class GameParametersEditor : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
+
+    private float FloatField(string labelText, Func<float> valueGetter) => EditorGUILayout.FloatField(labelText, valueGetter());
 }

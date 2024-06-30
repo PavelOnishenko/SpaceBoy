@@ -13,7 +13,7 @@ public class GameParametersManager : MonoBehaviour
                 _instance = FindObjectOfType<GameParametersManager>();
                 if (_instance == null)
                 {
-                    GameObject singleton = new GameObject(typeof(GameParametersManager).Name);
+                    var singleton = new GameObject(typeof(GameParametersManager).Name);
                     _instance = singleton.AddComponent<GameParametersManager>();
                     DontDestroyOnLoad(singleton);
                 }
