@@ -23,4 +23,27 @@ public class BulletBehavior : MonoBehaviour
             go.GetComponentFromParentByName<CharacterState>(IntersceneState.Instance.SelectedEnemy.ToString()).GetHit();
         Destroy(gameObject);
     }
+
+
+
+
+
+
+
+    public void ApplyParameters()
+    {
+        var gameParameters = GameParametersManager.Instance.gameParameters;
+        if (gameParameters != null)
+        {
+            if(gameObject.name.StartsWith("Human"))
+            {
+                movementSpeed = gameParameters.humanBulletSpeed;
+            }
+            else if (gameObject.name.StartsWith("Ai"))
+            {
+                movementSpeed = gameParameters.aiBulletSpeed;
+            }
+            destroyTime = gameParameters.bulletDestructionTime;
+        }
+    }
 }

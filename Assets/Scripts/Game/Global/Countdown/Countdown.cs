@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class Countdown : MonoBehaviour
 {
-    [SerializeField] private int countdownTime = 3;
-
-    public int CountdownTime => countdownTime;
-    public bool IsCounting => isCounting;
+    [SerializeField] private int initialCountdownTime = 3;
 
     private GameObject[] digits;
     private bool isCounting;
+    private int countdownTime;
 
     public void Restart() => StartCoroutine(CountdownCoroutine());
 
@@ -26,7 +24,7 @@ public class Countdown : MonoBehaviour
     {
         if (isCounting) yield break;
         isCounting = true;
-        countdownTime = 3;
+        countdownTime = initialCountdownTime;
         gameObject.SetActive(true);
         while (countdownTime > 0)
         {
