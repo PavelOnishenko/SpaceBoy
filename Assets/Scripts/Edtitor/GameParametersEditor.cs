@@ -1,4 +1,4 @@
-using System;
+using Assets.Scripts.Edtitor;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class GameParametersEditor : EditorWindow
         parameters = (GameParameters)EditorGUILayout.ObjectField("Game Parameters", parameters, typeof(GameParameters), false);
         if (parameters != null)
         {
-            FillParameters();
+            FillParametersFromInputs();
             if (GUILayout.Button("Save"))
             {
                 EditorUtility.SetDirty(parameters);
@@ -25,14 +25,16 @@ public class GameParametersEditor : EditorWindow
         }
     }
 
-    private void FillParameters()
+    private void FillParametersFromInputs()
     {
-        parameters.humanBulletSpeed = FloatField("скоростьѕулиѕротагониста", () => parameters.humanBulletSpeed);
-        parameters.aiBulletSpeed = FloatField("скоростьѕули¬рага", () => parameters.aiBulletSpeed);
-        parameters.bulletDestructionTime = FloatField("врем€”ничтожени€ѕули", () => parameters.bulletDestructionTime);
-        parameters.attackDelay_Brainman = FloatField("задержкајтакиBrainman", () => parameters.attackDelay_Brainman);
-        parameters.attackDelay_Lizard = FloatField("задержкајтакиLizard", () => parameters.attackDelay_Lizard);
-        parameters.attackDelay_Octopus = FloatField("задержкајтакиOctopus", () => parameters.attackDelay_Octopus);
+        parameters.humanBulletSpeed = FloatField("скоростьѕулиѕротагониста", parameters.humanBulletSpeed);
+        parameters.aiBulletSpeed = FloatField("скоростьѕули¬рага", parameters.aiBulletSpeed);
+        parameters.bulletDestructionTime = FloatField("врем€”ничтожени€ѕули", parameters.bulletDestructionTime);
+        parameters.attackDelay_Brainman = FloatField("задержкајтакиBrainman", parameters.attackDelay_Brainman);
+        parameters.attackDelay_Lizard = FloatField("задержкајтакиLizard", parameters.attackDelay_Lizard);
+        parameters.attackDelay_Octopus = FloatField("задержкајтакиOctopus", parameters.attackDelay_Octopus);
+
+        parameters.initialHp = EditorGUILayout.IntField("начальное оличество—ердечек", parameters.initialHp);
     }
 
     private void UpdatePrefabs()
@@ -42,30 +44,22 @@ public class GameParametersEditor : EditorWindow
         {
             var path = AssetDatabase.GUIDToAssetPath(guid);
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-            ApplyToBulletBehavior(prefab);
-            ApplyToAi(prefab);
+            ApplyTo<BulletBehavior>(prefab);
+            ApplyTo<Ai>(prefab);
+            ApplyTo<CharacterState>(prefab);
         }
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }
 
-    private static void ApplyToAi(GameObject prefab)
+    private static void ApplyTo<T>(GameObject prefab) where T : MonoBehaviour, IDesignerConfigurable
     {
-        if (prefab.TryGetComponent<Ai>(out var component))
+        if (prefab.TryGetComponent<T>(out var component))
         {
             component.ApplyParameters();
             EditorUtility.SetDirty(prefab);
         }
     }
 
-    private static void ApplyToBulletBehavior(GameObject prefab)
-    {
-        if (prefab.TryGetComponent<BulletBehavior>(out var component))
-        {
-            component.ApplyParameters();
-            EditorUtility.SetDirty(prefab);
-        }
-    }
-
-    private float FloatField(string labelText, Func<float> valueGetter) => EditorGUILayout.FloatField(labelText, valueGetter());
+    private float FloatField(string labelText, float theValue) => EditorGUILayout.FloatField(labelText, theValue);
 }

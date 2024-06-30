@@ -1,6 +1,7 @@
+using Assets.Scripts.Edtitor;
 using UnityEngine;
 
-public class BulletBehavior : MonoBehaviour
+public class BulletBehavior : MonoBehaviour, IDesignerConfigurable
 {
     [SerializeField] private float movementSpeed = 1000f;
     [SerializeField] private float destroyTime = 3f;
@@ -30,7 +31,6 @@ public class BulletBehavior : MonoBehaviour
 
     #region FOR EDITOR
 
-    // todo make an interface eventually
     public void ApplyParameters()
     {
         var gameParameters = GameParametersManager.Instance.gameParameters;

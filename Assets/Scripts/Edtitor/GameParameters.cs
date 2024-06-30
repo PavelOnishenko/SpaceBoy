@@ -9,4 +9,5 @@ public class GameParameters : ScriptableObject
     public float attackDelay_Brainman;
     public float attackDelay_Octopus;
     public float attackDelay_Lizard;
+    public int initialHp;
 }

@@ -972,8 +972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protagonistGameObjectName: Spacegirl
-  isDeaParamName: IsDead
   bulletCreator: {fileID: 8182007446535354344}
   initialHp: 2
   heartContainerNamePrefix: Protagonist
