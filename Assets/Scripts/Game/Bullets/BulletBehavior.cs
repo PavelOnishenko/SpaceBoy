@@ -30,6 +30,7 @@ public class BulletBehavior : MonoBehaviour
 
     #region FOR EDITOR
 
+    // todo make an interface eventually
     public void ApplyParameters()
     {
         var gameParameters = GameParametersManager.Instance.gameParameters;

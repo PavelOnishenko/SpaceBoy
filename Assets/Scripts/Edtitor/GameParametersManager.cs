@@ -15,7 +15,6 @@ public class GameParametersManager : MonoBehaviour
                 {
                     var singleton = new GameObject(typeof(GameParametersManager).Name);
                     _instance = singleton.AddComponent<GameParametersManager>();
-                    DontDestroyOnLoad(singleton);
                 }
             }
             return _instance;
@@ -26,14 +25,7 @@ public class GameParametersManager : MonoBehaviour
 
     private void Awake()
     {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (_instance != this)
-        {
-            Destroy(gameObject);
-        }
+        if (_instance == null) _instance = this;
+        else if (_instance != this) Destroy(gameObject);
     }
 }

@@ -15,3 +15,6 @@ MonoBehaviour:
   humanBulletSpeed: 1800
   aiBulletSpeed: 800
   bulletDestructionTime: 3
+  attackDelay_Brainman: 0.98
+  attackDelay_Octopus: 1.08
+  attackDelay_Lizard: 1.03

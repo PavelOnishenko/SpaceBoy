@@ -1,3 +1,5 @@
+using Assets.Scripts.Menu;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -24,4 +26,30 @@ public class Ai : MonoBehaviour
         state.Aim();
         attackCoroutine = null;
     }
+
+
+
+    #region FOR EDITOR
+
+    // todo make an interface eventually
+    public void ApplyParameters()
+    {
+        var gameParameters = GameParametersManager.Instance.gameParameters;
+        if (gameParameters != null)
+        {
+            delayBeforeAttackSeconds = gameObject.name switch
+            {
+                var name when name.StartsWith(CharacterType.Brainman.ToString()) => gameParameters.attackDelay_Brainman,
+                var name when name.StartsWith(CharacterType.Lizard.ToString()) => gameParameters.attackDelay_Lizard,
+                var name when name.StartsWith(CharacterType.Octopus.ToString()) => gameParameters.attackDelay_Octopus,
+                _ => throw new ArgumentException($"Invalid character type [{gameObject.name}].")
+            };
+        }
+        else
+        {
+            Debug.LogError("ASSIGN GAME PARAMS!!!");
+        }
+    }
+
+    #endregion
 }

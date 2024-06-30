@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 1
+  delayBeforeAttackSeconds: 1.03
 --- !u!1 &1666115021742035238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1794489708331582825, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
