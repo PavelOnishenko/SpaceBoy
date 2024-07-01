@@ -1,4 +1,5 @@
 using Assets.Scripts.Edtitor;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -35,6 +36,7 @@ public class GameParametersEditor : EditorWindow
         parameters.attackDelay_Octopus = FloatField("задержкајтакиOctopus", parameters.attackDelay_Octopus);
 
         parameters.initialHp = EditorGUILayout.IntField("начальное оличество—ердечек", parameters.initialHp);
+        parameters.initialCountdownTime = EditorGUILayout.IntField("врем€ќтсчЄта", parameters.initialCountdownTime);
     }
 
     private void UpdatePrefabs()
@@ -48,6 +50,10 @@ public class GameParametersEditor : EditorWindow
             ApplyTo<Ai>(prefab);
             ApplyTo<CharacterState>(prefab);
         }
+        
+        var gos = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => go.scene.isLoaded).ToArray();
+        foreach (var go in gos) ApplyTo<Countdown>(go);
+
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
     }

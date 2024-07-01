@@ -1,11 +1,12 @@
+using Assets.Scripts.Edtitor;
 using System.Collections;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class Countdown : MonoBehaviour
+public class Countdown : MonoBehaviour, IDesignerConfigurable
 {
-    [SerializeField] private int initialCountdownTime = 3;
+    [SerializeField] private int initialCountdownTime;
 
     private GameObject[] digits;
     private bool isCounting;
@@ -43,7 +44,7 @@ public class Countdown : MonoBehaviour
     private void SetDigitsActive()
     {
         var activeDigits = digits.Where(x => x.activeSelf).ToArray();
-        foreach (var t in activeDigits) t.gameObject.SetActive(false);
+        foreach (var t in activeDigits) t.SetActive(false);
         var gameObjectName = countdownTime switch 
         { 
             3 => CountdownLabelType.LabelThree.ToString(), 2 => CountdownLabelType.LabelTwo.ToString(), 
@@ -54,4 +55,16 @@ public class Countdown : MonoBehaviour
 
     private void SetActive(string gameObjectName, bool newValue) =>
         digits.Single(x => x.name == gameObjectName).SetActive(newValue);
+
+
+    #region FOR EDITOR
+
+    public void ApplyParameters()
+    {
+        var gameParameters = GameParametersManager.Instance.gameParameters;
+        if (gameParameters != null) initialCountdownTime = gameParameters.initialCountdownTime;
+    }
+
+    #endregion
+
 }
