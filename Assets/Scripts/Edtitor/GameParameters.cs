@@ -11,4 +11,5 @@ public class GameParameters : ScriptableObject
     public float attackDelay_Lizard;
     public int initialHp;
     public int initialCountdownTime;
+    public float shootButtonLifetime;
 }

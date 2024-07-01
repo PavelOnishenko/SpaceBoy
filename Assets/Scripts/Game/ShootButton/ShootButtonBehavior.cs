@@ -1,6 +1,7 @@
+using Assets.Scripts.Edtitor;
 using UnityEngine;
 
-public class ShootButtonBehavior : MonoBehaviour
+public class ShootButtonBehavior : MonoBehaviour, IDesignerConfigurable
 {
     [SerializeField] private float destroyTime = 3f;
 
@@ -17,8 +18,7 @@ public class ShootButtonBehavior : MonoBehaviour
         if (Input.touchCount > 0)
         {
             var touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-                CheckInputAction(touch.position);
+            if (touch.phase == TouchPhase.Began) CheckInputAction(touch.position);
         }
 
         if (Input.GetMouseButtonDown(0)) 
@@ -43,4 +43,15 @@ public class ShootButtonBehavior : MonoBehaviour
         stateController.Aim();
         Destroy(gameObject);
     }
+
+    #region FOR EDITOR
+
+    public void ApplyParameters()
+    {
+        var gameParameters = GameParametersManager.Instance.gameParameters;
+        if (gameParameters != null) destroyTime = gameParameters.shootButtonLifetime;
+    }
+
+    #endregion
+
 }

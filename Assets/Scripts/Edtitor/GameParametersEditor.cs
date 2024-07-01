@@ -22,6 +22,9 @@ public class GameParametersEditor : EditorWindow
                 EditorUtility.SetDirty(parameters);
                 AssetDatabase.SaveAssets();
                 UpdatePrefabs();
+                UpdateGosInScenes();
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
             }
         }
     }
@@ -31,6 +34,7 @@ public class GameParametersEditor : EditorWindow
         parameters.humanBulletSpeed = FloatField("скоростьѕулиѕротагониста", parameters.humanBulletSpeed);
         parameters.aiBulletSpeed = FloatField("скоростьѕули¬рага", parameters.aiBulletSpeed);
         parameters.bulletDestructionTime = FloatField("врем€”ничтожени€ѕули", parameters.bulletDestructionTime);
+        parameters.shootButtonLifetime = FloatField("врем€∆изни нопки—трельбы", parameters.shootButtonLifetime);
         parameters.attackDelay_Brainman = FloatField("задержкајтакиBrainman", parameters.attackDelay_Brainman);
         parameters.attackDelay_Lizard = FloatField("задержкајтакиLizard", parameters.attackDelay_Lizard);
         parameters.attackDelay_Octopus = FloatField("задержкајтакиOctopus", parameters.attackDelay_Octopus);
@@ -49,13 +53,14 @@ public class GameParametersEditor : EditorWindow
             ApplyTo<BulletBehavior>(prefab);
             ApplyTo<Ai>(prefab);
             ApplyTo<CharacterState>(prefab);
+            ApplyTo<ShootButtonBehavior>(prefab);
         }
-        
+    }
+
+    private void UpdateGosInScenes()
+    {
         var gos = Resources.FindObjectsOfTypeAll<GameObject>().Where(go => go.scene.isLoaded).ToArray();
         foreach (var go in gos) ApplyTo<Countdown>(go);
-
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
     }
 
     private static void ApplyTo<T>(GameObject prefab) where T : MonoBehaviour, IDesignerConfigurable
