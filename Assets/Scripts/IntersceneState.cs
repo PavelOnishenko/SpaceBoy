@@ -14,9 +14,9 @@ public class IntersceneState
 
     private static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new()
     {
-        { Level.Hallway, CharacterType.Octopus },
-        { Level.Window, CharacterType.Brainman },
-        { Level.Outside, CharacterType.Lizard }
+        { Level.Hallway, CharacterType.Brainman },
+        { Level.Window, CharacterType.Lizard },
+        { Level.Outside, CharacterType.Octopus }
     };
 
     private static IntersceneState instance;

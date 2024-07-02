@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e661f124e78bb7849957a1bcefd64add, type: 3}
   m_Name: MainGameParameters
   m_EditorClassIdentifier: 
-  humanBulletSpeed: 1900.02
+  humanBulletSpeed: 1900
   aiBulletSpeed: 800
   bulletDestructionTime: 3
   attackDelay_Brainman: 0.98
