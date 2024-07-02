@@ -1,9 +1,10 @@
+using Assets.Scripts.Edtitor;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Loader : MonoBehaviour
+public class Loader : MonoBehaviour, IDesignerConfigurable
 {
     [SerializeField] private Slider progressBar;
     [SerializeField] private Canvas loadingCanvas;
@@ -34,5 +35,11 @@ public class Loader : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void ApplyParameters()
+    {
+        var gameParameters = GameParametersManager.Instance.gameParameters;
+        if (gameParameters != null) step = gameParameters.loadingStep;
     }
 }

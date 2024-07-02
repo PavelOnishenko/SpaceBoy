@@ -12,4 +12,6 @@ public class GameParameters : ScriptableObject
     public int initialHp;
     public int initialCountdownTime;
     public float shootButtonLifetime;
+    public float buttonAppearancePeriod;
+    public float loadingStep;
 }
