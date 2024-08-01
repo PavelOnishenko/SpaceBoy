@@ -23,6 +23,7 @@ namespace Assets.Scripts.Game.Global
             foreach (var go in group.Values) go.SetActive(false);
             var selectedValue = getSelectedValue();
             var selectedGo = group[selectedValue];
+
             selectedGo.SetActive(true);
         }
     }

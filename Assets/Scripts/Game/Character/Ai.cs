@@ -16,6 +16,8 @@ public class Ai : MonoBehaviour, IDesignerConfigurable
 
     public void AttackAfterDelay()
     {
+        if (!gameObject.activeSelf)
+            return;
         if (attackCoroutine != null) StopCoroutine(attackCoroutine);
         attackCoroutine = StartCoroutine(AttackAfterDelayCoroutine());
     }
@@ -23,7 +25,7 @@ public class Ai : MonoBehaviour, IDesignerConfigurable
     IEnumerator AttackAfterDelayCoroutine()
     {
         while (GameInfo.Instance.State is not GameState.Ongoing) yield return null;
-        yield return new WaitForSeconds(delayBeforeAttackSeconds);
+        yield return new WaitForSeconds(delayBeforeAttackSeconds + 10000); // TODO ROLLBACK + 10000
         state.Aim();
         attackCoroutine = null;
     }
