@@ -9,7 +9,7 @@ public class LevelSelector : MonoBehaviour
     private void Awake()
     {
         exclusiveRendering = new ExclusiveRendering<Level>(this.gameObject,
-            new[] { Level.Hallway, Level.Window, Level.Outside }, () => IntersceneState.Instance.SelectedLevel);
+            new[] { Level.Hallway, Level.Window, Level.Outside, Level.Mountains, Level.NightCity, Level.Desert }, () => IntersceneState.Instance.SelectedLevel);
         exclusiveRendering.Render();
     }
 }
