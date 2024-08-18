@@ -16,6 +16,8 @@ public class Ai : MonoBehaviour, IDesignerConfigurable
 
     public void AttackAfterDelay()
     {
+        if (!gameObject.activeSelf)
+            return;
         if (attackCoroutine != null) StopCoroutine(attackCoroutine);
         attackCoroutine = StartCoroutine(AttackAfterDelayCoroutine());
     }
