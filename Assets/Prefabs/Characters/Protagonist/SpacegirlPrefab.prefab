@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5013059893167223444}
   - component: {fileID: 2773451842291291868}
-  - component: {fileID: 5637403296070931987}
-  - component: {fileID: 1892649409485952493}
   m_Layer: 7
   m_Name: FarThighCollider
   m_TagString: Untagged
@@ -138,46 +136,6 @@ PolygonCollider2D:
       - {x: -0.089999996, y: -1.895}
       - {x: 0.11, y: -1.7149999}
   m_UseDelaunayMesh: 0
---- !u!50 &5637403296070931987
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156803060712307770}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1892649409485952493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156803060712307770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &237075241327668250
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +366,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6194469764852505701}
   - component: {fileID: 7745628313776685418}
-  - component: {fileID: 4515873660234531934}
-  - component: {fileID: 1385866370720195903}
   m_Layer: 7
   m_Name: FreeForearmCollider
   m_TagString: Untagged
@@ -501,46 +457,6 @@ PolygonCollider2D:
       - {x: 0.71999997, y: -0.35}
       - {x: 0.94, y: 0.01}
   m_UseDelaunayMesh: 0
---- !u!50 &4515873660234531934
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559193722966012662}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1385866370720195903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559193722966012662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &1667727763846670859
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,8 +467,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7746999524977314841}
   - component: {fileID: 1185479485107880793}
-  - component: {fileID: 6571724814228796977}
-  - component: {fileID: 7929078349153373597}
   m_Layer: 7
   m_Name: CloseHipCollider
   m_TagString: Untagged
@@ -668,46 +582,6 @@ PolygonCollider2D:
       - {x: 0.45499998, y: -1.79}
       - {x: 0.625, y: -1.7099999}
   m_UseDelaunayMesh: 0
---- !u!50 &6571724814228796977
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667727763846670859}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7929078349153373597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1667727763846670859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &2101935758437366366
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,7 +624,6 @@ GameObject:
   - component: {fileID: 5433625395418545659}
   - component: {fileID: 6101104036805675543}
   - component: {fileID: 3326620862698681919}
-  - component: {fileID: 6406780771412114016}
   m_Layer: 7
   m_Name: ForearmCollider
   m_TagString: Untagged
@@ -890,19 +763,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6406780771412114016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2802066901528652580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &3258784403857958187
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,8 +773,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8378862916242705589}
   - component: {fileID: 1530970396516872600}
-  - component: {fileID: 8810776551480083152}
-  - component: {fileID: 281642312089997689}
   m_Layer: 7
   m_Name: HeadCollider
   m_TagString: Untagged
@@ -1087,46 +945,6 @@ PolygonCollider2D:
       - {x: 1.165, y: -1.81}
       - {x: 1.285, y: -1.67}
   m_UseDelaunayMesh: 0
---- !u!50 &8810776551480083152
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3258784403857958187}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &281642312089997689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3258784403857958187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &3333879187861681582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,8 +955,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2774684364336363160}
   - component: {fileID: 3679890076784267506}
-  - component: {fileID: 6005557729930075801}
-  - component: {fileID: 5749451214496755523}
   m_Layer: 7
   m_Name: CloseShinCollider
   m_TagString: Untagged
@@ -1247,46 +1063,6 @@ PolygonCollider2D:
       - {x: 0.48, y: -1.305}
       - {x: 0.55, y: -1.2149999}
   m_UseDelaunayMesh: 0
---- !u!50 &6005557729930075801
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3333879187861681582}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &5749451214496755523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3333879187861681582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &3461100139058077418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,8 +1104,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3730929292464726633}
   - component: {fileID: 8082134012941662596}
-  - component: {fileID: 8676413515740086539}
-  - component: {fileID: 5351154913441796733}
   m_Layer: 7
   m_Name: GunHandCollider
   m_TagString: Untagged
@@ -1494,46 +1268,6 @@ PolygonCollider2D:
       - {x: -0.91499996, y: -1.535}
       - {x: -0.66499996, y: -1.425}
   m_UseDelaunayMesh: 0
---- !u!50 &8676413515740086539
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3647982576532527430}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &5351154913441796733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3647982576532527430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &4228813939199524060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,8 +1309,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7884605656033000733}
   - component: {fileID: 4236252669520558698}
-  - component: {fileID: 2978582636754758211}
-  - component: {fileID: 8223065007305315248}
   m_Layer: 7
   m_Name: CloseFootCollider
   m_TagString: Untagged
@@ -1667,46 +1399,6 @@ PolygonCollider2D:
       - {x: 1.2049999, y: -0.31}
       - {x: 1.0849999, y: -0.19}
   m_UseDelaunayMesh: 0
---- !u!50 &2978582636754758211
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4945032634580407137}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8223065007305315248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4945032634580407137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &5493881610222604221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,8 +1852,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1888101357831115594}
   - component: {fileID: 2811195928511577437}
-  - component: {fileID: 198749509921880265}
-  - component: {fileID: 1097897191939238224}
   m_Layer: 7
   m_Name: FarFootCollider
   m_TagString: Untagged
@@ -2251,46 +1941,6 @@ PolygonCollider2D:
       - {x: 0.19, y: -0.42999998}
       - {x: 0.39, y: -0.45999998}
   m_UseDelaunayMesh: 0
---- !u!50 &198749509921880265
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7710138638915361907}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1097897191939238224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7710138638915361907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &7741168882410599106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,8 +1951,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4540105004553709696}
   - component: {fileID: 2540751706751544919}
-  - component: {fileID: 3476087789221644608}
-  - component: {fileID: 1345194807807368955}
   m_Layer: 7
   m_Name: FarShinCollider
   m_TagString: Untagged
@@ -2418,46 +2066,6 @@ PolygonCollider2D:
       - {x: -0.049999997, y: -1.2099999}
       - {x: 0.01, y: -1.14}
   m_UseDelaunayMesh: 0
---- !u!50 &3476087789221644608
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7741168882410599106}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1345194807807368955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7741168882410599106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &8275902675682885008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,8 +2107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 981722066985321045}
   - component: {fileID: 1508413806881444772}
-  - component: {fileID: 5916322792821276663}
-  - component: {fileID: 7964530435919819155}
   m_Layer: 7
   m_Name: TorsoCollider
   m_TagString: Untagged
@@ -2648,46 +2254,6 @@ PolygonCollider2D:
       - {x: 0.38, y: 4.0499997}
       - {x: 0.37, y: 4.0699997}
   m_UseDelaunayMesh: 0
---- !u!50 &5916322792821276663
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8599735254460498512}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7964530435919819155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8599735254460498512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 536c425d053396041bda9a3deb2cc5ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  magnitudeThreshold: 2
 --- !u!1 &8864975635030285166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,7 +2929,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7767067393691526557}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: efcb10a006d98624f995d21c91768112, type: 2}
   m_CullingMode: 0
