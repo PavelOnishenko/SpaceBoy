@@ -164,6 +164,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenGirl
       objectReference: {fileID: 0}
+    - target: {fileID: 8088018012391911271, guid: 3eb30227e7063e4469871f8f84cf85b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
