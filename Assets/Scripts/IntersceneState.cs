@@ -17,9 +17,9 @@ public class IntersceneState
         { Level.Hallway, CharacterType.Brainman },
         { Level.Window, CharacterType.Lizard },
         { Level.Outside, CharacterType.Octopus },
-        { Level.Mountains, CharacterType.AstronautGirl },
-        { Level.NightCity, CharacterType.RobotGirl },
-        { Level.Desert, CharacterType.CyberPunk }
+        { Level.Mountains, CharacterType.Brainman },
+        { Level.NightCity, CharacterType.Lizard },
+        { Level.Desert, CharacterType.Octopus }
     };
 
     private static IntersceneState instance;
