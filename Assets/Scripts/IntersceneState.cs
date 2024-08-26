@@ -14,10 +14,10 @@ public class IntersceneState
 
     private static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new()
     {
-        { Level.Hallway, CharacterType.Brainman },
+        { Level.Hallway, CharacterType.AstronautGirl },
         { Level.Window, CharacterType.Lizard },
         { Level.Outside, CharacterType.Octopus },
-        { Level.Mountains, CharacterType.Brainman },
+        { Level.Mountains, CharacterType.AstronautGirl },
         { Level.NightCity, CharacterType.Lizard },
         { Level.Desert, CharacterType.Octopus }
     };

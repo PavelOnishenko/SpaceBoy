@@ -8,9 +8,8 @@ public class EnemyPlacer : MonoBehaviour
 
     private void Awake()
     {
-        exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject, 
-            new[] { CharacterType.Brainman, CharacterType.Lizard, CharacterType.Octopus }, 
-            () => IntersceneState.Instance.SelectedEnemy);
+        var enemies = new[] { CharacterType.Brainman, CharacterType.Lizard, CharacterType.Octopus, CharacterType.AstronautGirl };
+        exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject, enemies, () => IntersceneState.Instance.SelectedEnemy);
         exclusiveRendering.Render();
     }
 }
