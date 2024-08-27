@@ -18,7 +18,7 @@ public class IntersceneState
         { Level.Window, CharacterType.Lizard },
         { Level.Outside, CharacterType.Octopus },
         { Level.Mountains, CharacterType.AstronautGirl },
-        { Level.NightCity, CharacterType.Lizard },
+        { Level.NightCity, CharacterType.CyberPunk },
         { Level.Desert, CharacterType.Octopus }
     };
 
