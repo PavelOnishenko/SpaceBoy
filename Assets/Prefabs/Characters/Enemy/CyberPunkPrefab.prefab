@@ -556,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 1
+  delayBeforeAttackSeconds: 1.5
 --- !u!4 &5019974889480356468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6732908555864831497, guid: e26f4e1290eeab744ae0098ba5931350, type: 3}
