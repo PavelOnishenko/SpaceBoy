@@ -8,30 +8,19 @@ namespace Assets.Scripts.Editor
 {
     public class FixShootAnimationWindow : EditorWindow
     {
-        public string[] characterFolders;
-
         [MenuItem("Tools/Fix Shoot Animations")]
         public static void ShowWindow() => GetWindow<FixShootAnimationWindow>("Fix Shoot Animations");
 
         private void OnGUI()
         {
             EditorGUILayout.LabelField("Fix Shoot Animations", EditorStyles.boldLabel);
-            var serializedObject = new SerializedObject(this);
-            var folderProperty = serializedObject.FindProperty("characterFolders");
-            EditorGUILayout.PropertyField(folderProperty, true);
-            serializedObject.ApplyModifiedProperties();
             if (GUILayout.Button("Fix Shoot Animations"))
                 FixShootAnimationsInAllFolders();
         }
 
         private void FixShootAnimationsInAllFolders()
         {
-            if (characterFolders == null || characterFolders.Length == 0)
-            {
-                Debug.LogError("No folders specified.");
-                return;
-            }
-
+            var characterFolders = Directory.GetDirectories("Assets/Animations");
             foreach (string folderPath in characterFolders)
                 FixShootAnimationInFolder(folderPath);
             Debug.Log("Shoot animations fixed where missing.");
@@ -63,26 +52,23 @@ namespace Assets.Scripts.Editor
                 foreach (ChildAnimatorState state in layer.stateMachine.states)
                     if (state.state.name.Contains("Shoot"))
                     {
-                        if (state.state.motion == null)
+                        var animationPath = Directory.GetFiles(folderPath, "*Shoot*.anim", SearchOption.TopDirectoryOnly).FirstOrDefault();
+                        if (!string.IsNullOrEmpty(animationPath))
                         {
-                            var animationPath = Directory.GetFiles(folderPath, "*Shoot*.anim", SearchOption.TopDirectoryOnly).FirstOrDefault();
-                            if (!string.IsNullOrEmpty(animationPath))
+                            AnimationClip shootClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(animationPath);
+                            if (shootClip != null)
                             {
-                                AnimationClip shootClip = AssetDatabase.LoadAssetAtPath<AnimationClip>(animationPath);
-                                if (shootClip != null)
-                                {
-                                    state.state.motion = shootClip;
-                                    Debug.Log($"Assigned '{shootClip.name}' to state '{state.state.name}' in controller '{controller.name}'");
-                                }
-                                else
-                                {
-                                    Debug.LogWarning($"Could not load animation clip at path: {animationPath}");
-                                }
+                                state.state.motion = shootClip;
+                                Debug.Log($"Assigned '{shootClip.name}' to state '{state.state.name}' in controller '{controller.name}'");
                             }
                             else
                             {
-                                Debug.LogWarning($"No 'Shoot' animation found in folder: {folderPath}");
+                                Debug.LogWarning($"Could not load animation clip at path: {animationPath}");
                             }
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"No 'Shoot' animation found in folder: {folderPath}");
                         }
                     }
 
