@@ -1,5 +1,5 @@
-using Assets.Scripts.Edtitor;
 using UnityEngine;
+using Assets.Scripts.EditorShared;
 
 public class BulletBehavior : MonoBehaviour, IDesignerConfigurable
 {

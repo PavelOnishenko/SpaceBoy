@@ -1,4 +1,4 @@
-using Assets.Scripts.Edtitor;
+using Assets.Scripts.EditorShared;
 using System.Collections;
 using System.Linq;
 using UnityEditor;

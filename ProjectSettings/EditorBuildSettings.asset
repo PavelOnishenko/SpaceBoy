@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CombatScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/LevelWindowScene.unity
-    guid: abf881d92ed8fb54ebdb8ae6c492b1ca
   m_configObjects: {}

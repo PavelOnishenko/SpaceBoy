@@ -1,4 +1,4 @@
-using Assets.Scripts.Edtitor;
+using Assets.Scripts.EditorShared;
 using Assets.Scripts.Menu;
 using System;
 using System.Collections;

@@ -1,4 +1,4 @@
-using Assets.Scripts.Edtitor;
+using Assets.Scripts.EditorShared;
 using UnityEngine;
 
 public class CharacterState : MonoBehaviour, IDesignerConfigurable
