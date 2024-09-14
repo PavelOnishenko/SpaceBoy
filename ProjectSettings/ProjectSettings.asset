@@ -808,7 +808,13 @@ PlayerSettings:
   XboxOneOverrideIdentityName: 
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
-  cloudServicesEnabled: {}
+  cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -828,11 +834,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: bd421e21-7b27-48dc-8ba4-6d6a81c7c410
+  cloudProjectId: 4b872b3b-20c6-4858-a7df-f01bff95c524
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: SpaceBoy
-  organizationId: unity_195yilya195
+  organizationId: biznezmail2016
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

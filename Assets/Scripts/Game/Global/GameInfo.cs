@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject shootingButtonContainer;
     [SerializeField] private GameObject countdownContainer;
     [SerializeField] private GameObject protagonistContainer;
+    [SerializeField] private GameObject adDisablingBanner;
 
     public GameObject Protagonist => protagonist;
     public GameObject Enemy => enemy;
@@ -58,6 +60,11 @@ public class GameInfo : MonoBehaviour
 
     private void HandleGameOverStateChange(GameState value)
     {
+        ShowGameOverLabels(value);
+    }
+
+    private void ShowGameOverLabels(GameState value)
+    {
         if (value == GameState.PlayerDead)
         {
             labelYouDie.SetActive(true);
@@ -68,6 +75,20 @@ public class GameInfo : MonoBehaviour
             labelYouDie.SetActive(false);
             labelYouWon.SetActive(true);
         }
+    }
+
+    private void HideGameOverLabels()
+    {
+        labelYouDie.SetActive(false);
+        labelYouWon.SetActive(false);
+    }
+
+    private IEnumerator GameOverProcess(GameState value)
+    {
+        ShowGameOverLabels(value);
+        yield return new WaitForSeconds(2f);
+        HideGameOverLabels();
+        adDisablingBanner.SetActive(true);
     }
 
     private void HandleInGameStateChange(GameState state)
