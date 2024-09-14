@@ -16,17 +16,16 @@ public class CharacterPicker : MonoBehaviour
     public void Pick(CharacterType who)
     {
         pickedCharacter = who;
-        if(pickedCharacter is CharacterType.GreenGirl)
+        if (pickedCharacter is CharacterType.GreenGirl)
         {
             GreenGirlHighlight.SetActive(true);
             SpaceGirlHighlight.SetActive(false);
-            IntersceneState.Instance.SelectedProtagonist = CharacterType.GreenGirl;
         }
         else
         {
             GreenGirlHighlight.SetActive(false);
             SpaceGirlHighlight.SetActive(true);
-            IntersceneState.Instance.SelectedProtagonist = CharacterType.SpaceGirl;
         }
+        IntersceneState.Instance.SelectedProtagonist = who;
     }
 }

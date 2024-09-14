@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,8 +7,8 @@ public class PlayButton : MonoBehaviour
 {
     [SerializeField] private Sprite offSprite; 
     [SerializeField] private Sprite onSprite; 
-    [SerializeField] private string loadingScene = "LoadingScene";
-    [SerializeField] private string sceneAfterLoading = "CombatScene";
+    [SerializeField] private SceneNames loadingScene = SceneNames.LoadingScene;
+    [SerializeField] private SceneNames sceneAfterLoading = SceneNames.CombatScene;
 
     private Image imageComponent;
     
@@ -28,5 +29,5 @@ public class PlayButton : MonoBehaviour
         if (imageComponent != null) imageComponent.sprite = offSprite;
     }
 
-    public void Click() => SceneManager.LoadScene(loadingScene);
+    public void Click() => SceneManager.LoadScene(loadingScene.ToString());
 }

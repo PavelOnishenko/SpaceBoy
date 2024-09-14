@@ -20,10 +20,10 @@ namespace Assets.Scripts.Game.Global
         
         public void Render()
         {
-            foreach (var go in group.Values) go.SetActive(false);
+            foreach (var go in group.Values) 
+                go.SetActive(false);
             var selectedValue = getSelectedValue();
             var selectedGo = group[selectedValue];
-
             selectedGo.SetActive(true);
         }
     }

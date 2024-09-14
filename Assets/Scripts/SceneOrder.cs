@@ -1,3 +1,5 @@
+using Assets.Scripts;
+
 public class SceneOrder
 {
     public static SceneOrder Instance
@@ -11,9 +13,9 @@ public class SceneOrder
 
     private static SceneOrder instance;
 
-    private string nextScene = "MenuScene";
+    private SceneNames nextScene = SceneNames.MenuScene;
 
-    public string GetNextSceneName() => nextScene;
+    public SceneNames GetNextSceneName() => nextScene;
 
-    public void SetNextScene(string sceneName) => nextScene = sceneName;
+    public void SetNextScene(SceneNames scene) => nextScene = scene;
 }

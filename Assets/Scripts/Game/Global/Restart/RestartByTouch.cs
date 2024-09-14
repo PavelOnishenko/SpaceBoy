@@ -10,7 +10,8 @@ public class RestartByTouch : MonoBehaviour
     void Update()
     {
         var touch = Touchscreen.current?.primaryTouch;
-        if (touch is null) return;
+        if (touch is null) 
+            return;
 
         if (touch.press.isPressed && touch.position.ReadValue().x < Screen.width / 2f)
         {

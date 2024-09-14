@@ -14,7 +14,7 @@ public class IntersceneState
 
     private static readonly Dictionary<Level, CharacterType> enemyNameByLevel = new()
     {
-        { Level.Hallway, CharacterType.AstronautGirl },
+        { Level.Hallway, CharacterType.Brainman },
         { Level.Window, CharacterType.Lizard },
         { Level.Outside, CharacterType.Octopus },
         { Level.Mountains, CharacterType.AstronautGirl },
@@ -25,6 +25,7 @@ public class IntersceneState
     private static IntersceneState instance;
 
     public CharacterType SelectedProtagonist { get; set; } = CharacterType.SpaceGirl;
+
     public Level SelectedLevel { get; set; } = Level.Outside;
 
     public CharacterType SelectedEnemy => enemyNameByLevel[SelectedLevel];

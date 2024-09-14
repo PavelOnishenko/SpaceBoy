@@ -1,10 +1,9 @@
-using Assets.Scripts.EditorShared;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Loader : MonoBehaviour, IDesignerConfigurable
+public class Loader : MonoBehaviour
 {
     [SerializeField] private Slider progressBar;
     [SerializeField] private Canvas loadingCanvas;
@@ -19,8 +18,8 @@ public class Loader : MonoBehaviour, IDesignerConfigurable
 
     IEnumerator LoadSceneAsync()
     {
-        var nextSceneName = SceneOrder.Instance.GetNextSceneName();
-        var asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
+        var nextScene = SceneOrder.Instance.GetNextSceneName();
+        var asyncLoad = SceneManager.LoadSceneAsync(nextScene.ToString());
         asyncLoad.allowSceneActivation = false;
 
         while (true)
@@ -35,11 +34,5 @@ public class Loader : MonoBehaviour, IDesignerConfigurable
 
             yield return null;
         }
-    }
-
-    public void ApplyParameters()
-    {
-        var gameParameters = GameParametersManager.Instance.gameParameters;
-        if (gameParameters != null) step = gameParameters.loadingStep;
     }
 }

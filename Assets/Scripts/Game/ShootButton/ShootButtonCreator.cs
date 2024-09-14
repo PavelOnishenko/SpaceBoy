@@ -1,8 +1,7 @@
-using Assets.Scripts.EditorShared;
 using System.Collections;
 using UnityEngine;
 
-public class ShootButtonCreator : MonoBehaviour, IDesignerConfigurable
+public class ShootButtonCreator : MonoBehaviour
 {
     [SerializeField] private GameObject shootButtonPrefab;
     [SerializeField] private ShootButtonPlaceholder[] shootButtonPlaceholders;
@@ -35,18 +34,9 @@ public class ShootButtonCreator : MonoBehaviour, IDesignerConfigurable
         while (true)
         {
             yield return new WaitForSeconds(buttonAppearancePeriod);
-            while(GameInfo.Instance.State is not GameState.Ongoing) yield return null;
+            while(GameInfo.Instance.State is not GameState.Ongoing) 
+                yield return null;
             CreateButton();
         }
     }
-
-    #region FOR EDITOR
-
-    public void ApplyParameters()
-    {
-        var gameParameters = GameParametersManager.Instance.gameParameters;
-        if (gameParameters != null) buttonAppearancePeriod = gameParameters.buttonAppearancePeriod;
-    }
-
-    #endregion
 }

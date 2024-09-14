@@ -1,5 +1,8 @@
+using Assets.Scripts;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameInfo : MonoBehaviour
 {
@@ -31,7 +34,8 @@ public class GameInfo : MonoBehaviour
         if (Instance != null)
             Destroy(gameObject);
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
+        PlayerPrefs.SetString(PlayerPrefNames.LastSelectedProtagonist.ToString(), selectedProtagonist.ToString());
     }
 
     private void SetCharacterRelatedVariables()
@@ -65,9 +69,30 @@ public class GameInfo : MonoBehaviour
         }
         else
         {
-            labelYouDie.SetActive(false);
-            labelYouWon.SetActive(true);
+            Win();
         }
+    }
+
+    private void Win()
+    {
+        labelYouDie.SetActive(false);
+        labelYouWon.SetActive(true);
+        var selectedLevel = (int)IntersceneState.Instance.SelectedLevel;
+        var lastCompletedLevelPrefName = PlayerPrefNames.LastCompletedLevel.ToString();
+        var lastCompletedLevel = PlayerPrefs.GetInt(lastCompletedLevelPrefName);
+        if (selectedLevel > lastCompletedLevel)
+        {
+            PlayerPrefs.SetInt(lastCompletedLevelPrefName, selectedLevel);
+            Debug.Log($"Last completed level set to [{selectedLevel}].");
+        }
+        StartCoroutine(GoToMenuAfterDelayCoroutine());
+    }
+
+    private IEnumerator GoToMenuAfterDelayCoroutine()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneOrder.Instance.SetNextScene(SceneNames.MenuScene);
+        SceneManager.LoadScene(SceneNames.LoadingScene.ToString());
     }
 
     private void HandleInGameStateChange(GameState state)

@@ -1,7 +1,6 @@
-using Assets.Scripts.EditorShared;
 using UnityEngine;
 
-public class CharacterState : MonoBehaviour, IDesignerConfigurable
+public class CharacterState : MonoBehaviour
 {
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private int initialHp = 2;
@@ -38,7 +37,8 @@ public class CharacterState : MonoBehaviour, IDesignerConfigurable
 
     public void GetHit()
     {
-        if (Time.time - lastHitTime < damageCooldown) return;
+        if (Time.time - lastHitTime < damageCooldown) 
+            return;
 
         lastHitTime = Time.time;
 
@@ -55,15 +55,4 @@ public class CharacterState : MonoBehaviour, IDesignerConfigurable
         if (GameInfo.Instance.State == GameState.Ongoing)
             GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
-
-    #region FOR EDITOR
-
-    public void ApplyParameters()
-    {
-        var gameParameters = GameParametersManager.Instance.gameParameters;
-        if (gameParameters != null) initialHp = gameParameters.initialHp;
-        else Debug.LogError("ASSIGN GAME PARAMS!!!");
-    }
-
-    #endregion
 }

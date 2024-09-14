@@ -753,6 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelCaption: {fileID: 1708329648}
   levelPreview: {fileID: 374600065}
+  characterPickerGo: {fileID: 1228886459}
 --- !u!4 &1668604344
 Transform:
   m_ObjectHideFlags: 0

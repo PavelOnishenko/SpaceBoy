@@ -11,7 +11,8 @@ namespace Assets.Scripts.Game.Character
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (ai != null) ai.AttackAfterDelay();
+            if (ai != null) 
+                ai.AttackAfterDelay();
         }
     }
 }

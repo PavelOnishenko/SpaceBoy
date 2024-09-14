@@ -1,7 +1,6 @@
 using UnityEngine;
-using Assets.Scripts.EditorShared;
 
-public class BulletBehavior : MonoBehaviour, IDesignerConfigurable
+public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 1000f;
     [SerializeField] private float destroyTime = 3f;
@@ -24,23 +23,4 @@ public class BulletBehavior : MonoBehaviour, IDesignerConfigurable
             go.GetComponentFromParentByName<CharacterState>(IntersceneState.Instance.SelectedEnemy.ToString()).GetHit();
         Destroy(gameObject);
     }
-
-
-
-
-
-    #region FOR EDITOR
-
-    public void ApplyParameters()
-    {
-        var gameParameters = GameParametersManager.Instance.gameParameters;
-        if (gameParameters != null)
-        {
-            if(gameObject.name.StartsWith("Human")) movementSpeed = gameParameters.humanBulletSpeed;
-            else if (gameObject.name.StartsWith("Ai")) movementSpeed = gameParameters.aiBulletSpeed;
-            destroyTime = gameParameters.bulletDestructionTime;
-        }
-    }
-
-    #endregion
 }

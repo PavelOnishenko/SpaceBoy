@@ -1,10 +1,9 @@
-using Assets.Scripts.EditorShared;
 using System.Collections;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-public class Countdown : MonoBehaviour, IDesignerConfigurable
+public class Countdown : MonoBehaviour
 {
     [SerializeField] private int initialCountdownTime;
 
@@ -55,16 +54,4 @@ public class Countdown : MonoBehaviour, IDesignerConfigurable
 
     private void SetActive(string gameObjectName, bool newValue) =>
         digits.Single(x => x.name == gameObjectName).SetActive(newValue);
-
-
-    #region FOR EDITOR
-
-    public void ApplyParameters()
-    {
-        var gameParameters = GameParametersManager.Instance.gameParameters;
-        if (gameParameters != null) initialCountdownTime = gameParameters.initialCountdownTime;
-    }
-
-    #endregion
-
 }

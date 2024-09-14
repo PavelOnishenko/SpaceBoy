@@ -21,7 +21,8 @@ public static class GameObjectExtensions
         Transform currentParent = obj.transform.parent;
         while (currentParent != null)
         {
-            if (currentParent.name == parentName) return true;
+            if (currentParent.name == parentName) 
+                return true;
             currentParent = currentParent.parent;
         }
         return false;

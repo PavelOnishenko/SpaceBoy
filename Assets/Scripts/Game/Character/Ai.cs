@@ -1,10 +1,7 @@
-using Assets.Scripts.EditorShared;
-using Assets.Scripts.Menu;
-using System;
 using System.Collections;
 using UnityEngine;
 
-public class Ai : MonoBehaviour, IDesignerConfigurable
+public class Ai : MonoBehaviour
 {
 
     [SerializeField] private float delayBeforeAttackSeconds = 0.2f;
@@ -29,25 +26,4 @@ public class Ai : MonoBehaviour, IDesignerConfigurable
         state.Aim();
         attackCoroutine = null;
     }
-
-
-
-    #region FOR EDITOR
-
-    public void ApplyParameters()
-    {
-        var gameParameters = GameParametersManager.Instance.gameParameters;
-        if (gameParameters != null)
-            delayBeforeAttackSeconds = gameObject.name switch
-            {
-                var name when name.StartsWith(CharacterType.Brainman.ToString()) => gameParameters.attackDelay_Brainman,
-                var name when name.StartsWith(CharacterType.Lizard.ToString()) => gameParameters.attackDelay_Lizard,
-                var name when name.StartsWith(CharacterType.Octopus.ToString()) => gameParameters.attackDelay_Octopus,
-                _ => throw new ArgumentException($"Invalid character type [{gameObject.name}].")
-            };
-        else
-            Debug.LogError("ASSIGN GAME PARAMS!!!");
-    }
-
-    #endregion
 }

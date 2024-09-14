@@ -9,8 +9,5 @@ public class LevelCaptionBehavior : MonoBehaviour
 
     private void Start() => image = GetComponent<Image>();
 
-    public void SetLevelCaption(int level)
-    {
-        image.sprite = levelSprites[level - 1];
-    }
+    public void SetLevelCaption(int level) => image.sprite = levelSprites[level - 1];
 }

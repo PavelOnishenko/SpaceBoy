@@ -13,7 +13,8 @@ public class EnemyPlacer : MonoBehaviour
             CharacterType.Brainman, CharacterType.Lizard, CharacterType.Octopus, 
             CharacterType.AstronautGirl, CharacterType.CyberPunk, CharacterType.RobotGirl 
         };
-        exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject, enemies, () => IntersceneState.Instance.SelectedEnemy);
+        exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject, enemies, 
+            () => IntersceneState.Instance.SelectedEnemy);
         exclusiveRendering.Render();
     }
 }

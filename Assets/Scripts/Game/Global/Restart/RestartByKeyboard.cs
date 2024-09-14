@@ -5,6 +5,7 @@ public class Restart : MonoBehaviour
 {
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) GameInfo.Instance.State = GameState.NotStarted;
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) 
+            GameInfo.Instance.State = GameState.NotStarted;
     }
 }
