@@ -7,7 +7,6 @@ public class PlayButton : MonoBehaviour
 {
     [SerializeField] private Sprite offSprite; 
     [SerializeField] private Sprite onSprite; 
-    [SerializeField] private SceneNames loadingScene = SceneNames.LoadingScene;
     [SerializeField] private SceneNames sceneAfterLoading = SceneNames.CombatScene;
 
     private Image imageComponent;
@@ -29,5 +28,9 @@ public class PlayButton : MonoBehaviour
         if (imageComponent != null) imageComponent.sprite = offSprite;
     }
 
-    public void Click() => SceneManager.LoadScene(loadingScene.ToString());
+    public void Click()
+    {
+        SceneOrder.Instance.SetNextScene(SceneNames.CombatScene);
+        SceneManager.LoadScene(SceneNames.LoadingScene.ToString());
+    }
 }

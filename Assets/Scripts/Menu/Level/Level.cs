@@ -7,6 +7,7 @@
         Outside = 3,
         Mountains = 4,
         NightCity = 5,
-        Desert = 6
+        Desert = 6,
+        Bar = 7
     }
 }

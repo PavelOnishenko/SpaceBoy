@@ -1,6 +1,8 @@
 using UnityEngine;
 using Assets.Scripts.Menu;
 using Assets.Scripts.Game.Global;
+using System;
+using System.Linq;
 
 public class LevelSelector : MonoBehaviour
 {
@@ -8,8 +10,8 @@ public class LevelSelector : MonoBehaviour
 
     private void Awake()
     {
-        exclusiveRendering = new ExclusiveRendering<Level>(this.gameObject,
-            new[] { Level.Hallway, Level.Window, Level.Outside, Level.Mountains, Level.NightCity, Level.Desert }, () => IntersceneState.Instance.SelectedLevel);
+        exclusiveRendering = new ExclusiveRendering<Level>(this.gameObject, 
+            Enum.GetValues(typeof(Level)).Cast<Level>(), () => IntersceneState.Instance.SelectedLevel);
         exclusiveRendering.Render();
     }
 }
