@@ -219,6 +219,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ced8773ff3668042997177ca76d1d20, type: 3}
   - {fileID: 21300000, guid: 471536ed4abe4a44d9890f2927505c69, type: 3}
   - {fileID: 21300000, guid: 13ac502b9c073c846a9c7039631c5638, type: 3}
+  - {fileID: 21300000, guid: 1dce0f0a899d37742a719e9e57ceb1b2, type: 3}
 --- !u!1 &530682931
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +867,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a69046edce838124fbcaf685698e1a75, type: 3}
   - {fileID: 21300000, guid: fc4a8c987e67e074b86da161fe65e3c4, type: 3}
   - {fileID: 21300000, guid: 67b72943b2c2ebd41801cc7920380e5a, type: 3}
+  - {fileID: 21300000, guid: 9932acbade22a1845bb0e7e4dcc64343, type: 3}
 --- !u!1 &1758365132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,7 +1354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offSprite: {fileID: 21300000, guid: b552e5cbd460e1043a9b16fb6eeb4a2a, type: 3}
   onSprite: {fileID: 21300000, guid: a6e9bf5b49a7e9d4195aee3bbce94ee8, type: 3}
-  loadingScene: 0
   sceneAfterLoading: 0
 --- !u!114 &1928317284
 MonoBehaviour:

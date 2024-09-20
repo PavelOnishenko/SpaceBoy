@@ -11,7 +11,7 @@ public class EnemyPlacer : MonoBehaviour
         var enemies = new[] 
         { 
             CharacterType.Brainman, CharacterType.Lizard, CharacterType.Octopus, CharacterType.AstronautGirl, 
-            CharacterType.CyberPunk, CharacterType.RobotGirl, CharacterType.Raccoon 
+            CharacterType.CyberPunk, CharacterType.RobotGirl, CharacterType.Raccoon, CharacterType.Spider
         };
         exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject, enemies, 
             () => IntersceneState.Instance.SelectedEnemy);

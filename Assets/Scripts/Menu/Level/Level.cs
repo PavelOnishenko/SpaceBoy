@@ -8,6 +8,7 @@
         Mountains = 4,
         NightCity = 5,
         Desert = 6,
-        Bar = 7
+        Bar = 7,
+        Shrine = 8
     }
 }

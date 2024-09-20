@@ -20,7 +20,8 @@ public class IntersceneState
         { Level.Mountains, CharacterType.AstronautGirl },
         { Level.NightCity, CharacterType.CyberPunk },
         { Level.Desert, CharacterType.RobotGirl },
-        { Level.Bar, CharacterType.Raccoon }
+        { Level.Bar, CharacterType.Raccoon },
+        { Level.Shrine, CharacterType.Spider }
     };
 
     private static IntersceneState instance;
