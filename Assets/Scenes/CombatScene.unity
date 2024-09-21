@@ -3702,7 +3702,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3074663371678239974, guid: d2374d105b8ba4644827710af3b1e726, type: 3}
       propertyPath: delayBeforeAttackSeconds
-      value: 1.15
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 5516665825876748885, guid: d2374d105b8ba4644827710af3b1e726, type: 3}
       propertyPath: m_LocalPosition.x
