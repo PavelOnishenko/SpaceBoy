@@ -28,7 +28,7 @@ public class IntersceneState
 
     public CharacterType SelectedProtagonist { get; set; } = CharacterType.SpaceGirl;
 
-    public Level SelectedLevel { get; set; } = Level.Outside;
+    public Level SelectedLevel { get; set; } = Level.Outside; 
 
     public CharacterType SelectedEnemy => enemyNameByLevel[SelectedLevel];
 }
