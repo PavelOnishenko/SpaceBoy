@@ -2,6 +2,6 @@
 {
     public enum CharacterType
     {
-        SpaceGirl, GreenGirl, Lizard, Brainman, Octopus, AstronautGirl, RobotGirl, CyberPunk, Raccoon, Spider
+        SpaceGirl, GreenGirl, Lizard, Brainman, Octopus, AstronautGirl, RobotGirl, CyberPunk, Raccoon, Spider, CosmoKnight
     }
 }

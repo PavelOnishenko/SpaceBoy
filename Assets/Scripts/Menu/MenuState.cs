@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Menu;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Behaviors.Menu
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Behaviors.Menu
                 IntersceneState.Instance.SelectedProtagonist = lastSelectedProtagonist;
             else
                 IntersceneState.Instance.SelectedProtagonist = CharacterType.SpaceGirl;
+            selectedCharacterIndex = protagonistPortraitsOrder.ToList().IndexOf(IntersceneState.Instance.SelectedProtagonist);
             selectedLevel = lastAvailableLevel;
             IntersceneState.Instance.SelectedLevel = (Level)selectedLevel;
             needToRefreshUi = true;
@@ -91,6 +93,6 @@ namespace Assets.Scripts.Behaviors.Menu
         }
 
         private CharacterType[] protagonistPortraitsOrder = 
-            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl };
+            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl, CharacterType.CosmoKnight };
     }
 }
