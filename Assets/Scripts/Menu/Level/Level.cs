@@ -6,8 +6,9 @@
         Window = 2,
         Outside = 3,
         Mountains = 4,
-        NightCity = 5,
+        Shrine = 5,
         Desert = 6,
-        Bar = 7
+        NightCity = 7,
+        Bar = 8
     }
 }

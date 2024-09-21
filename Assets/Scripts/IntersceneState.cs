@@ -20,14 +20,15 @@ public class IntersceneState
         { Level.Mountains, CharacterType.AstronautGirl },
         { Level.NightCity, CharacterType.CyberPunk },
         { Level.Desert, CharacterType.RobotGirl },
-        { Level.Bar, CharacterType.Raccoon }
+        { Level.Bar, CharacterType.Raccoon },
+        { Level.Shrine, CharacterType.Spider }
     };
 
     private static IntersceneState instance;
 
     public CharacterType SelectedProtagonist { get; set; } = CharacterType.SpaceGirl;
 
-    public Level SelectedLevel { get; set; } = Level.Outside;
+    public Level SelectedLevel { get; set; } = Level.Outside; 
 
     public CharacterType SelectedEnemy => enemyNameByLevel[SelectedLevel];
 }
