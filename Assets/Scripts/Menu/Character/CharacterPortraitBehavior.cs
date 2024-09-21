@@ -16,6 +16,7 @@ public class CharacterPortraitBehavior : MonoBehaviour
     private Dictionary<int, int> SpriteIndexByCharacterIndex = new Dictionary<int, int>
     {
         { 0, 1 },
-        { 1, 2 }
+        { 1, 2 },
+        { 2, 0 }
     };
 }
