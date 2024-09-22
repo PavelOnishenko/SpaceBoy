@@ -93,6 +93,6 @@ namespace Assets.Scripts.Behaviors.Menu
         }
 
         private CharacterType[] protagonistPortraitsOrder = 
-            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl, CharacterType.CosmoKnight };
+            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl, CharacterType.CosmoKnight, CharacterType.Panther };
     }
 }

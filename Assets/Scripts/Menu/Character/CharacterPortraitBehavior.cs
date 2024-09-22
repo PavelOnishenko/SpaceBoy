@@ -17,6 +17,7 @@ public class CharacterPortraitBehavior : MonoBehaviour
     {
         { 0, 1 },
         { 1, 2 },
-        { 2, 0 }
+        { 2, 0 },
+        { 3, 3 }
     };
 }

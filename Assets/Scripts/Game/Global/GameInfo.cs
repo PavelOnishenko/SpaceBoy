@@ -41,7 +41,7 @@ public class GameInfo : MonoBehaviour
     private void SetCharacterRelatedVariables()
     {
         protagonist = protagonistContainer.transform.Cast<Transform>()
-            .Single(x => x.gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString()).gameObject;
+            .Single(x => x.gameObject.name.Contains(IntersceneState.Instance.SelectedProtagonist.ToString())).gameObject;
         protagonistState = protagonist.GetComponent<CharacterState>();
         var enemyName = IntersceneState.Instance.SelectedEnemy.ToString();
         enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;

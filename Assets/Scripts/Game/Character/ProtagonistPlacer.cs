@@ -9,7 +9,7 @@ public class ProtagonistPlacer : MonoBehaviour
     private void Awake()
     {
         exclusiveRendering = new ExclusiveRendering<CharacterType>(this.gameObject,
-            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl, CharacterType.CosmoKnight },
+            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl, CharacterType.CosmoKnight, CharacterType.Panther },
             () => IntersceneState.Instance.SelectedProtagonist);
         exclusiveRendering.Render();
     }

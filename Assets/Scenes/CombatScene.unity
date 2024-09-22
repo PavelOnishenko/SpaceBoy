@@ -805,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662033325441649012, guid: c73504a6b5fb8c149bf1d23402439107, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4554,6 +4554,7 @@ Transform:
   - {fileID: 376988261}
   - {fileID: 2613095732862993166}
   - {fileID: 8142693925118797155}
+  - {fileID: 5936465505324843840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3621318869656767813
@@ -5294,7 +5295,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 799359576355741166, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_Name
-      value: PanteraPrefab
+      value: Panther
       objectReference: {fileID: 0}
     - target: {fileID: 2008601690625197453, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_LocalPosition.x
