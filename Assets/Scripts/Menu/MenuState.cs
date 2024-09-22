@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Menu;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Behaviors.Menu
@@ -8,13 +9,14 @@ namespace Assets.Scripts.Behaviors.Menu
     {
         [SerializeField] GameObject levelCaption;
         [SerializeField] GameObject levelPreview;
-        [SerializeField] GameObject characterPickerGo;
+        [SerializeField] GameObject characterPortraitGo;
 
         private int selectedLevel = 1;
+        private int selectedCharacterIndex = 1;
         private int lastAvailableLevel;
         private LevelCaptionBehavior levelCaptionBehavior;
         private LevelPreviewBehavior levelPreviewBehavior;
-        private CharacterPicker characterPicker;
+        private CharacterPortraitBehavior characterPortraitBehavior;
 
         private bool needToRefreshUi = false;
 
@@ -25,12 +27,13 @@ namespace Assets.Scripts.Behaviors.Menu
             lastAvailableLevel = lastCompletedLevel == lastPossibleLevel ? lastCompletedLevel : lastCompletedLevel + 1;
             levelCaptionBehavior = levelCaption.GetComponent<LevelCaptionBehavior>();
             levelPreviewBehavior = levelPreview.GetComponent<LevelPreviewBehavior>();
-            characterPicker = characterPickerGo.GetComponent<CharacterPicker>();
+            characterPortraitBehavior = characterPortraitGo.GetComponent<CharacterPortraitBehavior>();
             var lastSelectedProtagonistName = PlayerPrefs.GetString(PlayerPrefNames.LastSelectedProtagonist.ToString());
             if (Enum.TryParse<CharacterType>(lastSelectedProtagonistName, true, out var lastSelectedProtagonist))
                 IntersceneState.Instance.SelectedProtagonist = lastSelectedProtagonist;
             else
                 IntersceneState.Instance.SelectedProtagonist = CharacterType.SpaceGirl;
+            selectedCharacterIndex = protagonistPortraitsOrder.ToList().IndexOf(IntersceneState.Instance.SelectedProtagonist);
             selectedLevel = lastAvailableLevel;
             IntersceneState.Instance.SelectedLevel = (Level)selectedLevel;
             needToRefreshUi = true;
@@ -45,6 +48,7 @@ namespace Assets.Scripts.Behaviors.Menu
             }
         }
 
+        // todo refactor 4 times
         public void SelectLevelToLeft()
         {
             if (selectedLevel <= 1) selectedLevel = lastAvailableLevel;
@@ -61,11 +65,34 @@ namespace Assets.Scripts.Behaviors.Menu
             IntersceneState.Instance.SelectedLevel = (Level)selectedLevel;
         }
 
+        public void SelectCharacterToLeft()
+        {
+            if (selectedCharacterIndex <= 0) 
+                selectedCharacterIndex = protagonistPortraitsOrder.Length - 1;
+            else 
+                selectedCharacterIndex--;
+            RefreshUi();
+            IntersceneState.Instance.SelectedProtagonist = protagonistPortraitsOrder[selectedCharacterIndex];
+        }
+
+        public void SelectCharacterToRight()
+        {
+            if (selectedCharacterIndex >= protagonistPortraitsOrder.Length - 1) 
+                selectedCharacterIndex = 0;
+            else 
+                selectedCharacterIndex++;
+            RefreshUi();
+            IntersceneState.Instance.SelectedProtagonist = protagonistPortraitsOrder[selectedCharacterIndex];
+        }
+
         private void RefreshUi()
         {
             levelCaptionBehavior.SetLevelCaption(selectedLevel);
             levelPreviewBehavior.SetLevelPreview(selectedLevel);
-            characterPicker.Pick(IntersceneState.Instance.SelectedProtagonist);
+            characterPortraitBehavior.SetPreview(selectedCharacterIndex);
         }
+
+        private CharacterType[] protagonistPortraitsOrder = 
+            new[] { CharacterType.SpaceGirl, CharacterType.GreenGirl, CharacterType.CosmoKnight };
     }
 }
