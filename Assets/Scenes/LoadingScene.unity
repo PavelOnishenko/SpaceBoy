@@ -906,9 +906,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 32.4, y: 1.6}
+  m_AnchoredPosition: {x: 16.499939, y: 2.5000427}
   m_SizeDelta: {x: 10, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1452077177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1084,11 +1084,11 @@ RectTransform:
   - {fileID: 1452077176}
   m_Father: {fileID: 727358512}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 4.9999695, y: 22}
   m_SizeDelta: {x: -20, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1921115461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,8 +1195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBar: {fileID: 727358511}
   loadingCanvas: {fileID: 134840953}
-  step: 0.06
-  updateDelay: 0.05
+  step: 0.03
+  updateDelay: 0.02
 --- !u!4 &1973167953
 Transform:
   m_ObjectHideFlags: 0
