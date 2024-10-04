@@ -7,7 +7,8 @@ public class Loader : MonoBehaviour
 {
     [SerializeField] private Slider progressBar;
     [SerializeField] private Canvas loadingCanvas;
-    [SerializeField] private float step = 0.002f;
+    [SerializeField] private float step = 0.01f;
+    [SerializeField] private float updateDelay = 0.1f; // Update delay to control frequency of UI updates
 
     void Start()
     {
@@ -22,17 +23,23 @@ public class Loader : MonoBehaviour
         var asyncLoad = SceneManager.LoadSceneAsync(nextScene.ToString());
         asyncLoad.allowSceneActivation = false;
 
-        while (true)
+        // Use WaitForSeconds to limit the update frequency and reduce overhead
+        while (!asyncLoad.isDone)
         {
-            if (asyncLoad.progress - progressBar.value > step)
+            // Smoothly update the progress bar value over time
+            if (progressBar.value < asyncLoad.progress)
+            {
                 progressBar.value += step;
-            else
-                progressBar.value = asyncLoad.progress;
+            }
 
+            // Once the scene is almost loaded, activate it
             if (progressBar.value >= 0.9f && !asyncLoad.allowSceneActivation)
+            {
                 asyncLoad.allowSceneActivation = true;
+            }
 
-            yield return null;
+            // Add a small delay between updates to reduce the load on lower-powered devices
+            yield return new WaitForSeconds(updateDelay);
         }
     }
 }

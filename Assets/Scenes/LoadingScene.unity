@@ -1195,7 +1195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   progressBar: {fileID: 727358511}
   loadingCanvas: {fileID: 134840953}
-  step: 0.005
+  step: 0.06
+  updateDelay: 0.05
 --- !u!4 &1973167953
 Transform:
   m_ObjectHideFlags: 0
