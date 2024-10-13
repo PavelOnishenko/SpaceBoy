@@ -64,11 +64,13 @@ public class GameInfo : MonoBehaviour
     {
         if (value == GameState.PlayerDead)
         {
+            AudioManager.Instance.PlaySound("Lose");
             labelYouDie.SetActive(true);
             labelYouWon.SetActive(false);
         }
         else
         {
+            AudioManager.Instance.PlaySound("Win");
             Win();
         }
     }

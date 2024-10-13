@@ -24,7 +24,11 @@ public class CharacterState : MonoBehaviour
         heartsController = heartsContainer.GetComponent<HeartsController>();
     }
 
-    public void Shoot() => bulletCreator.CreateBullet();
+    public void Shoot()
+    {
+        AudioManager.Instance.PlaySound("Shot");
+        bulletCreator.CreateBullet();
+    }
 
     public void Aim() => animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
 
@@ -44,8 +48,16 @@ public class CharacterState : MonoBehaviour
 
         hp--;
         heartsController.SetHp(hp);
-        if(IsDead) GetDead();
-        else animator.SetTrigger(CharacterAnimationTriggerType.GetHit.ToString());
+        if(IsDead)
+        {
+            AudioManager.Instance.PlaySound("Death");
+            GetDead();
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound("GetHit");
+            animator.SetTrigger(CharacterAnimationTriggerType.GetHit.ToString());
+        }
     }
 
     private void GetDead()

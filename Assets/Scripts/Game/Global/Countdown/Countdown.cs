@@ -31,6 +31,10 @@ public class Countdown : MonoBehaviour
             SetDigitsActive();
             yield return new WaitForSeconds(1f);
             countdownTime--;
+            if(countdownTime > 0) 
+                AudioManager.Instance.PlaySound("ClockTick"); // todo enum?
+            else
+                AudioManager.Instance.PlaySound("GoBeep"); // todo enum?
         }
         SetActive(CountdownLabelType.LabelOne.ToString(), false);
         SetActive(CountdownLabelType.LabelGo.ToString(), true);
