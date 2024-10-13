@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class PlayButton : MonoBehaviour
     [SerializeField] private Sprite offSprite; 
     [SerializeField] private Sprite onSprite; 
     [SerializeField] private SceneNames sceneAfterLoading = SceneNames.CombatScene;
+    [SerializeField] private float delayBeforeLoadingInSeconds = 0.3f;
 
     private Image imageComponent;
     
@@ -30,6 +32,12 @@ public class PlayButton : MonoBehaviour
 
     public void Click()
     {
+        StartCoroutine(GoToNextSceneAfterDelay());
+    }
+
+    private IEnumerator GoToNextSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(delayBeforeLoadingInSeconds);
         SceneOrder.Instance.SetNextScene(SceneNames.CombatScene);
         SceneManager.LoadScene(SceneNames.LoadingScene.ToString());
     }
