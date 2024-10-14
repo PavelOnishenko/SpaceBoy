@@ -2614,7 +2614,7 @@ MonoBehaviour:
     volume: 1
   - name: Win
     clip: {fileID: 8300000, guid: b9c4da80f71b4a94d9b34e362384b61e, type: 3}
-    volume: 0.9
+    volume: 0.701
 --- !u!4 &1564119644
 Transform:
   m_ObjectHideFlags: 0
