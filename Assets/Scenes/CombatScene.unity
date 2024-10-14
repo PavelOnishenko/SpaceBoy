@@ -1069,6 +1069,7 @@ MonoBehaviour:
   shootingButtonContainer: {fileID: 2102621165}
   countdownContainer: {fileID: 8229891489250538252}
   protagonistContainer: {fileID: 2609804254878351125}
+  delayAfterVictorySeconds: 3
 --- !u!4 &417865632
 Transform:
   m_ObjectHideFlags: 0
@@ -2586,14 +2587,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1564119642}
-  soundClips:
-  - {fileID: 8300000, guid: 362b59a26f15eda4baf6d9b7c8768632, type: 3}
-  - {fileID: 8300000, guid: a85061020d100124fafe9d2ab7bf7fc3, type: 3}
-  - {fileID: 8300000, guid: 776b46cb4e2735b4792099eb1d28f33c, type: 3}
-  - {fileID: 8300000, guid: 45b8d61245324b14491a00089043beb1, type: 3}
-  - {fileID: 8300000, guid: 5374288251e461946a13a2adec767a8b, type: 3}
-  - {fileID: 8300000, guid: b9c4da80f71b4a94d9b34e362384b61e, type: 3}
-  - {fileID: 8300000, guid: 920e5a8f8a66fd641b657938a26f28b1, type: 3}
+  sounds:
+  - name: ClockTick
+    clip: {fileID: 8300000, guid: 362b59a26f15eda4baf6d9b7c8768632, type: 3}
+    volume: 0.91
+  - name: Death
+    clip: {fileID: 8300000, guid: 5374288251e461946a13a2adec767a8b, type: 3}
+    volume: 1
+  - name: GetHit
+    clip: {fileID: 8300000, guid: 45b8d61245324b14491a00089043beb1, type: 3}
+    volume: 1
+  - name: GoBeep
+    clip: {fileID: 8300000, guid: a85061020d100124fafe9d2ab7bf7fc3, type: 3}
+    volume: 0.62
+  - name: LongClick
+    clip: {fileID: 8300000, guid: d6f44e5e079b369469590e102b235e61, type: 3}
+    volume: 1
+  - name: Lose
+    clip: {fileID: 8300000, guid: 920e5a8f8a66fd641b657938a26f28b1, type: 3}
+    volume: 1
+  - name: RegularClick
+    clip: {fileID: 8300000, guid: fd510e02b5cc15340aba470f850ffabb, type: 3}
+    volume: 1
+  - name: Shot
+    clip: {fileID: 8300000, guid: 776b46cb4e2735b4792099eb1d28f33c, type: 3}
+    volume: 1
+  - name: Win
+    clip: {fileID: 8300000, guid: b9c4da80f71b4a94d9b34e362384b61e, type: 3}
+    volume: 0.9
 --- !u!4 &1564119644
 Transform:
   m_ObjectHideFlags: 0
@@ -2638,7 +2659,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6c3303fb02836b240888d4ba763cbc36, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.231
+  m_Volume: 0.153
   m_Pitch: 1
   Loop: 1
   Mute: 0

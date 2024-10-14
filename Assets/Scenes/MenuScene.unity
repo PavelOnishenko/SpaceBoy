@@ -1271,7 +1271,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5433e496679d2554cbd85dfbe1f8151f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.202
+  m_Volume: 0.124
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1930,7 +1930,7 @@ MonoBehaviour:
   offSprite: {fileID: 21300000, guid: b552e5cbd460e1043a9b16fb6eeb4a2a, type: 3}
   onSprite: {fileID: 21300000, guid: a6e9bf5b49a7e9d4195aee3bbce94ee8, type: 3}
   sceneAfterLoading: 0
-  delayBeforeLoadingInSeconds: 0.2
+  delayBeforeLoadingInSeconds: 0.5
 --- !u!114 &1928317284
 MonoBehaviour:
   m_ObjectHideFlags: 0

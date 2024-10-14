@@ -12,6 +12,7 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject shootingButtonContainer;
     [SerializeField] private GameObject countdownContainer;
     [SerializeField] private GameObject protagonistContainer;
+    [SerializeField] private float delayAfterVictorySeconds = 3f;
 
     public GameObject Protagonist => protagonist;
     public GameObject Enemy => enemy;
@@ -92,7 +93,7 @@ public class GameInfo : MonoBehaviour
 
     private IEnumerator GoToMenuAfterDelayCoroutine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(delayAfterVictorySeconds);
         SceneOrder.Instance.SetNextScene(SceneNames.MenuScene);
         SceneManager.LoadScene(SceneNames.LoadingScene.ToString());
     }

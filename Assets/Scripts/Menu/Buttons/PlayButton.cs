@@ -9,7 +9,7 @@ public class PlayButton : MonoBehaviour
     [SerializeField] private Sprite offSprite; 
     [SerializeField] private Sprite onSprite; 
     [SerializeField] private SceneNames sceneAfterLoading = SceneNames.CombatScene;
-    [SerializeField] private float delayBeforeLoadingInSeconds = 0.3f;
+    [SerializeField] private float delayBeforeLoadingInSeconds = 0.5f;
 
     private Image imageComponent;
     
