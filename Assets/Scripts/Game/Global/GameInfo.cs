@@ -1,4 +1,6 @@
 using Assets.Scripts;
+using Assets.Scripts.Menu;
+using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -14,6 +16,7 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject protagonistContainer;
     [SerializeField] private float delayAfterVictorySeconds = 3f;
     [SerializeField] private GameObject popupOverlay;
+    [SerializeField] private GameObject labelGameCompleted;
 
     public GameObject Protagonist => protagonist;
     public GameObject Enemy => enemy;
@@ -80,17 +83,20 @@ public class GameInfo : MonoBehaviour
 
     private void Win()
     {
-        labelYouDie.SetActive(false);
-        labelYouWon.SetActive(true);
-        popupOverlay.SetActive(true);
         var selectedLevel = (int)IntersceneState.Instance.SelectedLevel;
         var lastCompletedLevelPrefName = PlayerPrefNames.LastCompletedLevel.ToString();
         var lastCompletedLevel = PlayerPrefs.GetInt(lastCompletedLevelPrefName);
+        var victoryPopup = labelYouWon;
         if (selectedLevel > lastCompletedLevel)
         {
             PlayerPrefs.SetInt(lastCompletedLevelPrefName, selectedLevel);
             Debug.Log($"Last completed level set to [{selectedLevel}].");
+            if (selectedLevel == Enum.GetValues(typeof(Level)).Length)
+                victoryPopup = labelGameCompleted;
         }
+        labelYouDie.SetActive(false);
+        victoryPopup.SetActive(true);
+        popupOverlay.SetActive(true);
         StartCoroutine(GoToMenuAfterDelayCoroutine());
     }
 
