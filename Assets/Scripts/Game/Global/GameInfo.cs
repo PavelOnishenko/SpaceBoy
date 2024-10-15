@@ -13,6 +13,7 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private GameObject countdownContainer;
     [SerializeField] private GameObject protagonistContainer;
     [SerializeField] private float delayAfterVictorySeconds = 3f;
+    [SerializeField] private GameObject popupOverlay;
 
     public GameObject Protagonist => protagonist;
     public GameObject Enemy => enemy;
@@ -68,6 +69,7 @@ public class GameInfo : MonoBehaviour
             AudioManager.Instance.PlaySound("Lose");
             labelYouDie.SetActive(true);
             labelYouWon.SetActive(false);
+            popupOverlay.SetActive(true);
         }
         else
         {
@@ -80,6 +82,7 @@ public class GameInfo : MonoBehaviour
     {
         labelYouDie.SetActive(false);
         labelYouWon.SetActive(true);
+        popupOverlay.SetActive(true);
         var selectedLevel = (int)IntersceneState.Instance.SelectedLevel;
         var lastCompletedLevelPrefName = PlayerPrefNames.LastCompletedLevel.ToString();
         var lastCompletedLevel = PlayerPrefs.GetInt(lastCompletedLevelPrefName);
@@ -103,6 +106,7 @@ public class GameInfo : MonoBehaviour
         if (state == GameState.NotStarted) Restart();
         labelYouDie.SetActive(false);
         labelYouWon.SetActive(false);
+        popupOverlay.SetActive(false);
         if (state == GameState.Ongoing) ai.AttackAfterDelay();
     }
 
