@@ -15,6 +15,7 @@ public class CharacterState : MonoBehaviour
 
     private readonly float damageCooldown = 0.1f;
     private float lastHitTime;
+    private bool isDucked;
 
     private void Start()
     {
@@ -22,6 +23,12 @@ public class CharacterState : MonoBehaviour
         animator = GetComponent<Animator>();
         heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
         heartsController = heartsContainer.GetComponent<HeartsController>();
+    }
+
+    public void SetDucked(bool isDucked)
+    {
+        this.isDucked = isDucked;
+        animator.SetBool(CharacterAnimationParamType.Ducked.ToString(), isDucked);
     }
 
     public void Shoot()

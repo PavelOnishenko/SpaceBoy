@@ -26,7 +26,7 @@ public class IntersceneState
 
     private static IntersceneState instance;
 
-    public CharacterType SelectedProtagonist { get; set; } = CharacterType.SpaceGirl;
+    public CharacterType SelectedProtagonist { get; set; } = CharacterType.CosmoKnight;
 
     public Level SelectedLevel { get; set; } = Level.Outside; 
 

@@ -1,4 +1,4 @@
 public enum CharacterAnimationParamType
 {
-    IsDead
+    IsDead, Ducked
 }
