@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8567493943613225426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -61,23 +65,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.3144
+      value: 8.138158
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.3144
+      value: 8.138158
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 7.3144
+      value: 8.138158
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8
+      value: 26.1
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.7
+      value: 17.9
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -291,13 +295,10 @@ PrefabInstance:
       addedObject: {fileID: 566047208805434205}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4731564913550186780}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3074663371678239974}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5072022173174302765}
+      addedObject: {fileID: 457763428180823654}
     - targetCorrespondingSourceObject: {fileID: -1397274314566178095, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4475891135585154253}
@@ -826,20 +827,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4731564913550186780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6649348812343145014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 5260125338996666337}
-  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
 --- !u!114 &3074663371678239974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,8 +839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 1
---- !u!114 &5072022173174302765
+  delayBeforeAttackSeconds: 1.25
+--- !u!114 &457763428180823654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -862,12 +849,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6649348812343145014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b5f556cfe93979479039fd67a968b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCreator: {fileID: 4731564913550186780}
-  initialHp: 2
-  heartContainerNamePrefix: Enemy
+  characterState: {fileID: 0}
 --- !u!1 &7821467001901999244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3975441040679155463, guid: 068068c5f57f13f4ab8b089163124ed6, type: 3}

@@ -55,6 +55,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 60a79cc7cdec5ed448f72d6102d2d47d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8631677144738640513, guid: 60a79cc7cdec5ed448f72d6102d2d47d, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -215,10 +219,7 @@ PrefabInstance:
       addedObject: {fileID: 4232749512344079973}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 60a79cc7cdec5ed448f72d6102d2d47d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8039415871192793385}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 60a79cc7cdec5ed448f72d6102d2d47d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6291050297009234617}
+      addedObject: {fileID: 7216242657402286995}
     - targetCorrespondingSourceObject: {fileID: 1769465101944927738, guid: 60a79cc7cdec5ed448f72d6102d2d47d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2822173262530816683}
@@ -396,7 +397,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8039415871192793385
+--- !u!114 &7216242657402286995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,26 +406,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 799359576355741166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b5f556cfe93979479039fd67a968b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 5091695051688637499}
-  bulletPrefab: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
---- !u!114 &6291050297009234617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799359576355741166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletCreator: {fileID: 8039415871192793385}
-  initialHp: 2
-  heartContainerNamePrefix: Protagonist
+  characterState: {fileID: 0}
 --- !u!1 &1476703154673519017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1769465101944927738, guid: 60a79cc7cdec5ed448f72d6102d2d47d, type: 3}

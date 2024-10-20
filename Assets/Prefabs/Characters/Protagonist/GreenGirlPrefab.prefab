@@ -3057,7 +3057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
       propertyPath: m_LocalScale.x
@@ -3073,11 +3073,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.1
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.4
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3341,10 +3341,7 @@ PrefabInstance:
       addedObject: {fileID: 1094133193878120328}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6359086776978145873}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4745160550299892238}
+      addedObject: {fileID: 840291453474092761}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
 --- !u!4 &477164847912017162 stripped
 Transform:
@@ -3437,7 +3434,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6359086776978145873
+--- !u!114 &840291453474092761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3446,26 +3443,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8088018012391911271}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b5f556cfe93979479039fd67a968b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1026091961713988031}
-  bulletPrefab: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
---- !u!114 &4745160550299892238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8088018012391911271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletCreator: {fileID: 6359086776978145873}
-  initialHp: 2
-  heartContainerNamePrefix: Protagonist
+  characterState: {fileID: 0}
 --- !u!4 &8269940468826517399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8854889053627997875, guid: 3fcb7c1cc5321d04aa744c81d7080a73, type: 3}
