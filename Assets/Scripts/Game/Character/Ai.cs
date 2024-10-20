@@ -9,7 +9,7 @@ public class Ai : MonoBehaviour
     private CharacterState state;
     private Coroutine attackCoroutine;
 
-    private void Start() => state = GetComponent<CharacterState>();
+    private void Start() => state = GetComponentInParent<CharacterState>();
 
     public void AttackAfterDelay()
     {

@@ -259,6 +259,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &155696680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3919562582808244543, guid: 5ede421373b57aa418d404287211736c, type: 3}
+  m_PrefabInstance: {fileID: 6135426280967716960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &186840215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,16 +5122,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Octopus
       objectReference: {fileID: 0}
+    - target: {fileID: 4155230319973754824, guid: 5ede421373b57aa418d404287211736c, type: 3}
+      propertyPath: delayBeforeAttackSeconds
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3919562582808244543, guid: 5ede421373b57aa418d404287211736c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6135426280967716966}
   m_SourcePrefab: {fileID: 100100000, guid: 5ede421373b57aa418d404287211736c, type: 3}
 --- !u!4 &6135426280967716961 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2786897703789521244, guid: 5ede421373b57aa418d404287211736c, type: 3}
   m_PrefabInstance: {fileID: 6135426280967716960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6135426280967716966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155696680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5f556cfe93979479039fd67a968b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterState: {fileID: 1919417668}
 --- !u!222 &6451072737354627532
 CanvasRenderer:
   m_ObjectHideFlags: 0

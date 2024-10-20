@@ -69,7 +69,7 @@ public class CharacterState : MonoBehaviour
     private void GetDead()
     {
         animator.SetBool(CharacterAnimationParamType.IsDead.ToString(), true);
-        var isPlayer = gameObject.name == IntersceneState.Instance.SelectedProtagonist.ToString();
+        var isPlayer = gameObject.name == "Protagonist";
         if (GameInfo.Instance.State == GameState.Ongoing)
             GameInfo.Instance.State = isPlayer ? GameState.PlayerDead : GameState.PlayerWon;
     }
