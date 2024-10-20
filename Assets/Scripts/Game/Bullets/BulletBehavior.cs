@@ -17,10 +17,10 @@ public class BulletBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var go = other.gameObject;
-        if (go.IsParentWithName("ProtagonistContainer"))
-            go.GetComponentFromParentByName<CharacterState>(IntersceneState.Instance.SelectedProtagonist.ToString()).GetHit();
-        else if (go.IsParentWithName("EnemyContainer"))
-            go.GetComponentFromParentByName<CharacterState>(IntersceneState.Instance.SelectedEnemy.ToString()).GetHit();
+        if (go.IsParentWithName("Protagonist"))
+            go.GetComponentFromParentByName<CharacterState>("Protagonist").GetHit();
+        else if (go.IsParentWithName("Enemy"))
+            go.GetComponentFromParentByName<CharacterState>("Enemy").GetHit();
         Destroy(gameObject);
     }
 }

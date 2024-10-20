@@ -13,8 +13,8 @@ namespace Assets.Scripts.Game.Global
         public ExclusiveRendering(GameObject host, IEnumerable<TEnum> groupEnumValues, Func<TEnum> getSelectedValue)
         {
             this.getSelectedValue = getSelectedValue;
-            Func<TEnum, GameObject> findObjectInContainerByName = enumValue => host.transform.Cast<Transform>()
-                .Single(transform => transform.gameObject.name.Contains(enumValue.ToString())).gameObject;
+            Func<TEnum, GameObject> findObjectInContainerByName = 
+                x => host.transform.Cast<Transform>().Single(transform => transform.gameObject.name.Contains(x.ToString())).gameObject;
             group = groupEnumValues.ToDictionary(x => x, findObjectInContainerByName);
         }
         
@@ -22,9 +22,7 @@ namespace Assets.Scripts.Game.Global
         {
             foreach (var go in group.Values) 
                 go.SetActive(false);
-            var selectedValue = getSelectedValue();
-            var selectedGo = group[selectedValue];
-            selectedGo.SetActive(true);
+            group[getSelectedValue()].SetActive(true);
         }
     }
 }

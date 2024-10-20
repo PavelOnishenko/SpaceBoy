@@ -212,6 +212,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4231023618171091304, guid: 100620d9afbb1da4bab985e3bf16f6a9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.826959
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231023618171091304, guid: 100620d9afbb1da4bab985e3bf16f6a9, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.68824583
       objectReference: {fileID: 0}
@@ -291,10 +295,7 @@ PrefabInstance:
       addedObject: {fileID: 3604732655150432694}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 100620d9afbb1da4bab985e3bf16f6a9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3144477046617007853}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 100620d9afbb1da4bab985e3bf16f6a9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 869825827187511953}
+      addedObject: {fileID: 8364998103420671517}
     - targetCorrespondingSourceObject: {fileID: 3495196684186023336, guid: 100620d9afbb1da4bab985e3bf16f6a9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6765674567816275358}
@@ -1352,7 +1353,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3144477046617007853
+--- !u!114 &8364998103420671517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1361,23 +1362,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8662033325441649012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b5f556cfe93979479039fd67a968b63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCreator: {fileID: 869825827187511953}
-  initialHp: 2
-  heartContainerNamePrefix: Protagonist
---- !u!114 &869825827187511953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8662033325441649012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1906551285441979881}
-  bulletPrefab: {fileID: 7891033883629610073, guid: a6fded27b68cf6445bda806ea3f1c2d5, type: 3}
+  characterState: {fileID: 0}

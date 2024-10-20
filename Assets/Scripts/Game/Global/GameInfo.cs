@@ -17,6 +17,7 @@ public class GameInfo : MonoBehaviour
     [SerializeField] private float delayAfterVictorySeconds = 3f;
     [SerializeField] private GameObject popupOverlay;
     [SerializeField] private GameObject labelGameCompleted;
+    [SerializeField] private GameObject shootButton;
 
     public GameObject Protagonist => protagonist;
     public GameObject Enemy => enemy;
@@ -25,7 +26,6 @@ public class GameInfo : MonoBehaviour
     private CharacterState enemyState;
     private Ai ai;
     private Countdown countdown;
-    private ShootButtonCreator shootButtonCreator;
     private GameObject protagonist;
     private GameObject enemy;
 
@@ -35,7 +35,6 @@ public class GameInfo : MonoBehaviour
     {
         SetCharacterRelatedVariables();
         countdown = countdownContainer.GetComponent<Countdown>();
-        shootButtonCreator = shootingButtonContainer.GetComponent<ShootButtonCreator>();
         if (Instance != null)
             Destroy(gameObject);
         Instance = this;
@@ -60,8 +59,10 @@ public class GameInfo : MonoBehaviour
         set
         {
             _state = value;
-            if (_state is GameState.PlayerWon or GameState.PlayerDead) HandleGameOverStateChange(value);
-            else HandleInGameStateChange(value);
+            if (_state is GameState.PlayerWon or GameState.PlayerDead) 
+                HandleGameOverStateChange(value);
+            else 
+                HandleInGameStateChange(value);
         }
     }
 
@@ -79,15 +80,15 @@ public class GameInfo : MonoBehaviour
             AudioManager.Instance.PlaySound("Win");
             Win();
         }
+        shootButton.SetActive(false);
     }
 
     private void Win()
     {
         var selectedLevel = (int)IntersceneState.Instance.SelectedLevel;
         var lastCompletedLevelPrefName = PlayerPrefNames.LastCompletedLevel.ToString();
-        var lastCompletedLevel = PlayerPrefs.GetInt(lastCompletedLevelPrefName);
         var victoryPopup = labelYouWon;
-        if (selectedLevel > lastCompletedLevel)
+        if (selectedLevel > PlayerPrefs.GetInt(lastCompletedLevelPrefName))
         {
             PlayerPrefs.SetInt(lastCompletedLevelPrefName, selectedLevel);
             Debug.Log($"Last completed level set to [{selectedLevel}].");
@@ -109,11 +110,16 @@ public class GameInfo : MonoBehaviour
 
     private void HandleInGameStateChange(GameState state)
     {
-        if (state == GameState.NotStarted) Restart();
+        if (state == GameState.NotStarted) 
+            Restart();
         labelYouDie.SetActive(false);
         labelYouWon.SetActive(false);
         popupOverlay.SetActive(false);
-        if (state == GameState.Ongoing) ai.AttackAfterDelay();
+        if (state == GameState.Ongoing)
+        {
+            shootButton.SetActive(true);
+            ai.AttackAfterDelay();
+        }
     }
 
     private void Restart()
@@ -122,7 +128,7 @@ public class GameInfo : MonoBehaviour
         protagonistState.Revive();
         enemyState.Revive();
         ai.AttackAfterDelay();
-        shootButtonCreator.DestroyButton();
+        shootButton.SetActive(false);
     }
 
     private GameState _state = GameState.NotStarted;

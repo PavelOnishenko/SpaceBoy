@@ -759,11 +759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 31.3
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 15.6
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
       propertyPath: m_LocalPosition.z
@@ -880,12 +880,6 @@ PrefabInstance:
       addedObject: {fileID: 1121119722724268623}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2341983973883285046}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5491020565596189408}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4155230319973754824}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: aacf83123cfc75a4996587d948c71a58, type: 3}
 --- !u!4 &763201633831351959 stripped
@@ -929,35 +923,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2341983973883285046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3919562582808244543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1495736129089386694}
-  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
---- !u!114 &5491020565596189408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3919562582808244543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletCreator: {fileID: 2341983973883285046}
-  initialHp: 2
-  heartContainerNamePrefix: Enemy
 --- !u!114 &4155230319973754824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,7 +935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 1.08
+  delayBeforeAttackSeconds: 160
 --- !u!4 &7433857776706379650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2978984936461578496, guid: aacf83123cfc75a4996587d948c71a58, type: 3}

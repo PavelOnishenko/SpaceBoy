@@ -1,35 +1,34 @@
+using System.Linq;
 using UnityEngine;
 
 public class CharacterState : MonoBehaviour
 {
+    public int initialHp;
+
     [SerializeField] private BulletCreator bulletCreator;
-    [SerializeField] private int initialHp = 2;
-    [SerializeField] private string heartContainerNamePrefix;
+    [SerializeField] private HeartsController heartsController;
+    [SerializeField] private bool isProtagonist;
+
     public bool IsDead => hp <= 0;
 
     protected Animator animator;
 
-    private GameObject heartsContainer;
-    private HeartsController heartsController;
     private int hp;
 
     private readonly float damageCooldown = 0.1f;
     private float lastHitTime;
-    private bool isDucked;
 
     private void Start()
     {
         hp = initialHp;
-        animator = GetComponent<Animator>();
-        heartsContainer = GameObject.Find($"{heartContainerNamePrefix}HeartContainer");
-        heartsController = heartsContainer.GetComponent<HeartsController>();
+        // todo refactor 3 times
+        var selectedCharacterType = isProtagonist ? IntersceneState.Instance.SelectedProtagonist : IntersceneState.Instance.SelectedEnemy;
+        var characterTransform = transform.Cast<Transform>().Single(transform => transform.gameObject.name.Contains(selectedCharacterType.ToString()));
+        animator = characterTransform.gameObject.GetComponent<Animator>();
     }
 
-    public void SetDucked(bool isDucked)
-    {
-        this.isDucked = isDucked;
+    public void SetDucked(bool isDucked) => 
         animator.SetBool(CharacterAnimationParamType.Ducked.ToString(), isDucked);
-    }
 
     public void Shoot()
     {
