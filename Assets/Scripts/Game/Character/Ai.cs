@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Ai : MonoBehaviour
 {
-
-    [SerializeField] private float delayBeforeAttackSeconds = 0.2f;
-
+    private float delayBeforeAttackSeconds;
     private CharacterState state;
     private Coroutine attackCoroutine;
 
-    private void Start() => state = GetComponentInParent<CharacterState>();
+    private void Start()
+    {
+        delayBeforeAttackSeconds = GetComponent<CharacterDependentFeatures>().AttackDelay;
+        state = GetComponentInParent<CharacterState>();
+    }
 
     public void AttackAfterDelay()
     {

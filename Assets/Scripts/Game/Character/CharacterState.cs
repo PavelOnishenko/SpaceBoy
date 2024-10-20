@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class CharacterState : MonoBehaviour
 {
-    public int initialHp;
-
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private HeartsController heartsController;
     [SerializeField] private bool isProtagonist;
+    
+    private CharacterDependentFeatures characterDependentFeatures;
 
     public bool IsDead => hp <= 0;
 
@@ -18,12 +18,15 @@ public class CharacterState : MonoBehaviour
     private readonly float damageCooldown = 0.1f;
     private float lastHitTime;
 
+    private int InitialHp => characterDependentFeatures.InitialHp;
+
     private void Start()
     {
-        hp = initialHp;
         // todo refactor 3 times
         var selectedCharacterType = isProtagonist ? IntersceneState.Instance.SelectedProtagonist : IntersceneState.Instance.SelectedEnemy;
         var characterTransform = transform.Cast<Transform>().Single(transform => transform.gameObject.name.Contains(selectedCharacterType.ToString()));
+        characterDependentFeatures = characterTransform.gameObject.GetComponent<CharacterDependentFeatures>();
+        hp = InitialHp;
         animator = characterTransform.gameObject.GetComponent<Animator>();
     }
 
@@ -40,7 +43,7 @@ public class CharacterState : MonoBehaviour
 
     public void Revive()
     {
-        hp = initialHp;
+        hp = InitialHp;
         heartsController.SetHp(hp);
         animator.SetBool(CharacterAnimationParamType.IsDead.ToString(), false);
     }
@@ -51,7 +54,6 @@ public class CharacterState : MonoBehaviour
             return;
 
         lastHitTime = Time.time;
-
         hp--;
         heartsController.SetHp(hp);
         if(IsDead)

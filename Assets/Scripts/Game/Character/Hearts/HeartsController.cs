@@ -9,13 +9,13 @@ public class HeartsController : MonoBehaviour
     [SerializeField] private float heartDistance = 5f;
     [SerializeField] private float rowHeight = 10f;  // Distance between rows
     [SerializeField] private Rect heartArea;  // Defines the rectangular area for hearts
-    [SerializeField] private CharacterState characterState;
+    [SerializeField] private CharacterDependentFeatures characterDependentFeatures;
 
     private List<(GameObject empty, GameObject filled)> hearts = new List<(GameObject empty, GameObject filled)>();
 
     private void Start()
     {
-        maxHp = characterState.initialHp;
+        maxHp = characterDependentFeatures.InitialHp;
         CreateHearts();
         SetHp(maxHp);
     }
