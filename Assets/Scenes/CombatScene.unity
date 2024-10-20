@@ -1029,12 +1029,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e4b85f16d89b4429b80ad1da4b30b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  protagonistState: {fileID: 0}
   labelYouDie: {fileID: 7082413104226964122}
   labelYouWon: {fileID: 1546140905964097503}
   enemyContainer: {fileID: 1919417665}
   shootingButtonContainer: {fileID: 0}
   countdownContainer: {fileID: 8229891489250538252}
-  protagonistContainer: {fileID: 2609804254878351125}
   delayAfterVictorySeconds: 3
   popupOverlay: {fileID: 1959313639}
   labelGameCompleted: {fileID: 1362398440}
@@ -3211,6 +3211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AstronautGirl
       objectReference: {fileID: 0}
+    - target: {fileID: 2540516300135030970, guid: c15652abd8ce65147951e26adc4dbc6a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3713679453762107609, guid: c15652abd8ce65147951e26adc4dbc6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.8
@@ -3610,7 +3614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21754453241497084, guid: e0ca7cdf8169df54c91cda40d5dd8753, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1190446030650695071, guid: e0ca7cdf8169df54c91cda40d5dd8753, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4152,7 +4156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7767067393691526557, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8863703573939879422, guid: e9d18870dc8056349ad704009c2413e7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4752,6 +4756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panther
       objectReference: {fileID: 0}
+    - target: {fileID: 799359576355741166, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2008601690625197453, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.34
@@ -4791,6 +4799,10 @@ PrefabInstance:
     - target: {fileID: 2008601690625197453, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6956494399247795699, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.90402
       objectReference: {fileID: 0}
     - target: {fileID: 7216242657402286995, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: characterState

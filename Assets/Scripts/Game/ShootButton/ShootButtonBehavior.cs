@@ -6,9 +6,9 @@ public class ShootButtonBehavior : MonoBehaviour
 
     private void Update()
     {
-        var protagonist = GameInfo.Instance?.Protagonist;
-        if (stateController == null && protagonist != null) 
-            stateController = protagonist.GetComponent<CharacterState>();
+        var protagonistState = GameInfo.Instance?.protagonistState;
+        if (stateController == null && protagonistState != null) 
+            stateController = protagonistState;
     }
 
     public void HandleClick() => stateController.Aim();
