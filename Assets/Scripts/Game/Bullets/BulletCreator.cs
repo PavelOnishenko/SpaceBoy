@@ -8,9 +8,7 @@ public class BulletCreator : MonoBehaviour
 
     public void CreateBullet()
     {
-        var selectedCharacterType = isProtagonist ? IntersceneState.Instance.SelectedProtagonist : IntersceneState.Instance.SelectedEnemy;
-        // todo refactor 3 times
-        var characterTransform = transform.Cast<Transform>().Single(transform => transform.gameObject.name.Contains(selectedCharacterType.ToString()));
+        var characterTransform = IntersceneState.GetCharacterDependentTransform(transform, isProtagonist);
         var spawnPoint = FindTransformInChildren(characterTransform, "BulletSpawnPoint");
         var spawnPointTranform = spawnPoint.transform;
         Instantiate(bulletPrefab, spawnPointTranform.position, spawnPointTranform.rotation);

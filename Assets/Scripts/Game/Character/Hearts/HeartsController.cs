@@ -9,12 +9,15 @@ public class HeartsController : MonoBehaviour
     [SerializeField] private float heartDistance = 5f;
     [SerializeField] private float rowHeight = 10f;  // Distance between rows
     [SerializeField] private Rect heartArea;  // Defines the rectangular area for hearts
-    [SerializeField] private CharacterDependentFeatures characterDependentFeatures;
+    [SerializeField] private CharacterState characterState; 
 
     private List<(GameObject empty, GameObject filled)> hearts = new List<(GameObject empty, GameObject filled)>();
+    private CharacterDependentFeatures characterDependentFeatures;
 
     private void Start()
     {
+        var characterDependentTransform = IntersceneState.GetCharacterDependentTransform(characterState.transform, characterState.isProtagonist);
+        characterDependentFeatures = characterDependentTransform.GetComponent<CharacterDependentFeatures>();
         maxHp = characterDependentFeatures.InitialHp;
         CreateHearts();
         SetHp(maxHp);

@@ -1,5 +1,7 @@
 using Assets.Scripts.Menu;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 public class IntersceneState
 {
@@ -31,4 +33,11 @@ public class IntersceneState
     public Level SelectedLevel { get; set; } = Level.Outside; 
 
     public CharacterType SelectedEnemy => enemyNameByLevel[SelectedLevel];
+
+    public static Transform GetCharacterDependentTransform(Transform parentCharacterTrannsform, bool isProtagonist)
+    {
+        var selectedCharacterType = isProtagonist ? Instance.SelectedProtagonist : Instance.SelectedEnemy;
+        var characterTransform = parentCharacterTrannsform.Cast<Transform>().Single(transform => transform.gameObject.name.Contains(selectedCharacterType.ToString()));
+        return characterTransform;
+    }
 }

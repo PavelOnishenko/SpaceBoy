@@ -1127,7 +1127,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8510431946696466036, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       propertyPath: m_Layer
@@ -1418,6 +1418,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5068063847739503347}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3695325129421494696}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}
 --- !u!4 &644109003615610425 stripped
 Transform:
@@ -1502,7 +1505,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 1.5
 --- !u!114 &5068063847739503347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,6 +1518,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterState: {fileID: 0}
+--- !u!114 &3695325129421494696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7912359269500843222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaede23ec3a311047bc6a06e6039fa74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHp: 3
+  attackDelay: 1.5
 --- !u!4 &8013181749343384614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8854889053627997875, guid: 1aa0325879487114aa3a53fba4c85757, type: 3}

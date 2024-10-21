@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8168424755750523604, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_Layer
@@ -61,23 +61,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalScale.x
-      value: 9.61696
+      value: 10.280167
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalScale.y
-      value: 9.80892
+      value: 10.485366
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.556
+      value: 2.7322676
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.600006
+      value: 22.2
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.8999977
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       propertyPath: m_LocalPosition.z
@@ -215,13 +215,10 @@ PrefabInstance:
       addedObject: {fileID: 3209510883444610605}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4144750578853785839}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8539308204375690523}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 398108399736545864}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7870592262102786348}
     - targetCorrespondingSourceObject: {fileID: 8727091967253889458, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}
       insertIndex: -1
       addedObject: {fileID: 236927402998794102}
@@ -330,35 +327,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4144750578853785839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585393145866106354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13403b69f6a50fc48b07f5a7c6008628, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 8039325018934811513}
-  bulletPrefab: {fileID: 7891033883629610073, guid: 292d1559ea0dcaf4c958165171751036, type: 3}
---- !u!114 &8539308204375690523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585393145866106354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4c28e21eb7f23d44947cbf47215c149, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletCreator: {fileID: 4144750578853785839}
-  initialHp: 2
-  heartContainerNamePrefix: Enemy
 --- !u!114 &398108399736545864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +339,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17f3928c79d18b84da4e71b8dd093ffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforeAttackSeconds: 1.03
+--- !u!114 &7870592262102786348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585393145866106354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5f556cfe93979479039fd67a968b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterState: {fileID: 0}
 --- !u!1 &1666115021742035238 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1794489708331582825, guid: a45b9d954661b67418f2e2fd218b8566, type: 3}

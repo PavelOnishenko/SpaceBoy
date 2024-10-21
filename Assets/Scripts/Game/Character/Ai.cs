@@ -24,7 +24,9 @@ public class Ai : MonoBehaviour
     IEnumerator AttackAfterDelayCoroutine()
     {
         while (GameInfo.Instance.State is not GameState.Ongoing) yield return null;
+        Debug.Log("Started DELAY");
         yield return new WaitForSeconds(delayBeforeAttackSeconds);
+        Debug.Log("Finished DELAY");
         state.Aim();
         attackCoroutine = null;
     }

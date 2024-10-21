@@ -5,7 +5,7 @@ public class CharacterState : MonoBehaviour
 {
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private HeartsController heartsController;
-    [SerializeField] private bool isProtagonist;
+    public bool isProtagonist;
     
     private CharacterDependentFeatures characterDependentFeatures;
 
@@ -22,12 +22,10 @@ public class CharacterState : MonoBehaviour
 
     private void Start()
     {
-        // todo refactor 3 times
-        var selectedCharacterType = isProtagonist ? IntersceneState.Instance.SelectedProtagonist : IntersceneState.Instance.SelectedEnemy;
-        var characterTransform = transform.Cast<Transform>().Single(transform => transform.gameObject.name.Contains(selectedCharacterType.ToString()));
+        var characterTransform = IntersceneState.GetCharacterDependentTransform(transform, isProtagonist);
+        animator = characterTransform.gameObject.GetComponent<Animator>();
         characterDependentFeatures = characterTransform.gameObject.GetComponent<CharacterDependentFeatures>();
         hp = InitialHp;
-        animator = characterTransform.gameObject.GetComponent<Animator>();
     }
 
     public void SetDucked(bool isDucked) => 

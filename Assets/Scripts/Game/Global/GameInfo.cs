@@ -31,21 +31,16 @@ public class GameInfo : MonoBehaviour
 
     private void Start()
     {
-        SetCharacterRelatedVariables();
+        var enemyName = IntersceneState.Instance.SelectedEnemy.ToString();
+        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;
+        enemyState = enemy.GetComponent<CharacterState>();
+        ai = enemy.GetComponent<Ai>();
         countdown = countdownContainer.GetComponent<Countdown>();
         if (Instance != null)
             Destroy(gameObject);
         Instance = this;
         var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
         PlayerPrefs.SetString(PlayerPrefNames.LastSelectedProtagonist.ToString(), selectedProtagonist.ToString());
-    }
-
-    private void SetCharacterRelatedVariables()
-    {
-        var enemyName = IntersceneState.Instance.SelectedEnemy.ToString();
-        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;
-        enemyState = enemy.GetComponent<CharacterState>();
-        ai = enemy.GetComponent<Ai>();
     }
 
     public GameState State
