@@ -1651,8 +1651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaede23ec3a311047bc6a06e6039fa74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHp: 10
-  attackDelay: 0.2
+  initialHp: 7
+  attackDelay: 1.1
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4218,7 +4218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6649348812343145014, guid: d2374d105b8ba4644827710af3b1e726, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4251,7 +4251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 6
-  attackDelay: 0.8
+  attackDelay: 1.2
 --- !u!1 &1546140905964097503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,6 +4341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
+    - target: {fileID: 1794133461420462869, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9184214099371309856, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
       propertyPath: characterState
       value: 
@@ -4375,8 +4379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaede23ec3a311047bc6a06e6039fa74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialHp: 15
-  attackDelay: 0
+  initialHp: 8
+  attackDelay: 1
 --- !u!222 &1925043311333810179
 CanvasRenderer:
   m_ObjectHideFlags: 0
