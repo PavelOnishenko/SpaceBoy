@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class Ai : MonoBehaviour
@@ -23,10 +25,13 @@ public class Ai : MonoBehaviour
 
     IEnumerator AttackAfterDelayCoroutine()
     {
-        while (GameInfo.Instance.State is not GameState.Ongoing) yield return null;
-        Debug.Log("Started DELAY");
+        while (GameInfo.Instance.State is not GameState.Ongoing) 
+            yield return null;
+        Debug.Log($"Starting DELAY=[{delayBeforeAttackSeconds}]");
+        var time1 = DateTime.Now;
         yield return new WaitForSeconds(delayBeforeAttackSeconds);
-        Debug.Log("Finished DELAY");
+        var time2 = DateTime.Now;
+        Debug.Log($"Finished DELAY. Length: [{(time2-time1).TotalSeconds}] sec.");
         state.Aim();
         attackCoroutine = null;
     }
