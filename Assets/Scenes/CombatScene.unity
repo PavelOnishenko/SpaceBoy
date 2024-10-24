@@ -4217,8 +4217,8 @@ Transform:
   m_GameObject: {fileID: 4960369141526677320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26, y: 58, z: 74.08716}
-  m_LocalScale: {x: 6.812, y: 6.812, z: 1.3624}
+  m_LocalPosition: {x: 308, y: 67, z: 74.08716}
+  m_LocalScale: {x: 5, y: 5, z: 1.3624}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 357829009842700296}
@@ -4662,15 +4662,9 @@ MonoBehaviour:
   maxHp: 5
   emptyHeartPrefab: {fileID: 5559714610002932141, guid: 8488574fda075224e92ed06f34f157e1, type: 3}
   filledHeartPrefab: {fileID: 7368205536521495726, guid: fe6ec25309503ba45a0fcb0a95722f92, type: 3}
-  heartDistance: 15
-  rowHeight: 15
-  heartArea:
-    serializedVersion: 2
-    x: 0
-    y: -50
-    width: 90
-    height: 50
+  heartDistance: 8
   characterState: {fileID: 3453958918001264446}
+  isProtagonist: 1
 --- !u!114 &2782647585724734364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4687,14 +4681,8 @@ MonoBehaviour:
   emptyHeartPrefab: {fileID: 5559714610002932141, guid: 8488574fda075224e92ed06f34f157e1, type: 3}
   filledHeartPrefab: {fileID: 7368205536521495726, guid: fe6ec25309503ba45a0fcb0a95722f92, type: 3}
   heartDistance: 8
-  rowHeight: 8
-  heartArea:
-    serializedVersion: 2
-    x: 0
-    y: -50
-    width: 50
-    height: 50
   characterState: {fileID: 1919417668}
+  isProtagonist: 0
 --- !u!114 &2947090334376516905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5539,8 +5527,8 @@ Transform:
   m_GameObject: {fileID: 672264668408110304}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -351, y: 67, z: 74.08716}
-  m_LocalScale: {x: 6.8120003, y: 6.8120003, z: 1.3624}
+  m_LocalPosition: {x: -304, y: 67, z: 74.08716}
+  m_LocalScale: {x: 5, y: 5, z: 1.3624}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 357829009842700296}
