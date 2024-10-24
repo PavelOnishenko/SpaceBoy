@@ -2,7 +2,6 @@ using Assets.Scripts;
 using Assets.Scripts.Menu;
 using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,29 +11,25 @@ public class GameInfo : MonoBehaviour
 
     [SerializeField] private GameObject labelYouDie;
     [SerializeField] private GameObject labelYouWon;
-    [SerializeField] private GameObject enemyContainer;
-    [SerializeField] private GameObject shootingButtonContainer;
     [SerializeField] private GameObject countdownContainer;
     [SerializeField] private float delayAfterVictorySeconds = 3f;
     [SerializeField] private GameObject popupOverlay;
     [SerializeField] private GameObject labelGameCompleted;
     [SerializeField] private GameObject shootButton;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject restartButton;
 
-    public GameObject Enemy => enemy;
-
-    private CharacterState enemyState;
     private Ai ai;
+    private CharacterState enemyState;
     private Countdown countdown;
-    private GameObject enemy;
 
     public static GameInfo Instance { get; private set; }
 
     private void Start()
     {
-        var enemyName = IntersceneState.Instance.SelectedEnemy.ToString();
-        enemy = enemyContainer.transform.Cast<Transform>().Single(x => x.gameObject.name.Contains(enemyName)).gameObject;
         enemyState = enemy.GetComponent<CharacterState>();
-        ai = enemy.GetComponent<Ai>();
+        var specificEnemy = IntersceneState.GetCharacterDependentTransform(enemy.transform, false);
+        ai = specificEnemy.GetComponent<Ai>();
         countdown = countdownContainer.GetComponent<Countdown>();
         if (Instance != null)
             Destroy(gameObject);
@@ -49,6 +44,7 @@ public class GameInfo : MonoBehaviour
         set
         {
             _state = value;
+            restartButton.SetActive(false);
             if (_state is GameState.PlayerWon or GameState.PlayerDead) 
                 HandleGameOverStateChange(value);
             else 
@@ -64,6 +60,7 @@ public class GameInfo : MonoBehaviour
             labelYouDie.SetActive(true);
             labelYouWon.SetActive(false);
             popupOverlay.SetActive(true);
+            restartButton.SetActive(true);
         }
         else
         {

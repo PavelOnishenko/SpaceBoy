@@ -27,11 +27,7 @@ public class Ai : MonoBehaviour
     {
         while (GameInfo.Instance.State is not GameState.Ongoing) 
             yield return null;
-        Debug.Log($"Starting DELAY=[{delayBeforeAttackSeconds}]");
-        var time1 = DateTime.Now;
         yield return new WaitForSeconds(delayBeforeAttackSeconds);
-        var time2 = DateTime.Now;
-        Debug.Log($"Finished DELAY. Length: [{(time2-time1).TotalSeconds}] sec.");
         state.Aim();
         attackCoroutine = null;
     }
