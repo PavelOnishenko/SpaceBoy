@@ -900,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662033325441649012, guid: c73504a6b5fb8c149bf1d23402439107, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1707,7 +1707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2251060838117397952, guid: 31e6f46db72023c46b12ee2b59661c20, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4911564955285295470, guid: 31e6f46db72023c46b12ee2b59661c20, type: 3}
       propertyPath: characterState
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 7
-  attackDelay: 1.1
+  attackDelay: 0.85
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3589,7 +3589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 4
-  attackDelay: 1.3
+  attackDelay: 1.5
 --- !u!1 &1981235174
 GameObject:
   m_ObjectHideFlags: 0
@@ -4344,7 +4344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 6
-  attackDelay: 1.2
+  attackDelay: 1
 --- !u!1 &1546140905964097503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,7 +4473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 8
-  attackDelay: 1
+  attackDelay: 0.75
 --- !u!222 &1925043311333810179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5337,7 +5337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3919562582808244543, guid: 5ede421373b57aa418d404287211736c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4155230319973754824, guid: 5ede421373b57aa418d404287211736c, type: 3}
       propertyPath: delayBeforeAttackSeconds
@@ -5385,7 +5385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 5
-  attackDelay: 0.9
+  attackDelay: 0.6
 --- !u!222 &6451072737354627532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5591,7 +5591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8088018012391911271, guid: 3eb30227e7063e4469871f8f84cf85b8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -33,11 +33,16 @@ public class CharacterState : MonoBehaviour
 
     public void Shoot()
     {
+        Debug.Log("Shoot called");
         AudioManager.Instance.PlaySound("Shot");
         bulletCreator.CreateBullet();
     }
 
-    public void Aim() => animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
+    public void Aim()
+    {
+        Debug.Log("Aim called");
+        animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
+    }
 
     public void Revive()
     {

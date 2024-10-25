@@ -1,34 +1,29 @@
-using System;
-using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 public class Ai : MonoBehaviour
 {
     private float delayBeforeAttackSeconds;
     private CharacterState state;
-    private Coroutine attackCoroutine;
+    private float attackTimer;
 
     private void Start()
     {
         delayBeforeAttackSeconds = GetComponent<CharacterDependentFeatures>().AttackDelay;
+        Debug.Log($"Delay: [{delayBeforeAttackSeconds}].");
         state = GetComponentInParent<CharacterState>();
+        attackTimer = delayBeforeAttackSeconds;
     }
 
-    public void AttackAfterDelay()
+    private void Update()
     {
-        if (!gameObject.activeSelf)
+        if (GameInfo.Instance.State != GameState.Ongoing)
             return;
-        if (attackCoroutine != null) StopCoroutine(attackCoroutine);
-        attackCoroutine = StartCoroutine(AttackAfterDelayCoroutine());
-    }
 
-    IEnumerator AttackAfterDelayCoroutine()
-    {
-        while (GameInfo.Instance.State is not GameState.Ongoing) 
-            yield return null;
-        yield return new WaitForSeconds(delayBeforeAttackSeconds);
-        state.Aim();
-        attackCoroutine = null;
+        attackTimer -= Time.deltaTime;
+        if (attackTimer <= 0f)
+        {
+            state.Aim();
+            attackTimer = delayBeforeAttackSeconds;
+        }
     }
 }

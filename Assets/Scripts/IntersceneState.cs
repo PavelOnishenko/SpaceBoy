@@ -28,9 +28,9 @@ public class IntersceneState
 
     private static IntersceneState instance;
 
-    public CharacterType SelectedProtagonist { get; set; } = CharacterType.CosmoKnight;
+    public CharacterType SelectedProtagonist { get; set; } = CharacterType.GreenGirl;
 
-    public Level SelectedLevel { get; set; } = Level.Outside; 
+    public Level SelectedLevel { get; set; } = Level.NightCity; 
 
     public CharacterType SelectedEnemy => enemyNameByLevel[SelectedLevel];
 

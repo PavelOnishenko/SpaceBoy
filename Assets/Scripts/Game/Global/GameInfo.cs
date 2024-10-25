@@ -105,7 +105,7 @@ public class GameInfo : MonoBehaviour
         if (state == GameState.Ongoing)
         {
             shootButton.SetActive(true);
-            ai.AttackAfterDelay();
+            //ai.AttackAfterDelay();
         }
     }
 
@@ -114,7 +114,7 @@ public class GameInfo : MonoBehaviour
         countdown.Restart();
         protagonistState.Revive();
         enemyState.Revive();
-        ai.AttackAfterDelay();
+        //ai.AttackAfterDelay();
         shootButton.SetActive(false);
     }
 
