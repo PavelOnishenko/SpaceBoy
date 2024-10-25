@@ -1,7 +1,10 @@
 ﻿using Assets.Scripts.Menu;
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using Unity.Services.Core;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 namespace Assets.Scripts.Behaviors.Menu
 {
@@ -22,6 +25,8 @@ namespace Assets.Scripts.Behaviors.Menu
 
         private void Start()
         {
+            UnityServices.InitializeAsync().ConfigureAwait(false).GetAwaiter().GetResult();
+            Analytics.CustomEvent("AppStarted", new Dictionary<string, object>());
             var lastCompletedLevel = PlayerPrefs.GetInt(PlayerPrefNames.LastCompletedLevel.ToString());
             var lastPossibleLevel = Enum.GetValues(typeof(Level)).Length;
             lastAvailableLevel = lastCompletedLevel == lastPossibleLevel ? lastCompletedLevel : lastCompletedLevel + 1;
