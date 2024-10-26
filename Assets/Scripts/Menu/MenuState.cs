@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.Analytics;
@@ -23,10 +25,9 @@ namespace Assets.Scripts.Behaviors.Menu
 
         private bool needToRefreshUi = false;
 
-        private void Start()
+        private async void Start()
         {
-            UnityServices.InitializeAsync().ConfigureAwait(false).GetAwaiter().GetResult();
-            Analytics.CustomEvent("AppStarted", new Dictionary<string, object>());
+            await TurnOnAnalyticsAsync();
             var lastCompletedLevel = PlayerPrefs.GetInt(PlayerPrefNames.LastCompletedLevel.ToString());
             var lastPossibleLevel = Enum.GetValues(typeof(Level)).Length;
             lastAvailableLevel = lastCompletedLevel == lastPossibleLevel ? lastCompletedLevel : lastCompletedLevel + 1;
@@ -42,6 +43,21 @@ namespace Assets.Scripts.Behaviors.Menu
             selectedLevel = lastAvailableLevel;
             IntersceneState.Instance.SelectedLevel = (Level)selectedLevel;
             needToRefreshUi = true;
+        }
+
+        private static async Task TurnOnAnalyticsAsync()
+        {
+            try
+            {
+                await UnityServices.InitializeAsync();
+                AnalyticsService.Instance.StartDataCollection();
+                Analytics.CustomEvent("AppStarted", new Dictionary<string, object>());
+            }
+            catch (Exception e)
+            {
+                Debug.Log("Analytics error! Description below:");
+                Debug.LogException(e);
+            }
         }
 
         private void Update()
