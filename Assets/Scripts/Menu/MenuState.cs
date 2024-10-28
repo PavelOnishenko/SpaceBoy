@@ -51,7 +51,6 @@ namespace Assets.Scripts.Behaviors.Menu
             {
                 await UnityServices.InitializeAsync();
                 AnalyticsService.Instance.StartDataCollection();
-                Analytics.CustomEvent("AppStarted", new Dictionary<string, object>());
             }
             catch (Exception e)
             {

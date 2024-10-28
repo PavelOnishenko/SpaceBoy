@@ -1,8 +1,12 @@
+using Assets.Analytics;
 using Assets.Scripts;
 using Assets.Scripts.Menu;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using Unity.Services.Analytics;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class GameInfo : MonoBehaviour
@@ -35,7 +39,16 @@ public class GameInfo : MonoBehaviour
             Destroy(gameObject);
         Instance = this;
         var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
-        PlayerPrefs.SetString(PlayerPrefNames.LastSelectedProtagonist.ToString(), selectedProtagonist.ToString());
+        var selectedProtagonistName = selectedProtagonist.ToString();
+        PlayerPrefs.SetString(PlayerPrefNames.LastSelectedProtagonist.ToString(), selectedProtagonistName);
+        var combatStartedEvent = new CombatStartedEvent
+        {
+            LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
+            LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
+            ProtagonistCharacterName = selectedProtagonistName,
+            EnemyCharacterName = specificEnemy.name
+        };
+        AnalyticsService.Instance.RecordEvent(combatStartedEvent);
     }
 
     public GameState State
@@ -54,6 +67,7 @@ public class GameInfo : MonoBehaviour
 
     private void HandleGameOverStateChange(GameState value)
     {
+        bool playerWon;
         if (value == GameState.PlayerDead)
         {
             AudioManager.Instance.PlaySound("Lose");
@@ -61,12 +75,26 @@ public class GameInfo : MonoBehaviour
             labelYouWon.SetActive(false);
             popupOverlay.SetActive(true);
             restartButton.SetActive(true);
+            playerWon = false;
         }
         else
         {
             AudioManager.Instance.PlaySound("Win");
             Win();
+            playerWon = true;
         }
+        var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
+        var selectedProtagonistName = selectedProtagonist.ToString();
+        var specificEnemy = IntersceneState.GetCharacterDependentTransform(enemy.transform, false);
+        var combatFinishedEvent = new CombatFinishedEvent
+        {
+            LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
+            LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
+            ProtagonistCharacterName = selectedProtagonistName,
+            EnemyCharacterName = specificEnemy.name,
+            PlayerWon = playerWon
+        };
+        AnalyticsService.Instance.RecordEvent(combatFinishedEvent);
         shootButton.SetActive(false);
     }
 
@@ -77,10 +105,24 @@ public class GameInfo : MonoBehaviour
         var victoryPopup = labelYouWon;
         if (selectedLevel > PlayerPrefs.GetInt(lastCompletedLevelPrefName))
         {
+            var levelUnblockedEvent = new LevelUnblockedEvent
+            {
+                LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
+                LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
+            };
+            AnalyticsService.Instance.RecordEvent(levelUnblockedEvent);
             PlayerPrefs.SetInt(lastCompletedLevelPrefName, selectedLevel);
             Debug.Log($"Last completed level set to [{selectedLevel}].");
             if (selectedLevel == Enum.GetValues(typeof(Level)).Length)
+            {
                 victoryPopup = labelGameCompleted;
+                var gameCompletedEvent = new GameCompletedEvent
+                {
+                    LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
+                    LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
+                };
+                AnalyticsService.Instance.RecordEvent(gameCompletedEvent);
+            }
         }
         labelYouDie.SetActive(false);
         victoryPopup.SetActive(true);
