@@ -900,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662033325441649012, guid: c73504a6b5fb8c149bf1d23402439107, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1828,7 +1828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 7
-  attackDelay: 5
+  attackDelay: 0.85
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5271,7 +5271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 799359576355741166, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2008601690625197453, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_LocalPosition.x
