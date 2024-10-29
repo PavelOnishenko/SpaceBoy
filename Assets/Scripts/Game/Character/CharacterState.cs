@@ -28,8 +28,7 @@ public class CharacterState : MonoBehaviour
         hp = InitialHp;
     }
 
-    public void SetDucked(bool isDucked) => 
-        animator.SetBool(CharacterAnimationParamType.Ducked.ToString(), isDucked);
+    public void SetDucked(bool isDucked) => animator.SetBool(CharacterAnimationParamType.Ducked.ToString(), isDucked);
 
     public void Shoot()
     {
@@ -37,10 +36,7 @@ public class CharacterState : MonoBehaviour
         bulletCreator.CreateBullet();
     }
 
-    public void Aim()
-    {
-        animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
-    }
+    public void Aim() => animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
 
     public void Revive()
     {

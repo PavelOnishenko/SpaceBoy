@@ -1,19 +1,11 @@
-﻿using Unity.Services.Analytics;
+﻿using Assets.Analytics.Abstract;
 
 namespace Assets.Analytics
 {
-    internal class RestartEvent : Event
+    internal class RestartEvent : CharacterRelatedEvent
     {
         public RestartEvent() : base("Restart")
         {
         }
-
-        public int LevelIndex { set { SetParameter("LevelIndex", value); } }
-
-        public string LevelName { set { SetParameter("LevelName", value); } }
-
-        public string ProtagonistCharacterName { set { SetParameter("ProtagonistCharacterName", value); } }
-
-        public string EnemyCharacterName { set { SetParameter("EnemyCharacterName", value); } }
     }
 }

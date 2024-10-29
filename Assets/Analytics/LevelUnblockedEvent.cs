@@ -1,15 +1,11 @@
-﻿using Unity.Services.Analytics;
+﻿using Assets.Analytics.Abstract;
 
 namespace Assets.Analytics
 {
-    internal class LevelUnblockedEvent : Event
+    internal class LevelUnblockedEvent : LevelRelatedEvent
     {
         public LevelUnblockedEvent() : base("LevelUnblocked")
         {
         }
-
-        public int LevelIndex { set { SetParameter("LevelIndex", value); } }
-
-        public string LevelName { set { SetParameter("LevelName", value); } }
     }
 }

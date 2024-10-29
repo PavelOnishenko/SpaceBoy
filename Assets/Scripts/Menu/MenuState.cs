@@ -1,12 +1,10 @@
 ﻿using Assets.Scripts.Menu;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
-using UnityEngine.Analytics;
 
 namespace Assets.Scripts.Behaviors.Menu
 {
@@ -29,8 +27,7 @@ namespace Assets.Scripts.Behaviors.Menu
         {
             await TurnOnAnalyticsAsync();
             var lastCompletedLevel = PlayerPrefs.GetInt(PlayerPrefNames.LastCompletedLevel.ToString());
-            var lastPossibleLevel = Enum.GetValues(typeof(Level)).Length;
-            lastAvailableLevel = lastCompletedLevel == lastPossibleLevel ? lastCompletedLevel : lastCompletedLevel + 1;
+            lastAvailableLevel = lastCompletedLevel == Enum.GetValues(typeof(Level)).Length ? lastCompletedLevel : lastCompletedLevel + 1;
             levelCaptionBehavior = levelCaption.GetComponent<LevelCaptionBehavior>();
             levelPreviewBehavior = levelPreview.GetComponent<LevelPreviewBehavior>();
             characterPortraitBehavior = characterPortraitGo.GetComponent<CharacterPortraitBehavior>();

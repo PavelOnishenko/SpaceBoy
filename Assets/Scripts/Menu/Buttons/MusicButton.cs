@@ -23,10 +23,6 @@ public class MusicButton : MonoBehaviour
         isOn = !isOn;
         imageComponent.sprite = isOn ? onSprite : offSprite;
         AudioListener.pause = !isOn;
-        var toggleEvent = new SoundToggleEvent
-        {
-            SoundOn = isOn
-        };
-        AnalyticsService.Instance.RecordEvent(toggleEvent);
+        AnalyticsService.Instance.RecordEvent(new SoundToggleEvent { SoundOn = isOn });
     }
 }

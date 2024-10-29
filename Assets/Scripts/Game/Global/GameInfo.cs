@@ -3,10 +3,8 @@ using Assets.Scripts;
 using Assets.Scripts.Menu;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Services.Analytics;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class GameInfo : MonoBehaviour
@@ -41,14 +39,11 @@ public class GameInfo : MonoBehaviour
         var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
         var selectedProtagonistName = selectedProtagonist.ToString();
         PlayerPrefs.SetString(PlayerPrefNames.LastSelectedProtagonist.ToString(), selectedProtagonistName);
-        var combatStartedEvent = new CombatStartedEvent
+        AnalyticsService.Instance.RecordEvent(new CombatStartedEvent
         {
-            LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
-            LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
-            ProtagonistCharacterName = selectedProtagonistName,
-            EnemyCharacterName = specificEnemy.name
-        };
-        AnalyticsService.Instance.RecordEvent(combatStartedEvent);
+            LevelIndex = (int)IntersceneState.Instance.SelectedLevel, LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
+            ProtagonistCharacterName = selectedProtagonistName, EnemyCharacterName = specificEnemy.name
+        });
     }
 
     public GameState State
@@ -86,15 +81,11 @@ public class GameInfo : MonoBehaviour
         var selectedProtagonist = IntersceneState.Instance.SelectedProtagonist;
         var selectedProtagonistName = selectedProtagonist.ToString();
         var specificEnemy = IntersceneState.GetCharacterDependentTransform(enemy.transform, false);
-        var combatFinishedEvent = new CombatFinishedEvent
+        AnalyticsService.Instance.RecordEvent(new CombatFinishedEvent
         {
-            LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
-            LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
-            ProtagonistCharacterName = selectedProtagonistName,
-            EnemyCharacterName = specificEnemy.name,
-            PlayerWon = playerWon
-        };
-        AnalyticsService.Instance.RecordEvent(combatFinishedEvent);
+            LevelIndex = (int)IntersceneState.Instance.SelectedLevel, LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
+            ProtagonistCharacterName = selectedProtagonistName, EnemyCharacterName = specificEnemy.name, PlayerWon = playerWon
+        });
         shootButton.SetActive(false);
     }
 
@@ -105,23 +96,15 @@ public class GameInfo : MonoBehaviour
         var victoryPopup = labelYouWon;
         if (selectedLevel > PlayerPrefs.GetInt(lastCompletedLevelPrefName))
         {
-            var levelUnblockedEvent = new LevelUnblockedEvent
-            {
-                LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
-                LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
-            };
-            AnalyticsService.Instance.RecordEvent(levelUnblockedEvent);
+            AnalyticsService.Instance.RecordEvent(new LevelUnblockedEvent
+                { LevelIndex = (int)IntersceneState.Instance.SelectedLevel, LevelName = IntersceneState.Instance.SelectedLevel.ToString() });
             PlayerPrefs.SetInt(lastCompletedLevelPrefName, selectedLevel);
             Debug.Log($"Last completed level set to [{selectedLevel}].");
             if (selectedLevel == Enum.GetValues(typeof(Level)).Length)
             {
                 victoryPopup = labelGameCompleted;
-                var gameCompletedEvent = new GameCompletedEvent
-                {
-                    LevelIndex = (int)IntersceneState.Instance.SelectedLevel,
-                    LevelName = IntersceneState.Instance.SelectedLevel.ToString(),
-                };
-                AnalyticsService.Instance.RecordEvent(gameCompletedEvent);
+                AnalyticsService.Instance.RecordEvent(new GameCompletedEvent
+                    { LevelIndex = (int)IntersceneState.Instance.SelectedLevel, LevelName = IntersceneState.Instance.SelectedLevel.ToString(), });
             }
         }
         labelYouDie.SetActive(false);
@@ -147,7 +130,6 @@ public class GameInfo : MonoBehaviour
         if (state == GameState.Ongoing)
         {
             shootButton.SetActive(true);
-            //ai.AttackAfterDelay();
         }
     }
 
@@ -156,7 +138,6 @@ public class GameInfo : MonoBehaviour
         countdown.Restart();
         protagonistState.Revive();
         enemyState.Revive();
-        //ai.AttackAfterDelay();
         shootButton.SetActive(false);
     }
 
