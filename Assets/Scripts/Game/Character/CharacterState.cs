@@ -1,11 +1,11 @@
-using System.Linq;
 using UnityEngine;
 
 public class CharacterState : MonoBehaviour
 {
+    public bool isProtagonist;
+
     [SerializeField] private BulletCreator bulletCreator;
     [SerializeField] private HeartsController heartsController;
-    public bool isProtagonist;
     
     private CharacterDependentFeatures characterDependentFeatures;
 
@@ -28,21 +28,15 @@ public class CharacterState : MonoBehaviour
         hp = InitialHp;
     }
 
-    public void SetDucked(bool isDucked) => 
-        animator.SetBool(CharacterAnimationParamType.Ducked.ToString(), isDucked);
+    public void SetDucked(bool isDucked) => animator.SetBool(CharacterAnimationParamType.Ducked.ToString(), isDucked);
 
     public void Shoot()
     {
-        Debug.Log("Shoot called");
         AudioManager.Instance.PlaySound("Shot");
         bulletCreator.CreateBullet();
     }
 
-    public void Aim()
-    {
-        Debug.Log("Aim called");
-        animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
-    }
+    public void Aim() => animator.SetTrigger(CharacterAnimationTriggerType.Aim.ToString());
 
     public void Revive()
     {

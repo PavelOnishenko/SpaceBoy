@@ -116,10 +116,10 @@ TextureImporter:
       name: RestartButton_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 93
-        width: 290
-        height: 138
+        x: 14
+        y: 2
+        width: 589
+        height: 187
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
