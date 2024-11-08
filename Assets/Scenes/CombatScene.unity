@@ -973,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662033325441649012, guid: c73504a6b5fb8c149bf1d23402439107, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4590,9 +4590,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raccoon
       objectReference: {fileID: 0}
-    - target: {fileID: 1794133461420462869, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 2046105121276671327, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
+      propertyPath: attackDelay
+      value: 1.05
       objectReference: {fileID: 0}
     - target: {fileID: 9184214099371309856, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
       propertyPath: characterState
@@ -4601,35 +4601,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1794133461420462869, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1850353258948974216}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
 --- !u!4 &1850353258948974214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 589429716550716278, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
   m_PrefabInstance: {fileID: 1850353258948974213}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1850353258948974215 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1794133461420462869, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
-  m_PrefabInstance: {fileID: 1850353258948974213}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1850353258948974216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1850353258948974215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaede23ec3a311047bc6a06e6039fa74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialHp: 8
-  attackDelay: 0.95
 --- !u!222 &1925043311333810179
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5343,7 +5321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 799359576355741166, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2008601690625197453, guid: 2095c1513afad98498eb1cc4091009ae, type: 3}
       propertyPath: m_LocalPosition.x
