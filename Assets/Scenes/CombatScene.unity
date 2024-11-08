@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 7
-  attackDelay: 0.85
+  attackDelay: 0.95
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4500,7 +4500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 6
-  attackDelay: 1
+  attackDelay: 1.1
 --- !u!1 &1546140905964097503
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,7 +4629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 8
-  attackDelay: 0.75
+  attackDelay: 0.95
 --- !u!222 &1925043311333810179
 CanvasRenderer:
   m_ObjectHideFlags: 0
