@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 7
-  attackDelay: 0.95
+  attackDelay: 1.05
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4592,7 +4592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2046105121276671327, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
       propertyPath: attackDelay
-      value: 1.05
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 9184214099371309856, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
       propertyPath: characterState
