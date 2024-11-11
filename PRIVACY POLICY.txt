@@ -1,0 +1,22 @@
+**Privacy Policy for Space Gun**
+
+**Information We Collect**
+Our game collects minimal data to improve gameplay and understand user interactions. This data includes anonymous session tracking through session IDs. Additionally, Unity Analytics, a tool we use, may collect information such as device IDs and IP addresses for analytics purposes. We do not collect any personal information like name or email.
+
+**Purpose of Data Collection**
+The data we collect is used to enhance game performance, analyze gameplay patterns, and improve user experience. All data is used solely for statistical purposes.
+
+**Data Sharing and Storage**
+We use Unity Analytics for data processing, which may store certain data for up to 13 months. We do not share data with other third parties, and we do not directly store any identifiable information.
+
+**User Rights and Data Control**
+You have the right to request deletion of your data. If you wish to opt-out of analytics or request data deletion, please contact us at pavelonishchenko.software@gmail.com.
+
+**Children’s Privacy**
+If the game is directed at users under the age of 13, we comply with child protection laws, including COPPA, to ensure privacy and obtain parental consent as required.
+
+**Contact Us**
+For questions or concerns regarding our Privacy Policy, please reach out at pavelonishchenko.software@gmail.com.
+
+Synesthesia Lab
+10/25/2024
