@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialHp: 7
-  attackDelay: 1.05
+  attackDelay: 1.15
 --- !u!1001 &1011833489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2961,7 +2961,7 @@ MonoBehaviour:
     volume: 1
   - name: Win
     clip: {fileID: 8300000, guid: b9c4da80f71b4a94d9b34e362384b61e, type: 3}
-    volume: 0.701
+    volume: 0.679
 --- !u!4 &1564119644
 Transform:
   m_ObjectHideFlags: 0
@@ -3007,7 +3007,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 6c3303fb02836b240888d4ba763cbc36, type: 3}
   m_Resource: {fileID: 8300000, guid: 6c3303fb02836b240888d4ba763cbc36, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.153
+  m_Volume: 0.302
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4592,7 +4592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2046105121276671327, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
       propertyPath: attackDelay
-      value: 1.15
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 9184214099371309856, guid: 21f8c6366b476414d93fbca534683e5b, type: 3}
       propertyPath: characterState
